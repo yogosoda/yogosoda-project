@@ -1,0 +1,62 @@
+{
+    "extends": [
+        "next/core-web-vitals",
+        "next/typescript",
+        "next/core-web-vitals",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended",
+        "prettier"
+    ],
+    "plugins": [
+        "prettier"
+    ],
+    "rules": {
+        "prettier/prettier": "error",
+        // Prettier 규칙을 ESLint에서 에러로 처리
+        "react/react-in-jsx-scope": "off",
+        // React 17 이상에서는 불필요
+        "no-var": "error",
+        // var 사용 금지
+        "eqeqeq": "error",
+        // ===를 사용한 동등 비교 강제
+        "no-multiple-empty-lines": "error",
+        // 여러 줄의 공백 금지
+        "no-console": [
+            "error",
+            {
+                "allow": [
+                    "warn",
+                    "error",
+                    "info"
+                ]
+            }
+        ],
+        // console.log() 금지, warn, error, info는 허용
+        "no-unused-vars": [
+            "error",
+            {
+                "varsIgnorePattern": "^_",
+                "argsIgnorePattern": "^_"  // '_'로 시작하는 인수도 검사에서 제외
+            }
+        ],
+        // 사용되지 않는 변수 금지
+        "react-hooks/exhaustive-deps": "off"
+        // 특정 ESLint 규칙을 비활성화
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "project": "./tsconfig.json"
+    },
+    "ignorePatterns": [
+        "build",
+        "dist",
+        "public"
+    ]
+}
