@@ -277,8 +277,8 @@ Next.js 또는 TypeScript 환경에서 **경로 별칭**을 설정함으로써 �
       "@dev/*": [
         "./src/*"
       ],
-      "@devStyles/*": [
-        "./src/styles/*"
+      "@devAssets/*": [
+        "./src/assets/*"
       ],
       "@devTypes/*": [
         "./src/types/*"
@@ -312,7 +312,7 @@ Next.js 또는 TypeScript 환경에서 **경로 별칭**을 설정함으로써 �
 ### 설정한 별칭 설명
 
 - **`@dev/*`**: 기본적으로 `src` 폴더 내 모든 파일에 대한 별칭입니다.
-- **`@devStyles/*`**: `src/styles` 폴더의 스타일 파일에 접근할 때 사용합니다.
+- **`@devAssets/*`**: `src/assets` 폴더의 정적 파일(이미지, 폰트, 스타일 등)에 접근할 때 사용합니다.
 - **`@devTypes/*`**: `src/types` 폴더에 정의된 TypeScript 타입에 접근할 때 사용됩니다.
 - **`@devUtils/*`**: 공통 유틸리티 함수나 도구 모음이 있는 `src/utils` 폴더에 대한 별칭입니다.
 - **`@devConstants/*`**: 상수 값들이 정의된 `src/constants` 폴더에 대한 별칭입니다.
