@@ -1,5 +1,5 @@
-# 🚀 **feat: 기능명**
-    ex) feat: pull request template 작성
+# 🚀 **feat: 기능명 (YSP-번호)**
+    ex) feat: pull request template 작성 (YSP-번호)
 - 간단한 설명: PR의 목적을 간략하게 요약해주세요.
 
 <br/>
