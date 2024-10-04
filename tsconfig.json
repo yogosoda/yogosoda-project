@@ -27,7 +27,7 @@
                 "./src/*"
             ],
             "@devAssets/*": [
-                "./src/styles/*"
+                "./src/assets/*"
             ],
             "@devTypes/*": [
                 "./src/types/*"
@@ -44,8 +44,8 @@
             "@devHooks/*": [
                 "./src/hooks/*"
             ],
-            "@devPages/*": [
-                "./src/pages/*"
+            "@devScreens/*": [
+                "./src/screens/*"
             ],
             "@devServices/*": [
                 "./src/services/*"
