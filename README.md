@@ -165,7 +165,7 @@ Next.js는 환경 변수를 아래 순서대로 로드합니다:
 │    └── common
 │        ├── useDebounce.ts
 │        └── useThrottle.ts
-├── pages
+├── screens
 │    └── index.ts
 ├── serviece
 │    └── common
