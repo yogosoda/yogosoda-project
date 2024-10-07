@@ -1,4 +1,4 @@
-import { ThrottleTypes } from '@devTypes/common/throttle.type';
+import { ThrottleTypes } from '@dev/shared/types/common/throttle.type';
 import { CustomError } from '@devUtils/common/error';
 
 const throttle = ({ fn, wait = 500 }: ThrottleTypes) => {

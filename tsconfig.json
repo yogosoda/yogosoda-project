@@ -1,10 +1,6 @@
 {
     "compilerOptions": {
-        "lib": [
-            "dom",
-            "dom.iterable",
-            "esnext"
-        ],
+        "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": true,
         "skipLibCheck": true,
         "strict": true,
@@ -23,45 +19,18 @@
         ],
         "baseUrl": "./",
         "paths": {
-            "@dev/*": [
-                "./src/*"
-            ],
-            "@devAssets/*": [
-                "./src/styles/*"
-            ],
-            "@devTypes/*": [
-                "./src/types/*"
-            ],
-            "@devUtils/*": [
-                "./src/utils/*"
-            ],
-            "@devConstants/*": [
-                "./src/constants/*"
-            ],
-            "@devComponents/*": [
-                "./src/components/*"
-            ],
-            "@devHooks/*": [
-                "./src/hooks/*"
-            ],
-            "@devPages/*": [
-                "./src/pages/*"
-            ],
-            "@devServices/*": [
-                "./src/services/*"
-            ],
-            "@devStore/*": [
-                "./src/store/*"
-            ]
+            "@dev/*": ["./src/*"],
+            "@devAssets/*": ["src/shared/assets/*"],
+            "@devTypes/*": ["src/shared/types/*"],
+            "@devUtils/*": ["./src/features/utils/*"],
+            "@devConstants/*": ["src/shared/constants/*"],
+            "@devComponents/*": ["src/widgets/*"],
+            "@devHooks/*": ["src/features/hooks/*"],
+            "@devPages/*": ["src/views/*"],
+            "@devServices/*": ["./src/entities/*"],
+            "@devStore/*": ["src/shared/store/*"]
         }
     },
-    "include": [
-        "next-env.d.ts",
-        "**/*.ts",
-        "**/*.tsx",
-        ".next/types/**/*.ts"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+    "exclude": ["node_modules"]
 }

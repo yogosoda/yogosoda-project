@@ -1,13 +1,12 @@
+import { DebounceType } from '@dev/shared/types/common/debounce.type';
 import { useCallback, useState } from 'react';
-import { ThrottleTypes } from '@devTypes/common/throttle.type';
-import throttle from '@devUtils/common/throttle';
+import { debounce } from '@devUtils/common/debounce';
 
-export const useThrottle = ({ fn, wait = 500 }: ThrottleTypes) => {
+export const useDebounce = ({ fn, wait = 500 }: DebounceType) => {
     // 상태 관리 (선택 사항, 필요하다면 사용할 수 있음)
     const [state, setState] = useState(false);
-
     const event = useCallback(
-        throttle({
+        debounce({
             fn: (...args: unknown[]) => {
                 // 실제로 호출된 함수가 실행될 때 상태 변경
                 setState(true);
