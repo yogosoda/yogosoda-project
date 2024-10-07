@@ -29,6 +29,7 @@
             "@devPages/*": ["src/views/*"],
             "@devServices/*": ["./src/entities/*"],
             "@devStore/*": ["src/shared/store/*"]
+
         }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
