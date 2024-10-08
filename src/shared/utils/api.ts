@@ -1,6 +1,6 @@
 import crypto from 'crypto';
-import { CustomError } from '@devUtils/common/error';
-import { RESPONSE_STATUS_KR } from '@dev/shared/constants/common/httpStatus';
+import { CustomError } from '@devUtils/error';
+import { RESPONSE_STATUS_KR } from '@dev/shared/constants/httpStatus';
 
 class ApiService {
     baseUrl: string;

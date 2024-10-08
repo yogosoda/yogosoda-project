@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
-import { ThrottleTypes } from '@dev/shared/types/common/throttle.type';
-import throttle from '@devUtils/common/throttle';
+import { ThrottleTypes } from '@dev/shared/types/throttle.type';
+import throttle from '@devUtils/throttle';
 
 export const useThrottle = ({ fn, wait = 500 }: ThrottleTypes) => {
     // 상태 관리 (선택 사항, 필요하다면 사용할 수 있음)

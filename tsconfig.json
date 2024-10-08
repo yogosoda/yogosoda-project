@@ -22,10 +22,10 @@
             "@dev/*": ["./src/*"],
             "@devAssets/*": ["src/shared/assets/*"],
             "@devTypes/*": ["src/shared/types/*"],
-            "@devUtils/*": ["./src/features/utils/*"],
+            "@devUtils/*": ["src/shared/utils/*"],
             "@devConstants/*": ["src/shared/constants/*"],
             "@devComponents/*": ["src/widgets/*"],
-            "@devHooks/*": ["src/features/hooks/*"],
+            "@devHooks/*": ["src/shared/hooks/*"],
             "@devPages/*": ["src/views/*"],
             "@devServices/*": ["./src/entities/*"],
             "@devStore/*": ["src/shared/store/*"]

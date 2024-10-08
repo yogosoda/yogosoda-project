@@ -1,4 +1,4 @@
-import { DebounceType } from '@dev/shared/types/common/debounce.type';
+import { DebounceType } from '@dev/shared/types/debounce.type';
 
 export const debounce = ({ fn, wait = 500 }: DebounceType) => {
     let debounceCall: ReturnType<typeof setTimeout> | null = null;
