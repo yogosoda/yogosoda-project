@@ -132,207 +132,182 @@ Next.js는 환경 변수를 아래 순서대로 로드합니다:
 - **환경 파일**: `.env`, `.env.local`, `.env.development`, `.env.production` 파일을 통해 다양한 환경에 맞는 변수를 설정할 수 있습니다.
 
 ---
+### 프로젝트 폴더 구조
 
-## 프로젝트 폴더 구조
+이 프로젝트는 **Next.js TypeScript App Router**와 **FSD(Feature-Sliced Design)** 아키텍처에 기반하여 설계되었습니다.
 
-이 프로젝트는 **Next.js TypeScript App Router** 기반으로 개발되었으며, 유지보수 및 확장성을 고려한 폴더 구조를 따릅니다.
+각 도메인은 **Slice 단위**로 나누어져 있으며, 각 기능은 독립적으로 관리됩니다. 
 
-각 폴더는 역할에 따라 나뉘어 있으며, 공통적으로 사용하는 요소는 `common` 폴더에, 각 페이지별로 독립적으로 사용하는 요소는 별도의 폴더로 관리하는 컨벤션을 따릅니다.
+도메인의 기능이 많아질 경우, 기능별로 하위 폴더를 추가하여 세분화할 수 있습니다.
 
-### 폴더 구조
+### 예시 폴더 구조
 
 ```
 ├── app
-│    ├── layout.tsx
-│    └── page.tsx
-├── assets
-│    ├── fonts
-│    │    └── index.ts
-│    ├── icons
-│    │    └── index.ts
-│    ├── images
-│    │    └── index.ts
-│    └── styles
-│        ├── index.css
-│        └── tailwind.css
-├── components
-│    └── common
-│        └── index.ts
-├── constants
-│    └── common
-│        └── httpStatus.ts
-├── hooks
-│    └── common
-│        ├── useDebounce.ts
-│        └── useThrottle.ts
-├── screens
-│    └── index.ts
-├── serviece
-│    └── common
-│        └── index.ts
-├── store
-│    └── common
-│        └── index.ts
-├── types
-│    └── common
-│        ├── debounce.type.ts
-│        └── throttle.type.ts
-└── utils
-    └── common
-        ├── api.ts
-        ├── debounce.ts
-        ├── error.ts
-        └── throttle.ts
-
+│   ├── layout.tsx
+│   └── page.tsx
+├── entities
+│   ├── user.ts
+│   └── product.ts
+├── features
+│   ├── auth
+│   │   ├── login
+│   │   │   ├── model.ts
+│   │   │   ├── api.ts
+│   │   │   └── ui
+│   │   │       └── LoginForm.tsx
+│   │   ├── signup
+│   │   │   ├── model.ts
+│   │   │   ├── api.ts
+│   │   │   └── ui
+│   │   │       └── SignupForm.tsx
+│   │   ├── passwordReset
+│   │   │   ├── model.ts
+│   │   │   ├── api.ts
+│   │   │   └── ui
+│   │   │       └── PasswordResetForm.tsx
+│   └── product
+│       ├── model.ts
+│       ├── api.ts
+│       └── ui
+│           └── ProductList.tsx
+├── shared
+│   ├── constants
+│   │   └── httpStatus.ts
+│   ├── hooks
+│   │   ├── useDebounce.ts
+│   │   └── useThrottle.ts
+│   ├── store
+│   │   └── index.ts
+│   ├── styles
+│   │   └── tailwind.css
+│   ├── utils
+│   │   ├── api.ts
+│   │   └── error.ts
+└── widgets
+    └── Header.tsx
 ```
+
+
 
 ### 폴더 설명
 
-### `app/`
+#### `app/` (App 레이어)
 
-- **Next.js 13+의 App Router**에서 사용하는 폴더로, 라우팅과 레이아웃 관리를 위한 파일이 포함됩니다.
-  - **`layout.tsx`**: 모든 페이지에 공통적으로 적용되는 레이아웃을 정의하는 파일입니다.
-  - **`page.tsx`**: 각 경로에 대응하는 기본 페이지 컴포넌트를 호출하는 파일입니다.
+- **역할**: Next.js의 **App Router**와 전역 설정을 관리합니다. 페이지 전역에서 사용하는 레이아웃이나 공통적인 기능을 설정합니다.
+  - **`layout.tsx`**: 모든 페이지에 적용되는 전역 레이아웃을 정의. 예: 헤더, 푸터, 네비게이션 바.
+  - **`page.tsx`**: 각 경로에 대응하는 기본 페이지 컴포넌트를 렌더링.
 
-### `assets/`
+#### `entities/` (Entities 레이어)
 
-- **정적 파일**을 관리하는 폴더입니다. 여기에는 이미지, 폰트, 아이콘, 스타일 파일 등이 포함됩니다.
-  - **`fonts/`**: 프로젝트에서 사용하는 폰트 파일을 저장합니다.
-  - **`icons/`**: SVG 및 PNG 형식의 아이콘 파일을 관리합니다.
-  - **`images/`**: 프로젝트 내에서 사용되는 이미지 파일을 저장합니다.
-  - **`styles/`**: 전역 스타일 파일을 관리하며, TailwindCSS와 같은 유틸리티 스타일 파일이 포함됩니다.
+- **역할**: 도메인별 **핵심 데이터 모델**을 정의하는 레이어입니다. 각 도메인에서 공통적으로 사용하는 데이터 구조가 포함됩니다.
+  - **`user.ts`**: 사용자 정보 모델 정의.
+  - **`product.ts`**: 상품 정보 모델 정의.
 
-### `components/`
+#### `features/` (Features 레이어)
 
-- **재사용 가능한 UI 컴포넌트**를 관리하는 폴더입니다.
-  - **`common/`**: 여러 페이지에서 재사용 가능한 공통 컴포넌트를 저장합니다. 특정 페이지에서만 사용하는 컴포넌트는 각 페이지 폴더에서 독립적으로 관리합니다.
+- **역할**: 도메인별 기능을 **Slice 단위**로 나누어 관리합니다. 각 기능은 상태 관리, 비즈니스 로직, API 호출, UI 컴포넌트를 포함해 독립적으로 관리됩니다. 도메인의 기능이 많아질 경우 하위 폴더를 사용해 세분화합니다.
+  - **`auth/`**: 인증 관련 기능을 처리.
+    - **`login/`**:
+      - **`model.ts`**: 로그인 상태 관리.
+      - **`api.ts`**: 로그인 API 호출.
+      - **`ui/LoginForm.tsx`**: 로그인 폼 UI 컴포넌트.
+    - **`signup/`**: 회원가입 기능 처리.
+    - **`passwordReset/`**: 비밀번호 재설정 기능 처리.
+  - **`product/`**: 상품 관련 기능.
+    - **`model.ts`**: 상품 목록 상태 관리.
+    - **`api.ts`**: 상품 데이터를 API로부터 받아오는 로직.
+    - **`ui/ProductList.tsx`**: 상품 목록 UI 컴포넌트.
 
-### `constants/`
+#### `shared/` (Shared 레이어)
 
-- **상수 값**을 관리하는 폴더입니다.
-  - **`common/`**: 프로젝트 전반에서 자주 사용되는 공통 상수 값(예: HTTP 상태 코드 등)을 저장합니다.
+- **역할**: 프로젝트 전반에서 공통으로 사용되는 **상수, 훅, 유틸리티 함수** 등을 관리합니다.
+  - **`constants/`**: 전역에서 사용하는 상수 (예: HTTP 상태 코드).
+  - **`hooks/`**: 재사용 가능한 커스텀 훅 관리 (예: `useDebounce`, `useThrottle`).
+  - **`store/`**: 전역 상태 관리 (Zustand 등의 상태 관리 로직 포함).
+  - **`utils/`**: 공통 유틸리티 함수 (API 호출 등).
 
-### `hooks/`
+#### `widgets/` (Widgets 레이어)
 
-- **커스텀 React 훅**을 관리하는 폴더입니다.
-  - **`common/`**: 여러 페이지에서 재사용할 수 있는 커스텀 훅
-    - 예: `useDebounce.ts`, `useThrottle.ts`을 저장합니다.
+- **역할**: 여러 페이지에서 **재사용 가능한 UI 컴포넌트**를 관리합니다. 예를 들어, **네비게이션 바, 푸터, 헤더**와 같은 요소가 포함됩니다.
+  - **`Header.tsx`**: 재사용 가능한 헤더 컴포넌트.
 
-### `screens/`
 
-- App Router에서 사용되는 시스템 파일인 `page.tsx`에서 **임포트할 페이지 컴포넌트들을 모아 놓는 곳**입니다.
-- 페이지 폴더는 App Router에서 각 경로와 연결되는 **페이지 컴포넌트**를 관리하며, 해당 컴포넌트를 **import**하여 사용합니다.
+### 도메인별 Slice 개념
 
-### `service/`
+**Slice 개념**은 도메인별로 기능을 나누어 관리하는 방식입니다. 각 도메인은 **상태 관리, 비즈니스 로직, UI 컴포넌트**를 모두 포함해 독립적으로 관리됩니다. 도메인 내 기능이 많아질 경우, 각 기능별로 하위 폴더를 만들어 관리합니다.
 
-- **API 호출** 및 **비즈니스 로직**을 관리하는 폴더입니다.
-  - **`common/`**: 공통으로 사용하는 API 호출 및 비즈니스 로직을 관리합니다.
+#### 예시: `auth` 도메인
+- **`login/`**: 로그인 관련 상태, API, UI 관리.
+- **`signup/`**: 회원가입 관련 기능.
+- **`passwordReset/`**: 비밀번호 재설정 기능.
 
-### `store/`
+#### 예시: `product` 도메인
+- **`model.ts`**: 상품 목록 상태 관리.
+- **`api.ts`**: 상품 데이터 API 호출.
+- **`ui/ProductList.tsx`**: 상품 목록 UI.
 
-- **전역 상태 관리**를 위한 폴더입니다.
-  - **`common/`**: Zustand 또는 Redux와 같은 전역 상태 관리 라이브러리를 위한 공통 상태 관리 로직을 저장합니다.
-
-### `types/`
-
-- **TypeScript 타입 정의**를 관리하는 폴더입니다.
-  - **`common/`**: 여러 페이지에서 공통으로 사용되는 TypeScript 타입
-    - 예: `debounce.type.ts`, `throttle.type.ts`을 저장합니다.
-
-### `utils/`
-
-- **유틸리티 함수** 및 **공통 로직**을 관리하는 폴더입니다.
-  - **`common/`**: 여러 페이지에서 재사용할 수 있는 공통 유틸리티 함수
-    - 예: `api.ts`, `debounce.ts`, `*throttle*.ts`, `error.ts`를 저장합니다.
 
 ### 요약
 
-- **공통 폴더 관리**: `common` 폴더에 여러 페이지에서 공통으로 사용하는 컴포넌트, 훅, 상수, 유틸리티 등을 저장합니다.
-- **독립적인 구조**: 페이지별로 사용되는 요소들은 각 페이지 폴더에 독립적으로 저장하여 관리합니다.
+- **`app/`**: Next.js App Router 설정 및 전역 레이아웃 관리.
+- **`entities/`**: 도메인별 데이터 모델 정의.
+- **`features/`**: 도메인별 기능 관리. Slice로 상태, 비즈니스 로직, UI를 독립적으로 관리.
+- **`shared/`**: 공통 상수, 훅, 유틸리티 함수, 전역 상태 관리.
+- **`widgets/`**: 재사용 가능한 UI 컴포넌트 관리.
+
+이 구조는 **FSD(Feature-Sliced Design)** 아키텍처를 따르며, 도메인별로 기능을 독립적으로 관리함으로써 확장성과 유지보수성을 극대화할 수 있는 구조입니다.
 
 ---
+
 ## 경로 별칭 (Path Alias)
 
 경로 별칭은 코드베이스에서 파일 및 디렉터리 구조에 접근할 때 사용되는 **상대 경로**의 복잡함을 줄이고 **모듈**을 쉽게 참조할 수 있도록 도와줍니다.
 
 Next.js 또는 TypeScript 환경에서 **경로 별칭**을 설정함으로써 더 간결하고 직관적인 코드 작성을 할 수 있습니다.
 
-### 별칭의 시작을 `@dev`로 설정한 이유
-
-`@dev`로 시작하는 이유는 **내장 모듈**이나 **라이브러리**와 경로가 충돌하지 않도록 하기 위해서입니다. 
-
-많은 라이브러리나 내장 모듈에서 사용하는 경로나 이름과 겹치는 문제를 방지하기 위해, 프로젝트에서 사용하는 경로 별칭의 고유성을 보장하는 것이 중요합니다.
-
-예를 들어, 일반적으로 `@components`, `@utils`와 같은 경로 별칭은 널리 사용되기 때문에, 이를 `@devComponents`, `@devUtils`와 같은 방식으로 고유하게 설정하여 충돌 가능성을 줄일 수 있습니다.
-
-### `tsconfig.json` 경로 별칭 설정
-
-아래는 `tsconfig.json`에서 **경로 별칭**을 설정한 예시입니다. 이 설정은 프로젝트에서 각 디렉터리를 간단한 별칭으로 참조할 수 있도록 도와줍니다.
-
 ```json
 {
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@dev/*": [
-        "./src/*"
-      ],
-      "@devAssets/*": [
-        "./src/assets/*"
-      ],
-      "@devTypes/*": [
-        "./src/types/*"
-      ],
-      "@devUtils/*": [
-        "./src/utils/*"
-      ],
-      "@devConstants/*": [
-        "./src/constants/*"
-      ],
-      "@devComponents/*": [
-        "./src/components/*"
-      ],
-      "@devHooks/*": [
-        "./src/hooks/*"
-      ],
-      "@devScreens/*": [
-        "./src/screens/*"
-      ],
-      "@devServices/*": [
-        "./src/services/*"
-      ],
-      "@devStore/*": [
-        "./src/store/*"
-      ]
+      "@dev/*": ["./src/*"],
+      "@devFeatures/*": ["./src/features/*"],
+      "@devShared/*": ["./src/shared/*"],
+      "@devViews/*": ["./src/views/*"],
+      "@devWidgets/*": ["./src/widgets/*"],
+      "@devEntities/*": ["./src/entities/*"]
     }
   }
 }
 ```
 
-### 설정한 별칭 설명
+### 별칭의 시작을 `@dev`로 설정한 이유
 
-- **`@dev/*`**: 기본적으로 `src` 폴더 내 모든 파일에 대한 별칭입니다.
-- **`@devAssets/*`**: `src/assets` 폴더의 정적 파일(이미지, 폰트, 스타일 등)에 접근할 때 사용합니다.
-- **`@devTypes/*`**: `src/types` 폴더에 정의된 TypeScript 타입에 접근할 때 사용됩니다.
-- **`@devUtils/*`**: 공통 유틸리티 함수나 도구 모음이 있는 `src/utils` 폴더에 대한 별칭입니다.
-- **`@devConstants/*`**: 상수 값들이 정의된 `src/constants` 폴더에 대한 별칭입니다.
-- **`@devComponents/*`**: 공통으로 사용하는 컴포넌트가 위치한 `src/components` 폴더의 별칭입니다.
-- **`@devHooks/*`**: 커스텀 훅을 저장한 `src/hooks` 폴더에 대한 별칭입니다.
-- **`@devPages/*`**: 페이지 관련 파일들이 저장된 `src/pages` 폴더에 접근할 때 사용합니다.
-- **`@devServices/*`**: 서비스 로직이나 API 호출을 다루는 `src/services` 폴더를 참조합니다.
-- **`@devStore/*`**: 전역 상태 관리 로직이 있는 `src/store` 폴더에 대한 별칭입니다.
+`@dev`로 시작하는 이유는 **내장 모듈**이나 **외부 라이브러리**와 경로가 충돌하는 것을 방지하기 위해서입니다.
+
+일반적으로 **`@components`**, **`@utils`** 등의 별칭은 많이 사용되므로, 이를 **`@devComponents`**, **`@devUtils`**처럼 고유하게 설정하여 **충돌 가능성**을 최소화할 수 있습니다.
+
+### 경로 별칭 설명
+
+- **`@dev/*`**: `src` 폴더 내 모든 파일에 접근할 때 사용.
+- **`@devFeatures/*`**: `features` 폴더에 있는 도메인별 기능에 접근.
+- **`@devShared/*`**: 공통적으로 사용하는 상수, 훅, 전역 상태 등을 관리하는 `shared` 폴더에 접근.
+- **`@devViews/*`**: 각 페이지별 컴포넌트가 있는 `views` 폴더에 접근.
+- **`@devWidgets/*`**: 재사용 가능한 UI 블록을 관리하는 `widgets` 폴더에 접근.
+- **`@devEntities/*`**: 핵심 데이터 모델을 관리하는 `entities` 폴더에 접근.
 
 ### 경로 별칭의 장점
 
-- **가독성**: 여러 단계의 상대 경로(`../../components`) 대신 간결한 별칭(`@devComponents`)을 사용할 수 있어 코드의 가독성을 높입니다.
-- **유지보수성**: 폴더 구조가 변경되더라도, 경로 별칭을 사용하면 각 파일에서 상대 경로를 일일이 수정할 필요 없이 `tsconfig.json`의 경로만 수정하면 됩니다.
-- **충돌 방지**: `@dev`로 시작하는 별칭을 사용하면, 외부 라이브러리나 패키지와의 충돌을 피할 수 있습니다.
+1. **가독성**: 복잡한 상대 경로를 대신하여 간결한 별칭 사용으로 코드의 가독성을 높임.
+2. **유지보수성**: 폴더 구조가 변경되더라도, 각 파일의 상대 경로를 수정할 필요 없이 **`tsconfig.json`**의 별칭만 수정하면 됨.
+3. **충돌 방지**: **`@dev`**로 시작하는 별칭을 사용함으로써 외부 라이브러리와의 경로 충돌을 방지할 수 있음.
 
 ### 요약
 
-- 경로 별칭은 코드의 **가독성**과 **유지보수성**을 크게 개선합니다.
-- **`@dev`**로 시작하는 별칭은 다른 라이브러리와의 경로 충돌을 방지하는 데 도움을 줍니다.
-- **tsconfig.json**에서 `paths` 속성을 통해 여러 폴더에 대해 간편하게 경로 별칭을 설정할 수 있습니다.
+- 경로 별칭은 코드의 **가독성**과 **유지보수성**을 개선하며, **내장 모듈과의 충돌을 피할 수 있는** 방안을 제공합니다.
+- **`@dev`**로 시작하는 별칭을 통해 외부 라이브러리와의 경로 충돌을 방지할 수 있습니다.
+- **tsconfig.json**에서 `paths` 속성을 사용해 프로젝트 폴더에 대한 간단한 경로 참조가 가능합니다.
 
 ---
 
