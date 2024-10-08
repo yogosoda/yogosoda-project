@@ -1,5 +1,5 @@
-import { ThrottleTypes } from '@devTypes/common/throttle.type';
-import { CustomError } from '@devUtils/common/error';
+import { ThrottleTypes } from '@dev/shared/types/throttle.type';
+import { CustomError } from '@devUtils/error';
 
 const throttle = ({ fn, wait = 500 }: ThrottleTypes) => {
     let throttleLastCall: number = 0;
