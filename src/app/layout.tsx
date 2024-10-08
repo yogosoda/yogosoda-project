@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import '@devAssets/styles/index.css';
+import '@devShared/styles/index.css';
 import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
