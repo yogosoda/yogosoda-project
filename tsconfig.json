@@ -20,15 +20,10 @@
         "baseUrl": "./",
         "paths": {
             "@dev/*": ["./src/*"],
-            "@devAssets/*": ["src/shared/assets/*"],
-            "@devTypes/*": ["src/shared/types/*"],
-            "@devUtils/*": ["src/shared/utils/*"],
-            "@devConstants/*": ["src/shared/constants/*"],
-            "@devComponents/*": ["src/widgets/*"],
-            "@devHooks/*": ["src/shared/hooks/*"],
-            "@devPages/*": ["src/views/*"],
-            "@devServices/*": ["./src/entities/*"],
-            "@devStore/*": ["src/shared/store/*"]
+            "@devFeatures/*": ["src/features/*"],
+            "@devShared/*": ["src/shared/*"],
+            "@devViews/*": ["src/views/*"],
+            "@devWidgets/*": ["./src/entities/*"],
         }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
