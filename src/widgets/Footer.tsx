@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <div className="flex flex-col w-full bg-[#F2F2F2] text-[#666666] gap-[11px]">
+        <div className="flex flex-col w-full bg-[#F2F2F2] text-[#666666] gap-[11px] pl-[20px] pr-[20px] pb-[30px]">
             <h1 className={'text-[15px]'}>
                 <strong>KT 공식 온라인샵</strong>
             </h1>
