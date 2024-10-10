@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    /* 컴포넌트에 사용할 스타일 */
+    .flex-col-center {
+        @apply flex flex-col items-center;
+    }
+
+    .flex-row-center {
+        @apply flex flex-row justify-center;
+    }
+}
