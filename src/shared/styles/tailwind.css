@@ -2,29 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    .font-neo-lt {
-        @apply font-sans;
-        font-family: var(--font-neo-lt);
-    }
-    .font-neo-rg {
-        @apply font-sans;
-        font-family: var(--font-neo-rg);
-    }
-    .font-neo-bd {
-        @apply font-sans;
-        font-family: var(--font-neo-bd);
-    }
-    .font-neo-eb {
-        @apply font-sans;
-        font-family: var(--font-neo-eb);
-    }
-    .font-neo-hv {
-        @apply font-sans;
-        font-family: var(--font-neo-hv);
-    }
-}
-
 @layer components {
     /* 컴포넌트에 사용할 스타일 */
     .flex-col-center {
