@@ -25,6 +25,7 @@ const neoHeavy = localFont({
     src: './NanumSquareNeo-eHv.ttf',
     variable: '--font-neo-hv',
 });
+
 export const notosansKr = Noto_Sans_KR({ subsets: ['latin'] });
 
 export { neoLight, neoRegular, neoBold, neoExtraBold, neoHeavy };
