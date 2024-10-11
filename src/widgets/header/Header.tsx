@@ -2,7 +2,6 @@
 import Line from '@devShared/components/Line';
 import React, { useEffect, useState } from 'react';
 import HeaderTitle from '@dev/widgets/header/components/HeaderTitle';
-import { twMerge } from 'tailwind-merge';
 import HeaderForm from '@dev/widgets/header/components/HeaderForm';
 
 const Header = () => {
@@ -28,7 +27,7 @@ const Header = () => {
     }, []);
 
     return (
-        <div className={twMerge('flex flex-col w-full')}>
+        <div className={'flex flex-col w-full'}>
             <HeaderTitle
                 hideForm={hideForm}
                 label={label}
