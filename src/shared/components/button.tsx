@@ -1,25 +1,18 @@
 import { twMerge } from 'tailwind-merge';
-import Image from 'next/image';
-import RightArrow from '../../shared/svg/chevron-right-solid.svg';
 
-export default function RegistrationButton({
-    children,
-    className,
-}: {
-    children: React.ReactNode;
-    className?: string;
-}) {
+export default function RegistrationButton({ children, className }: BtnProps) {
     return (
         <>
             <button
                 className={twMerge(
-                    'w-80 h-11 rounded-lg flex items-center gap-2',
+                    'w-80 h-11 rounded-lg bg-black text-white flex items-center gap-2 justify-center',
                     className
                 )}
             >
                 {children}
-                <Image src={RightArrow} width={10} height={10} alt="svg" />
             </button>
         </>
     );
 }
+
+type BtnProps = React.ComponentPropsWithoutRef<'button'>;
