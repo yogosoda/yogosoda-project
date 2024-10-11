@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 
 function page() {
     return (
-        <main className={twMerge('flexCol px-5 bg-white')}>
+        <main className={twMerge('flex-col-center px-5 bg-white')}>
             <YogoEvent />
         </main>
     );
