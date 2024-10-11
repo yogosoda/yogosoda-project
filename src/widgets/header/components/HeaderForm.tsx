@@ -1,3 +1,4 @@
+'use client';
 import { twMerge } from 'tailwind-merge';
 import { PATH_INFO } from '@devShared/constants/header/path';
 import Button from '@devShared/components/Button';
@@ -27,7 +28,7 @@ const HeaderForm = ({ hideForm, isForm, setIsForm, setLabel }: FormProps) => {
 
             setLabel(dataSetLabel);
         }
-    }, [pathName]);
+    }, [pathName, hideForm, isForm]);
 
     return (
         <div
