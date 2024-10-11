@@ -17,24 +17,27 @@ const HeaderForm = ({ hideForm, isForm, setIsForm, setLabel }: FormProps) => {
     const categoryList = useRef<Record<string, HTMLDivElement>>({});
 
     useEffect(() => {
-        if (container.current && categoryList.current[pathName]) {
-            const activeCategory = categoryList.current[pathName];
-
-            container.current.scrollTo({
-                left: activeCategory.offsetLeft,
-                behavior: 'smooth',
-            });
-            const dataSetLabel = activeCategory.dataset.label ?? '';
-
-            setLabel(dataSetLabel);
+        if (!(container.current && categoryList.current[pathName])) {
+            return;
         }
-    }, [pathName, hideForm, isForm]);
+
+        const activeCategory = categoryList.current[pathName];
+
+        container.current.scrollTo({
+            left: activeCategory.offsetLeft,
+            behavior: 'smooth',
+        });
+
+        const dataSetLabel = activeCategory.dataset.label ?? '';
+
+        setLabel(dataSetLabel);
+    }, [pathName, isForm]);
 
     return (
         <div
             className={twMerge(
                 ' bg-white',
-                hideForm && isForm ? 'fixed top-[66px]' : ''
+                hideForm && isForm && 'fixed top-[66px]'
             )}
         >
             <div className={'flex-with-row'}>
@@ -42,8 +45,7 @@ const HeaderForm = ({ hideForm, isForm, setIsForm, setLabel }: FormProps) => {
                     ref={container}
                     className={twMerge(
                         `min-h-[53px] flex-1 flex-with-row gap-x-2 items-center
-                 pl-[20px] pr-[20px] pt-[10px] pb-[10px] 
-                `,
+                         pl-[20px] pr-[20px] pt-[10px] pb-[10px]`,
                         isForm
                             ? 'flex-wrap gap-y-4'
                             : 'overflow-x-auto no-scrollbar'

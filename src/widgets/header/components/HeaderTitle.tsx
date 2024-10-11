@@ -14,6 +14,7 @@ const HeaderTitle = ({ label, isForm, setIsForm, hideForm }: TitleProps) => {
             setIsForm(false);
         };
     }, [hideForm]);
+
     return (
         <div className={`w-[390px] bg-white fixed`}>
             <div
