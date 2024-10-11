@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import logo from '@devShared/images/logo.svg';
 import React, { Dispatch, SetStateAction, useEffect } from 'react';
