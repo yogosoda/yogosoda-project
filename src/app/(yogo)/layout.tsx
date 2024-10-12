@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import Header from '@dev/widgets/header/Header';
-import Footer from '@dev/widgets/footer/Footer';
+import Header from '@devWidgets/header/Header';
+import Footer from '@devWidgets/footer/Footer';
 
 export default function Layout({
     children,

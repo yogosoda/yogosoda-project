@@ -1,8 +1,8 @@
 'use client';
 import Line from '@devShared/components/Line';
 import React, { useEffect, useState } from 'react';
-import HeaderTitle from '@dev/widgets/header/components/HeaderTitle';
-import HeaderForm from '@dev/widgets/header/components/HeaderForm';
+import HeaderTitle from '@devWidgets/header/components/HeaderTitle';
+import HeaderForm from '@devWidgets/header/components/HeaderForm';
 
 const Header = () => {
     const [isForm, setIsForm] = useState<boolean>(false);
