@@ -10,7 +10,7 @@ function GuageGraph({
     setPlanIdx: (_planIdx: number) => void;
 }) {
     return (
-        <div className="relative flex justify-center items-center w-full h-10 px-2 py-1">
+        <div className="relative flex justify-center items-center w-full h-10 px-2 py-1 mr-2">
             <GuageBarBG setPlanIdx={setPlanIdx}></GuageBarBG>
             <Image
                 src={img}
@@ -23,7 +23,7 @@ function GuageGraph({
                         'w-full h-8 bg-gradient-to-r from-[#69F1FA] to-[#0DD9D3]'
                     )}
                     style={{
-                        transform: `translateX(-${(12 - planIdx) * 20.5}px)`,
+                        transform: `translateX(-${(12 - planIdx) * 18.5}px)`,
                     }}
                 ></div>
             </div>
