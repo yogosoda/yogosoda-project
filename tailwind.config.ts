@@ -6,7 +6,23 @@ const config: Config = {
         "./src/widgets/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
-    theme: {},
+    theme: {
+        extend: {
+            colors: {
+                background: "var(--background)",
+                foreground: "var(--foreground)",
+            },
+            keyframes: {
+                shimmer: {
+                    '0%': { backgroundPosition: '-100% 0' },
+                    '100%': { backgroundPosition: '100% 0' },
+                },
+            },
+            animation: {
+                shimmer: 'shimmer 2s infinite linear',
+            },
+        },
+    },
     plugins: [],
 };
 export default config;

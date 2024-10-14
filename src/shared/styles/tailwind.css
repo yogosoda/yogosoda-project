@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    .shimmer-effect {
+        @apply bg-gradient-to-r from-[#00D2BB] via-[#009A90] to-[#00D2BB] bg-[length:200%_100%] animate-shimmer;    }
+}
+
 
 @layer base {
     :root {
