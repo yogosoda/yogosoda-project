@@ -11,10 +11,14 @@ import { ReactComponent as Up } from '@devShared/svg/chevron-up-solid.svg';
 
 export default function Payment() {
     const [payData, setPayData] = useState<[]>([]);
-    const [isToggle, setIsToggle] = useState<boolean>(false);
+    const [isToggle, setIsToggle] = useState<boolean[]>(
+        Array(payData.length).fill(false)
+    );
 
-    const toggleHandler = () => {
-        setIsToggle(!isToggle);
+    const toggleHandler = (index: number) => {
+        setIsToggle((prevToggle) =>
+            prevToggle.map((toggle, i) => (i === index ? !toggle : toggle))
+        );
     };
 
     const paymentFetchData = async () => {
@@ -36,6 +40,10 @@ export default function Payment() {
     useEffect(() => {
         paymentFetchData();
     }, []);
+
+    useEffect(() => {
+        setIsToggle(Array(payData.length).fill(false));
+    }, [payData]);
 
     return (
         <>
@@ -111,16 +119,17 @@ export default function Payment() {
                                             .length}
                                     개
                                 </p>
+
                                 <div className="absolute pl-[21.5rem]">
-                                    {isToggle ? (
+                                    {isToggle[index] ? (
                                         <Up
-                                            onClick={toggleHandler}
+                                            onClick={() => toggleHandler(index)}
                                             fill="#666"
                                             className="cursor-pointer"
                                         />
                                     ) : (
                                         <Down
-                                            onClick={toggleHandler}
+                                            onClick={() => toggleHandler(index)}
                                             fill="#666"
                                             className="cursor-pointer"
                                         />
@@ -130,7 +139,9 @@ export default function Payment() {
 
                             <ul
                                 className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                                    isToggle ? 'max-h-[200px]' : 'max-h-0'
+                                    isToggle[index]
+                                        ? 'max-h-[200px]'
+                                        : 'max-h-0'
                                 } flex flex-col gap-2 text-[#666] text-[0.7rem]`}
                             >
                                 <li className="flex flex-col gap-2">
