@@ -9,7 +9,7 @@ export default function RegistrationUsing() {
     return (
         <>
             <article className="flex flex-col gap-4">
-                <div className="bg-[#F6F4EA]  h-[550px] w-[400px]">
+                <div className="bg-[#F6F4EA]  h-[34.375rem] w-[25rem]">
                     <Image src={RegisOtherBg} width={400} alt="img" />
 
                     <div className="flex flex-col justify-center items-center font-bold">

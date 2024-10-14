@@ -55,7 +55,7 @@ export default function Payment() {
                     >
                         <div
                             className={twMerge(
-                                'w-[400px] shadow-box bg-white rounded-2xl flex flex-col justify-center pl-4 pt-6 gap-4'
+                                'w-[25rem] shadow-box bg-white rounded-2xl flex flex-col justify-center pl-4 pt-6 gap-4'
                             )}
                         >
                             <KtLogo width={25} height={25} />
@@ -91,7 +91,7 @@ export default function Payment() {
                             </div>
 
                             <div className="flex justify-center pr-6">
-                                <Divider className="w-[360px]" />
+                                <Divider className="w-[22.5rem]" />
                             </div>
 
                             <div className="flex items-center gap-4 pb-4">
@@ -140,7 +140,7 @@ export default function Payment() {
                             <ul
                                 className={`transition-all duration-500 ease-in-out overflow-hidden ${
                                     isToggle[index]
-                                        ? 'max-h-[200px]'
+                                        ? 'max-h-[12.5rem]'
                                         : 'max-h-0'
                                 } flex flex-col gap-2 text-[#666] text-[0.7rem]`}
                             >
