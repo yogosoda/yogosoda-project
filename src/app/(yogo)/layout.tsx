@@ -8,7 +8,7 @@ export default function Layout({
     return (
         <div
             className={
-                'max-w-[390px] max-w-[390px]  min-h-screen flex flex-col items-center relative'
+                'max-w-[390px]  min-h-screen flex flex-col items-center relative'
             }
         >
             <Header />
