@@ -39,9 +39,9 @@ function Yogoevent_Select_Plan({
                         type="checkbox"
                         className={twMerge(
                             'appearance-none w-4 h-4 border-[1px] border-gray-500 rounded',
-                            'bg-[url("../../shared/images/yogoevent_plan/check_gray-300.svg")] bg-no-repeat bg-center',
+                            'bg-[url("../../shared/images/yogoevent/check_gray-300.svg")] bg-no-repeat bg-center',
                             isY &&
-                                'checked:bg-[url("../../shared/images/yogoevent_plan/check_white.svg")] checked:bg-[#0F807B]'
+                                'checked:bg-[url("../../shared/images/yogoevent/check_white.svg")] checked:bg-[#0F807B]'
                         )}
                         onClick={() => setIsY((isY) => !isY)}
                     ></input>

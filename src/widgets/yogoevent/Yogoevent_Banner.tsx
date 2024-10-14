@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import img from '../../shared/images/image 31.png';
+import img from '../../shared/images/yogoevent/image 31.png';
 import HighlitedSpan from '@dev/shared/components/HighlitedSpan';
 
 function Yogoevent_Banner() {

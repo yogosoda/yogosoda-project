@@ -5,19 +5,19 @@ import { twMerge } from 'tailwind-merge';
 function Yogoevent_Plan_Info() {
     const benefit_data = [
         {
-            src: 'bg-[url("../../shared/images/yogoevent_plan/plans_call.png")]',
+            src: 'bg-[url("../../shared/images/yogoevent/plans_call.png")]',
             alt: '통화',
         },
         {
-            src: 'bg-[url("../../shared/images/yogoevent_plan/plans_present.png")]',
+            src: 'bg-[url("../../shared/images/yogoevent/plans_present.png")]',
             alt: '혜택',
         },
         {
-            src: 'bg-[url("../../shared/images/yogoevent_plan/plans_benefit.png")]',
+            src: 'bg-[url("../../shared/images/yogoevent/plans_benefit.png")]',
             alt: '추가혜택',
         },
         {
-            src: 'bg-[url("../../shared/images/yogoevent_plan/plans_coupon.png")]',
+            src: 'bg-[url("../../shared/images/yogoevent/plans_coupon.png")]',
             alt: '쿠폰',
         },
     ];

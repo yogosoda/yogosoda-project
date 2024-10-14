@@ -1,5 +1,5 @@
 import HighlitedSpan from '@dev/shared/components/HighlitedSpan';
-import image from '@devShared/images/image 25.png';
+import image from '@devShared/images/yogoevent/image 25.png';
 import Image from 'next/image';
 import { twMerge } from 'tailwind-merge';
 
