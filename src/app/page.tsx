@@ -11,11 +11,13 @@ import slide5 from '@devShared/images/brandStory/slide-5.svg';
 import slide6 from '@devShared/images/brandStory/slide-6.svg';
 import Image from 'next/image';
 import Slider from 'react-slick';
+import Skeleton from '@devShared/components/Skeleton';
 
 export default function Home() {
     const sliderRef = useRef<Slider | null>(null);
 
     const [currentSlide, setCurrentSlide] = useState<number>(0);
+    const [loadingCount, setLoadingCount] = useState(3);
 
     // 이전 슬라이드로 이동하는 함수
     const handlePrevSlide = () => {
@@ -27,6 +29,9 @@ export default function Home() {
         sliderRef.current?.slickNext(); // 다음 슬라이드로 이동
     };
 
+    const handleIframeLoad = () => {
+        setLoadingCount((prev) => prev - 1); // 각 iframe이 로드될 때마다 카운트 감소
+    };
     const settings = {
         dots: false,
         infinite: true,
@@ -96,10 +101,18 @@ export default function Home() {
                     요고를 영상으로 만나 보세요.
                 </pre>
                 <div className={'rounded-[15px] overflow-hidden'}>
+                    <Skeleton
+                        width={300}
+                        height={514}
+                        display={loadingCount > 0}
+                    />
                     <iframe
+                        style={{ display: loadingCount > 0 ? 'none' : 'flex' }}
                         src={'https://youtube.com/embed/EEKovGsbLWg'}
                         allowFullScreen
+                        width={300}
                         height={514}
+                        onLoad={handleIframeLoad}
                     />
                 </div>
                 <pre className={'mt-[22px] text-white text-[18px]'}>
@@ -116,11 +129,20 @@ export default function Home() {
                         }
                     >
                         <div className={'rounded-[15px] overflow-hidden'}>
+                            <Skeleton
+                                width={170}
+                                height={323}
+                                display={loadingCount > 0}
+                            />
                             <iframe
+                                style={{
+                                    display: loadingCount > 0 ? 'none' : 'flex',
+                                }}
                                 src={'https://youtube.com/embed/RStVl4lilxM'}
                                 allowFullScreen
                                 width={170}
                                 height={323}
+                                onLoad={handleIframeLoad}
                             />
                         </div>
                         <pre className={'text-white'}>요고 69 (시즌 2)</pre>
@@ -132,11 +154,20 @@ export default function Home() {
                         }
                     >
                         <div className={'rounded-[15px] overflow-hidden'}>
+                            <Skeleton
+                                width={170}
+                                height={323}
+                                display={loadingCount > 0}
+                            />
                             <iframe
+                                style={{
+                                    display: loadingCount > 0 ? 'none' : 'flex',
+                                }}
                                 src={'https://youtube.com/embed/bxFI64dzg1E'}
                                 allowFullScreen
                                 width={170}
                                 height={323}
+                                onLoad={handleIframeLoad}
                             />
                         </div>
                         <pre className={'text-white'}>요고 30 (시즌 2)</pre>
