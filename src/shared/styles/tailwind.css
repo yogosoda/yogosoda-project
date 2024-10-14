@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .shadow-box {
+        @apply shadow-xl border border-slate-100;
+    }
+}
