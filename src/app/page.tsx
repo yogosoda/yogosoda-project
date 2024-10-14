@@ -44,9 +44,9 @@ export default function Home() {
     };
 
     return (
-        <div className="w-[390px]">
+        <div className="w-[24.375rem]">
             <div
-                className={`bg-cover pt-[60px] overflow-hidden`}
+                className={`bg-cover pt-[3.75rem] overflow-hidden`}
                 style={{ backgroundImage: `url(${background1.src})` }}
             >
                 <div>
@@ -61,7 +61,7 @@ export default function Home() {
                 </div>
                 <div
                     className={
-                        'flex flex-row justify-center items-center gap-4 mb-[50px]'
+                        'flex flex-row justify-center items-center gap-4 mb-[3.125rem] mt-[2.2rem]'
                     }
                 >
                     <button onClick={handlePrevSlide}>
@@ -73,9 +73,9 @@ export default function Home() {
                         />
                     </button>
                     <div
-                        className={`h-[35px] flex flex-col items-center justify-center bg-white rounded-[40px] pt-[5px] pb-[5px] pr-[10px] pl-[10px]`}
+                        className={`h-[2.188rem] flex flex-col items-center justify-center bg-white rounded-[2.5rem] pt-[0.35rem] pb-[0.35rem] pr-[0.7rem] pl-[0.7rem]`}
                     >
-                        <pre>{currentSlide + 1} / 6</pre>
+                        <pre className={'text-xl'}>{currentSlide + 1} / 6</pre>
                     </div>
                     <button onClick={handleNextSlide}>
                         <Image
@@ -90,17 +90,17 @@ export default function Home() {
 
             <div
                 className={
-                    'min-w-full flex flex-col items-center bg-black pt-[50px] pb-[60px]'
+                    'min-w-full flex flex-col items-center bg-black pt-[3.125rem] pb-[3.75rem]'
                 }
             >
                 <pre
                     className={
-                        'bg-gradient-to-r from-[#00D2BB] to-[#00AEA4] text-white pt-[5px] pb-[5px] pr-[10px] pl-[10px] rounded-[40px] mb-[40px]'
+                        'bg-gradient-to-r from-[#00D2BB] to-[#00AEA4] font-bold text-white pt-[0.313rem] pb-[0.313rem] pr-[0.7rem] pl-[0.7rem] rounded-[2.5rem] mb-[2.5rem]'
                     }
                 >
                     요고를 영상으로 만나 보세요.
                 </pre>
-                <div className={'rounded-[15px] overflow-hidden'}>
+                <div className={'rounded-[0.938rem] overflow-hidden'}>
                     <Skeleton
                         width={300}
                         height={514}
@@ -115,12 +115,16 @@ export default function Home() {
                         onLoad={handleIframeLoad}
                     />
                 </div>
-                <pre className={'mt-[22px] text-white text-[18px]'}>
+                <pre
+                    className={
+                        'mt-[1.375rem] font-bold text-white text-[1.125rem]'
+                    }
+                >
                     요금은 줄이고 혜택은 가득한 요고!!
                 </pre>
                 <div
                     className={
-                        'min-w-full flex flex-row items-center justify-center pt-[80px] gap-[20px]'
+                        'min-w-full flex flex-row items-center justify-center pt-[5rem] gap-[1.25rem]'
                     }
                 >
                     <div
@@ -128,7 +132,7 @@ export default function Home() {
                             'flex flex-col items-center justify-center gap-3'
                         }
                     >
-                        <div className={'rounded-[15px] overflow-hidden'}>
+                        <div className={'rounded-[0.938rem] overflow-hidden'}>
                             <Skeleton
                                 width={170}
                                 height={323}
@@ -145,7 +149,9 @@ export default function Home() {
                                 onLoad={handleIframeLoad}
                             />
                         </div>
-                        <pre className={'text-white'}>요고 69 (시즌 2)</pre>
+                        <pre className={'font-bold text-white'}>
+                            요고 69 (시즌 2)
+                        </pre>
                     </div>
 
                     <div
@@ -153,7 +159,7 @@ export default function Home() {
                             'flex flex-col items-center justify-center gap-3'
                         }
                     >
-                        <div className={'rounded-[15px] overflow-hidden'}>
+                        <div className={'rounded-[0.938rem] overflow-hidden'}>
                             <Skeleton
                                 width={170}
                                 height={323}
@@ -170,7 +176,9 @@ export default function Home() {
                                 onLoad={handleIframeLoad}
                             />
                         </div>
-                        <pre className={'text-white'}>요고 30 (시즌 2)</pre>
+                        <pre className={'font-bold text-white'}>
+                            요고 30 (시즌 2)
+                        </pre>
                     </div>
                 </div>
             </div>
