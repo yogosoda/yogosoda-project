@@ -13,7 +13,14 @@ function Yogoevent_Select_Plan({
     setIsY,
     setIsSelectData,
     setPlanIdx,
+    selectedPlan,
 }: PlanPropsType) {
+    const { benefits, data, monthly_fee } = selectedPlan;
+    const additional_data = benefits.additional_benefits
+        .replace('출시기념 데이터', '')
+        .replace('추가 제공', '')
+        .trim();
+
     const showPrevPlan = () => {
         if (planIdx > 0) setPlanIdx((_prev) => _prev - 1);
     };
@@ -68,18 +75,31 @@ function Yogoevent_Select_Plan({
                             className='bg-[url("../../shared/images/minus.svg")]'
                             clickHandler={showPrevPlan}
                         ></RoundedButton>
-                        <div className="flex-row-center items-center text-xl font-normal">
-                            <span>데이터</span>
-                            {isSelectData && (
-                                <>
-                                    <span>+</span>
-                                    <span className="text-red-500">30GB</span>
-                                    <div className="flex justify-center items-center w-8 h-4 bg-red-500 text-xs text-white rounded-sm p-1 ml-1">
-                                        추가
-                                    </div>
-                                </>
-                            )}
-                        </div>
+                        {isSelectData ? (
+                            <div className="flex-row-center items-center text-xl font-normal">
+                                <span>
+                                    {isY &&
+                                    Number(data.total_data.replace('GB', ''))
+                                        ? `${Number(data.total_data.replace('GB', '')) * 2}GB`
+                                        : data.total_data}
+                                </span>
+                                {benefits.additional_benefits && (
+                                    <>
+                                        <span>+</span>
+                                        <span className="text-red-500">
+                                            {additional_data}
+                                        </span>
+                                        <div className="flex justify-center items-center w-8 h-4 bg-red-500 text-xs text-white rounded-sm p-1 ml-1">
+                                            추가
+                                        </div>
+                                    </>
+                                )}
+                            </div>
+                        ) : (
+                            <div className="flex-row-center items-center text-xl font-normal">
+                                <span>{monthly_fee}</span>
+                            </div>
+                        )}
                         <RoundedButton
                             className='bg-[url("../../shared/images/plus.svg")]'
                             clickHandler={showNextPlan}
@@ -97,10 +117,14 @@ function Yogoevent_Select_Plan({
                 </div>
                 <div
                     className={twMerge(
-                        'flex-row-center items-center w-full h-fit bg-sky-100 text-[10px] px-2 py-1 mt-2'
+                        'flex-row-center justify-center items-center w-full h-fit bg-sky-100 text-[10px] px-2 py-1 mt-2',
+                        additional_data ? 'visible' : 'invisible'
                     )}
                 >
-                    ※ 출시 기념 추가데이터 35GB가 12개월간 제공됩니다.
+                    <p>
+                        ※ 출시 기념 추가 데이터 {additional_data}가 12개월간
+                        제공됩니다.
+                    </p>
                 </div>
             </TextBox>
         </div>

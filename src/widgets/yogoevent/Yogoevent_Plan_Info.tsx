@@ -1,24 +1,41 @@
 import { TextBox } from '@dev/shared/components/TextBox';
 import { notosansKr } from '@dev/shared/fonts';
+import { KTPlansType } from '@dev/shared/types/kt_plans.type';
 import { twMerge } from 'tailwind-merge';
 
-function Yogoevent_Plan_Info() {
+function Yogoevent_Plan_Info({
+    isY,
+    selectedPlan,
+}: {
+    isY: boolean;
+    selectedPlan: KTPlansType;
+}) {
+    const { benefits, calls_and_texts, data, monthly_fee, plan_name } =
+        selectedPlan;
+    const basic_data = Number(data.total_data.replace('GB', ''));
+    const additional_data = Number(
+        benefits.additional_benefits
+            .replace('출시기념 데이터', '')
+            .replace('추가 제공', '')
+            .replace('GB', '')
+    );
+    const limit_speed = data.speed_limit.replace('속도제한', '').trim();
     const benefit_data = [
         {
             src: 'bg-[url("../../shared/images/yogoevent/plans_call.png")]',
-            alt: '통화',
+            desc: calls_and_texts,
         },
         {
             src: 'bg-[url("../../shared/images/yogoevent/plans_present.png")]',
-            alt: '혜택',
+            desc: '혜택',
         },
         {
             src: 'bg-[url("../../shared/images/yogoevent/plans_benefit.png")]',
-            alt: '추가혜택',
+            desc: '추가혜택',
         },
         {
             src: 'bg-[url("../../shared/images/yogoevent/plans_coupon.png")]',
-            alt: '쿠폰',
+            desc: '쿠폰',
         },
     ];
     return (
@@ -29,7 +46,7 @@ function Yogoevent_Plan_Info() {
             )}
         >
             <TextBox className="flex-col-center">
-                <p className={twMerge('text-2xl font-bold')}>요고 36</p>
+                <p className={twMerge('text-2xl font-bold')}>{plan_name}</p>
             </TextBox>
             <TextBox className="flex flex-col gap-5">
                 <div className="flex flex-row justify-start items-center gap-4">
@@ -37,15 +54,28 @@ function Yogoevent_Plan_Info() {
                         데이터
                     </span>
                     <div className="relative flex flex-row items-center gap-2">
-                        <span className="font-bold text-black text-xl">
-                            50GB
-                        </span>
-                        <span className="font-regular text-gray-500 text-xs">
-                            다 쓰면 1mps로 무제한
-                        </span>
-                        <span className="absolute top-7 text-red-500 text-xs">
-                            * 기본 35GB + 프로모션 35GB
-                        </span>
+                        {isNaN(basic_data + additional_data) ? (
+                            <span className="font-bold text-black text-xl">
+                                완전무제한
+                            </span>
+                        ) : (
+                            <>
+                                <span className="font-bold text-black text-xl">
+                                    {isY
+                                        ? `${basic_data * 2 + additional_data}GB`
+                                        : `${basic_data + additional_data}GB`}
+                                </span>
+                                <span className="font-regular text-gray-500 text-xs">
+                                    {`다 쓰면 ${limit_speed}로 무제한`}
+                                </span>
+                                <span className="absolute top-7 font-bold text-red-500 text-[10px]">
+                                    {`* 기본 ${basic_data}GB`}
+                                    {isY && `+ Y덤 ${basic_data}GB`}
+                                    {additional_data > 0 &&
+                                        ` + 프로모션 ${additional_data}GB`}
+                                </span>
+                            </>
+                        )}
                     </div>
                 </div>
                 <div className="flex flex-row justify-start items-center gap-4">
@@ -53,7 +83,7 @@ function Yogoevent_Plan_Info() {
                         월정액
                     </span>
                     <span className="font-bold text-black text-xl">
-                        42,000원
+                        {monthly_fee}
                     </span>
                 </div>
             </TextBox>
@@ -72,7 +102,7 @@ function Yogoevent_Plan_Info() {
                                 )}
                             ></div>
                             <span className="font-light text-gray-700 text-sm">
-                                {item.alt}
+                                {item.desc}
                             </span>
                         </div>
                     );

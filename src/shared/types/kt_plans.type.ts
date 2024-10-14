@@ -25,4 +25,5 @@ export interface PlanPropsType {
     setIsY: (_isY: boolean | ((_prev: boolean) => boolean)) => void;
     setIsSelectData: (_data: boolean | ((_prev: boolean) => boolean)) => void;
     setPlanIdx: (_value: number | ((_prev: number) => number)) => void;
+    selectedPlan: KTPlansType;
 }
