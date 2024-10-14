@@ -20,9 +20,10 @@
         "baseUrl": "./",
         "paths": {
             "@dev/*": ["./src/*"],
-            "@devFeatures/*": ["./src/features/*"],
+            "@devfeatures/*": ["./src/features/*"],
             "@devShared/*": ["./src/shared/*"],
             "@devViews/*": ["./src/views/*"],
+            "@devEntities/*": ["./src/widgets/*"],
             "@devWidgets/*": ["./src/widgets/*"]
         }
     },
