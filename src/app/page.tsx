@@ -1,7 +1,8 @@
 'use client';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import background1 from '@devShared/images/brandStory/brand-story-background1.svg';
-import background2 from '@devShared/images/brandStory/brand-story-background2.svg';
+import arrowLeft from '@devShared/images/brandStory/brand-arrow-left.svg';
+import arrowRight from '@devShared/images/brandStory/brand-arrow-right.svg';
 import slide1 from '@devShared/images/brandStory/slide-1.svg';
 import slide2 from '@devShared/images/brandStory/slide-2.svg';
 import slide3 from '@devShared/images/brandStory/slide-3.svg';
@@ -10,10 +11,12 @@ import slide5 from '@devShared/images/brandStory/slide-5.svg';
 import slide6 from '@devShared/images/brandStory/slide-6.svg';
 import Image from 'next/image';
 import Slider from 'react-slick';
-import YouTube, { YouTubeProps } from 'react-youtube';
 
 export default function Home() {
     const sliderRef = useRef<Slider | null>(null);
+
+    const [currentSlide, setCurrentSlide] = useState<number>(0);
+
     // 이전 슬라이드로 이동하는 함수
     const handlePrevSlide = () => {
         sliderRef.current?.slickPrev(); // 이전 슬라이드로 이동
@@ -23,18 +26,7 @@ export default function Home() {
     const handleNextSlide = () => {
         sliderRef.current?.slickNext(); // 다음 슬라이드로 이동
     };
-    const onPlayerReady: YouTubeProps['onReady'] = (event) => {
-        // 모든 이벤트 핸들러에서 event.target을 통해 플레이어에 접근할 수 있음
-        event.target.pauseVideo();
-    };
-    const opts: YouTubeProps['opts'] = {
-        height: '513',
-        width: '350',
 
-        playerVars: {
-            autoplay: 1,
-        },
-    };
     const settings = {
         dots: false,
         infinite: true,
@@ -43,15 +35,17 @@ export default function Home() {
         autoplay: true,
         autoplaySpeed: 4000,
         pauseOnHover: true,
+        afterChange: (current: number) => setCurrentSlide(current),
     };
+
     return (
-        <>
-            <div className="m-plan-article-visual">
-                <div
-                    className={`min-w-full bg-cover pt-[60px]`}
-                    style={{ backgroundImage: `url(${background1.src})` }}
-                >
-                    <Slider {...settings}>
+        <div className="w-[390px]">
+            <div
+                className={`bg-cover pt-[60px] overflow-hidden`}
+                style={{ backgroundImage: `url(${background1.src})` }}
+            >
+                <div>
+                    <Slider ref={sliderRef} {...settings}>
                         <Image src={slide1} alt={'slide1'} />
                         <Image src={slide2} alt={'slide2'} />
                         <Image src={slide3} alt={'slide3'} />
@@ -59,47 +53,96 @@ export default function Home() {
                         <Image src={slide5} alt={'slide5'} />
                         <Image src={slide6} alt={'slide6'} />
                     </Slider>
-                    {/* 슬라이더 제어 버튼 */}
-                    {/* <button 
-                onClick={() => sliderRef.current?.slickNext()} 
-                type="button" 
-                className="slick-arrow slick-next"
-            >
-                Next
-            </button> */}
                 </div>
-                <div className="bx-controls bx-has-pager bx-has-controls-direction">
-                    <div className="bx-pager bx-default-pager">
-                        <div className="bx-controls-direction">
-                            {/* 이전 슬라이드로 이동하는 버튼 */}
-                            <button
-                                onClick={handlePrevSlide}
-                                style={{ marginRight: '10px' }}
-                            >
-                                Previous
-                            </button>
+                <div
+                    className={
+                        'flex flex-row justify-center items-center gap-4 mb-[50px]'
+                    }
+                >
+                    <button onClick={handlePrevSlide}>
+                        <Image
+                            width={31}
+                            height={41}
+                            src={arrowLeft}
+                            alt={'brand-arrow-left'}
+                        />
+                    </button>
+                    <div
+                        className={`h-[35px] flex flex-col items-center justify-center bg-white rounded-[40px] pt-[5px] pb-[5px] pr-[10px] pl-[10px]`}
+                    >
+                        <pre>{currentSlide + 1} / 6</pre>
+                    </div>
+                    <button onClick={handleNextSlide}>
+                        <Image
+                            width={31}
+                            height={41}
+                            src={arrowRight}
+                            alt={'brand-arrow-right'}
+                        />
+                    </button>
+                </div>
+            </div>
 
-                            {/* 다음 슬라이드로 이동하는 버튼 */}
-                            <button onClick={handleNextSlide}>Next</button>
+            <div
+                className={
+                    'min-w-full flex flex-col items-center bg-black pt-[50px] pb-[60px]'
+                }
+            >
+                <pre
+                    className={
+                        'bg-gradient-to-r from-[#00D2BB] to-[#00AEA4] text-white pt-[5px] pb-[5px] pr-[10px] pl-[10px] rounded-[40px] mb-[40px]'
+                    }
+                >
+                    요고를 영상으로 만나 보세요.
+                </pre>
+                <div className={'rounded-[15px] overflow-hidden'}>
+                    <iframe
+                        src={'https://youtube.com/embed/EEKovGsbLWg'}
+                        allowFullScreen
+                        height={514}
+                    />
+                </div>
+                <pre className={'mt-[22px] text-white text-[18px]'}>
+                    요금은 줄이고 혜택은 가득한 요고!!
+                </pre>
+                <div
+                    className={
+                        'min-w-full flex flex-row items-center justify-center pt-[80px] gap-[20px]'
+                    }
+                >
+                    <div
+                        className={
+                            'flex flex-col items-center justify-center gap-3'
+                        }
+                    >
+                        <div className={'rounded-[15px] overflow-hidden'}>
+                            <iframe
+                                src={'https://youtube.com/embed/RStVl4lilxM'}
+                                allowFullScreen
+                                width={170}
+                                height={323}
+                            />
                         </div>
+                        <pre className={'text-white'}>요고 69 (시즌 2)</pre>
+                    </div>
+
+                    <div
+                        className={
+                            'flex flex-col items-center justify-center gap-3'
+                        }
+                    >
+                        <div className={'rounded-[15px] overflow-hidden'}>
+                            <iframe
+                                src={'https://youtube.com/embed/bxFI64dzg1E'}
+                                allowFullScreen
+                                width={170}
+                                height={323}
+                            />
+                        </div>
+                        <pre className={'text-white'}>요고 30 (시즌 2)</pre>
                     </div>
                 </div>
             </div>
-            <div style={{ backgroundImage: `url(${background2.src})` }}>
-                <div
-                    id="player"
-                    style={{
-                        display: 'grid', // Grid 레이아웃 사용
-                        placeItems: 'center', // 수직 및 수평 가운데 정렬
-                    }}
-                >
-                    <YouTube
-                        videoId="EEKovGsbLWg" // 재생할 YouTube 동영상 ID (예시 ID)
-                        opts={opts} // YouTube 플레이어 옵션 (크기, 자동재생 등)
-                        onReady={onPlayerReady} // 플레이어가 준비되었을 때 호출되는 함수
-                    />
-                </div>
-            </div>
-        </>
+        </div>
     );
 }
