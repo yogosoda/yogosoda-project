@@ -3,6 +3,7 @@ import image from '@devShared/images/yogoevent/image 25.png';
 import Image from 'next/image';
 import { twMerge } from 'tailwind-merge';
 
+// 상단 첫번쨰 배너 컴포넌트
 function Yogoevent_Intro() {
     return (
         <section className={twMerge('flex-col-center py-5 gap-5')}>

@@ -1,5 +1,6 @@
 import { twMerge } from 'tailwind-merge';
 
+// 하단에 테두리가 있는 텍스트 영역
 export const TextBox = ({
     children,
     className,

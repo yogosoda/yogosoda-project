@@ -3,6 +3,7 @@ import { notosansKr } from '@dev/shared/fonts';
 import { KTPlansType } from '@dev/shared/types/kt_plans.type';
 import { twMerge } from 'tailwind-merge';
 
+// 상단 2번째 컴포넌트 하단 요금제 표시 컴포넌트입니다
 function Yogoevent_Plan_Info({
     isY,
     selectedPlan,

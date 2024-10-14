@@ -1,5 +1,7 @@
 import { twMerge } from 'tailwind-merge';
 
+// 하이라이트 처리가 된 텍스트
+// 텍스트 속성은 className으로 받습니다
 function HighlitedSpan({
     className,
     children,

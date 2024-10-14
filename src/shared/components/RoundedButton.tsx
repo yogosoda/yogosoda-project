@@ -1,5 +1,6 @@
 import { twMerge } from 'tailwind-merge';
 
+// 원형 버튼
 function RoundedButton({
     className,
     clickHandler,

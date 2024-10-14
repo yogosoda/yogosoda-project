@@ -6,6 +6,7 @@ import { notosansKr } from '@dev/shared/fonts';
 import { PlanPropsType } from '@dev/shared/types/kt_plans.type';
 import { twMerge } from 'tailwind-merge';
 
+// 상단 2번째 컴포넌트 상단 요금제 선택 컴포넌트입니다
 function Yogoevent_Select_Plan({
     isY,
     isSelectData,

@@ -5,6 +5,7 @@ import Yogoevent_Intro from '@dev/widgets/yogoevent/Yogoevent_Intro';
 import Yogoevent_Search from '@dev/widgets/yogoevent/Yogoevent_Search';
 import Yogoevent_ToEnter from '@dev/widgets/yogoevent/Yogoevent_ToEnter';
 
+// 요고 가입 혜택 페이지
 async function YogoEvent() {
     const ktPlanData = await getKTPlan();
     return (
@@ -16,9 +17,9 @@ async function YogoEvent() {
         </div>
     );
 }
-
+// [FIXME] KT 요고 요금제를 받아와 가입 혜택 페이지로 전달합니다
 const getKTPlan = async () => {
-    const res = await api.post('http://3.35.51.214/api/search_kt_plan', {
+    const res = await api.post(`${process.env.NEXT_PUBLIC_API_KT_URL}`, {
         searchKeyword: '',
     });
     const data = await res.data;

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import img from '../images/graph_bar.png';
 import { twMerge } from 'tailwind-merge';
 
+//가입혜택 - 데이터 플랜 보기 메뉴에서 사용하는 게이지 그래프입니다
 function GuageGraph({
     planIdx,
     setPlanIdx,

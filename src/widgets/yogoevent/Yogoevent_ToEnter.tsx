@@ -2,6 +2,7 @@ import Image from 'next/image';
 import img from '@devShared/images/yogoevent/image 32.png';
 import Link from 'next/link';
 
+// 상단 4번째 요금제 가입 배너 컴포넌트입니다
 function Yogoevent_ToEnter() {
     return (
         <div className="flex-col-center w-full h-fit gap-4 rounded-2xl px-10 py-6 bg-gray-200 shadow-[10px_10px_5px_rgba(0,0,0,0.2)]">

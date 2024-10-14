@@ -2,6 +2,7 @@ import Image from 'next/image';
 import img from '../../shared/images/yogoevent/image 31.png';
 import HighlitedSpan from '@dev/shared/components/HighlitedSpan';
 
+// 상단 3번째 이벤트 배너 컴포넌트
 function Yogoevent_Banner() {
     return (
         <section>
