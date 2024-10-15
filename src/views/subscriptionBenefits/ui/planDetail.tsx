@@ -1,7 +1,7 @@
-import PlanDetailTitle from '@dev/widgets/subscriptionBenefits/planDetailTitle';
 import yogoDetailImage1 from '@dev/shared/images/subscriptionImage/yogo_detail_image1.png';
+import PlanDetailTitle from '@dev/widgets/subscriptionBenefits/components/planDetailTitle';
+import SubscriptionBenefitsButtonBlack from '@dev/widgets/subscriptionBenefits/components/subscriptionBenefitsButtonBlack';
 import Image from 'next/image';
-import SubscriptionBenefitsButtonBlack from '@dev/widgets/subscriptionBenefits/subscriptionBenefitsButtonBlack';
 
 export default function PlanDetail() {
     return (

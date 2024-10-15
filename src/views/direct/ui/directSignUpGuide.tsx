@@ -3,7 +3,7 @@ import yogoLogo from '@dev/shared/images/directImage/yogo_logo.png';
 import yogoSignUpGuideImage1 from '@dev/shared/images/directImage/yogo_signup_guide_image1.png';
 import yogoSignUpGuideImage2 from '@dev/shared/images/directImage/yogo_signup_guide_image2.png';
 import yogoSignUpGuideImage3 from '@dev/shared/images/directImage/yogo_signup_guide_image3.png';
-import DirectSignUpGuideBox from '@dev/widgets/direct/directSignUpGuideBox';
+import DirectSignUpGuideBox from '@dev/widgets/direct/components/directSignUpGuideBox';
 
 const buttonData1 = [
     {

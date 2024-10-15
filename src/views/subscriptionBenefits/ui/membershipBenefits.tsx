@@ -1,5 +1,5 @@
-import MembershipBenefitsTitle from '@dev/widgets/subscriptionBenefits/membershipBenefitsTitle';
-import MembershipBenefitsRow from '@dev/widgets/subscriptionBenefits/membershipBenefitsRow';
+import MembershipBenefitsRow from '@dev/widgets/subscriptionBenefits/components/membershipBenefitsRow';
+import MembershipBenefitsTitle from '@dev/widgets/subscriptionBenefits/components/membershipBenefitsTitle';
 
 export default function MembershipBenefits() {
     return (

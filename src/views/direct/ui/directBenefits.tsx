@@ -7,9 +7,9 @@ import yogoBenefitsImage10 from '@dev/shared/images/directImage/yogo_benefits_im
 import yogoBenefitsImage11 from '@dev/shared/images/directImage/yogo_benefits_image11.png';
 import yogoBenefitsImage12 from '@dev/shared/images/directImage/yogo_benefits_image12.png';
 import yogoBenefitsImage13 from '@dev/shared/images/directImage/yogo_benefits_image13.png';
-import DirectBenefitsTop from '@dev/widgets/direct/directBenefitsTop';
-import DirectBenefitsRow from '@dev/widgets/direct/directBenefitsRow';
-import DirectBenefitsBottom from '@dev/widgets/direct/directBenefitsBottom';
+import DirectBenefitsTop from '@dev/widgets/direct/components/directBenefitsTop';
+import DirectBenefitsRow from '@dev/widgets/direct/components/directBenefitsRow';
+import DirectBenefitsBottom from '@dev/widgets/direct/components/directBenefitsBottom';
 
 const benefitsData = [
     [

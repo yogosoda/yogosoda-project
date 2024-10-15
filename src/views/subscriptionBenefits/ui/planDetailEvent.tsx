@@ -1,5 +1,5 @@
 import yogoDetailImage2 from '@dev/shared/images/subscriptionImage/yogo_detail_image2.png';
-import SubscriptionBenefitsButtonSmall from '@dev/widgets/subscriptionBenefits/subscriptionBenefitsButtonSmall';
+import SubscriptionBenefitsButtonSmall from '@dev/widgets/subscriptionBenefits/components/subscriptionBenefitsButtonSmall';
 import Image from 'next/image';
 
 export default function PlanDetailEvent() {

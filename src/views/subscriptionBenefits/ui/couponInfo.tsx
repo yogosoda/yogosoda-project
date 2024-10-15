@@ -1,10 +1,10 @@
-import CouponInfoBox from '@dev/widgets/subscriptionBenefits/couponInfoBox';
-import CouponInfoTitle from '@dev/widgets/subscriptionBenefits/couponInfoTitle';
 import yogoCouponImage1 from '@dev/shared/images/subscriptionImage/yogo_coupon_image1.png';
 import yogoCouponImage2 from '@dev/shared/images/subscriptionImage/yogo_coupon_image2.png';
 import yogoCouponImage3 from '@dev/shared/images/subscriptionImage/yogo_coupon_image3.png';
 import yogoCouponImage4 from '@dev/shared/images/subscriptionImage/yogo_coupon_image4.png';
 import yogoCouponPlus from '@dev/shared/images/subscriptionImage/yogo_coupon_plus.png';
+import CouponInfoBox from '@dev/widgets/subscriptionBenefits/components/couponInfoBox';
+import CouponInfoTitle from '@dev/widgets/subscriptionBenefits/components/couponInfoTitle';
 import Image from 'next/image';
 
 export default function CouponInfo() {

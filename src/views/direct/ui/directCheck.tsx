@@ -1,4 +1,4 @@
-import DirectCheckItem from '@dev/widgets/direct/directCheckItem';
+import DirectCheckItem from '@dev/widgets/direct/components/directCheckItem';
 
 export default function DirectCheck() {
     return (

@@ -1,10 +1,10 @@
-import MembershipBenefitsBox from '@dev/widgets/subscriptionBenefits/membershipBenefitsBox';
 import yogoMembershipImage1 from '@dev/shared/images/subscriptionImage/yogo_membership_image1.png';
 import yogoMembershipImage2 from '@dev/shared/images/subscriptionImage/yogo_membership_image2.png';
 import yogoMembershipImage3 from '@dev/shared/images/subscriptionImage/yogo_membership_image3.png';
 import yogoMembershipImage4 from '@dev/shared/images/subscriptionImage/yogo_membership_image4.png';
 import yogoMembershipImage5 from '@dev/shared/images/subscriptionImage/yogo_membership_image5.png';
 import yogoMembershipImage6 from '@dev/shared/images/subscriptionImage/yogo_membership_image6.png';
+import MembershipBenefitsBox from './membershipBenefitsBox';
 
 export default function MembershipBenefitsRow() {
     return (
