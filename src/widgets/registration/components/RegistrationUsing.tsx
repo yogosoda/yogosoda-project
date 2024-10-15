@@ -1,9 +1,7 @@
 import Image from 'next/image';
 import RegisOtherBg from '@devShared/images/bg_otherCarrier.png';
-
-import { twMerge } from 'tailwind-merge';
-import { ReactComponent as RightArrow } from '@devShared/svg/chevron-right-solid.svg';
 import RegistrationButton from '@devShared/components/button';
+import { ReactComponent as RightArrow } from '@devShared/svg/chevron-right-solid.svg';
 
 export default function RegistrationUsing() {
     return (
@@ -24,11 +22,7 @@ export default function RegistrationUsing() {
                                 </p>
                                 <p>요고 요금제만 가입하기</p>
                             </div>
-                            <RegistrationButton
-                                className={twMerge(
-                                    'text-sm font-semibold w-[9rem] h-[2.5rem]'
-                                )}
-                            >
+                            <RegistrationButton className="text-sm font-semibold w-[9rem] h-[2.5rem]">
                                 <div className=" flex justify-between items-center ">
                                     <span>USIM 개통하기</span>
                                     <div className="pl-2">
@@ -49,11 +43,7 @@ export default function RegistrationUsing() {
                                 </p>
                                 <p>요고 요금제 가입하기</p>
                             </div>
-                            <RegistrationButton
-                                className={twMerge(
-                                    'text-sm font-semibold w-[9rem] h-[2.5rem]'
-                                )}
-                            >
+                            <RegistrationButton className="text-sm font-semibold w-[9rem] h-[2.5rem]">
                                 <div className=" flex justify-between items-center ">
                                     <span>핸드폰 보러가기</span>
                                     <div className="pl-2">
