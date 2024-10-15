@@ -1,6 +1,7 @@
 module.exports = {
   extends: ['@commitlint/config-conventional'],  // Conventional Commits 규칙 사용
   rules: {
+    'subject-case': [0, 'always'],
     'type-enum': [
       2,  // 규칙을 '에러'로 설정하여 잘못된 타입 사용 시 에러 발생
       'always',  // 항상 아래 타입들만 허용
