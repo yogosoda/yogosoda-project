@@ -13,7 +13,7 @@ const Footer = () => {
             <Line className={'mb-[15px]'} />
             <div
                 className={
-                    'flex-with-row min-h-fit items-center justify-between pl-[20px] pr-[20px] '
+                    'flex-with-row min-h-fit items-center justify-between px-[20px]'
                 }
             >
                 <Link
@@ -37,10 +37,10 @@ const Footer = () => {
                     구매안전서비스확인
                 </Link>
             </div>
-            <Line className={'mb-[15px] mt-[15px]'} />
+            <Line className={'my-[15px]'} />
             <div
                 className={
-                    'flex-with-row items-center justify-between pl-[20px] pr-[20px] '
+                    'flex-with-row items-center justify-between px-[20px]'
                 }
             >
                 <Link
@@ -88,12 +88,12 @@ const Footer = () => {
                     />
                 </Link>
             </div>
-            <Line className={'mb-[15px] mt-[15px]'} />
-            <div className="flex flex-col w-full  text-[#666666] gap-[11px]  pb-[20px] pl-[20px] pr-[20px]">
+            <Line className={'my-[15px]'} />
+            <div className="flex flex-col w-full  text-[#666666] gap-[11px]  pb-[20px] px-[20px]">
                 <h1 className={'text-[15px]'}>
                     <strong>KT 공식 온라인샵</strong>
                 </h1>
-                <div className={'flex flex-col w-full  text-[13px] gap-[11px]'}>
+                <div className={'flex flex-col w-full text-[13px] gap-[11px]'}>
                     <div>
                         <p className={'break-words whitespace-pre-wrap'}>
                             (주) 케이티 대표이사 김영섭 사업자등록번호 :
