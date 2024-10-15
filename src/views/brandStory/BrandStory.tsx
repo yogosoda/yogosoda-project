@@ -49,16 +49,14 @@ export default function BrandStory() {
                 className={`bg-cover pt-[3.75rem] overflow-hidden`}
                 style={{ backgroundImage: `url(${background1.src})` }}
             >
-                <div>
-                    <Slider ref={sliderRef} {...settings}>
-                        <Image src={slide1} alt={'slide1'} />
-                        <Image src={slide2} alt={'slide2'} />
-                        <Image src={slide3} alt={'slide3'} />
-                        <Image src={slide4} alt={'slide4'} />
-                        <Image src={slide5} alt={'slide5'} />
-                        <Image src={slide6} alt={'slide6'} />
-                    </Slider>
-                </div>
+                <Slider ref={sliderRef} {...settings}>
+                    <Image src={slide1} alt={'slide1'} />
+                    <Image src={slide2} alt={'slide2'} />
+                    <Image src={slide3} alt={'slide3'} />
+                    <Image src={slide4} alt={'slide4'} />
+                    <Image src={slide5} alt={'slide5'} />
+                    <Image src={slide6} alt={'slide6'} />
+                </Slider>
                 <div
                     className={
                         'flex flex-row justify-center items-center gap-4 mb-[3.125rem] mt-[2.2rem]'

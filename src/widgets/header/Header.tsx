@@ -27,7 +27,7 @@ const Header = () => {
     }, []);
 
     return (
-        <div className={'flex flex-col w-full sticky'}>
+        <div className={'flex flex-col w-full z-10'}>
             <HeaderTitle
                 hideForm={hideForm}
                 label={label}
