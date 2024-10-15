@@ -99,7 +99,10 @@ const apiService = () => {
         data?: T;
     }> => {
         try {
-            let url = `${baseUrl}${uri}`; // baseUrl과 uri 결합
+            let url = `${uri}`; // baseUrl과 uri 결합
+            if (!(uri.startsWith('http://') || uri.startsWith('https://'))) {
+                url = `${baseUrl}${uri}`;
+            }
 
             // options에 params가 있으면 쿼리 스트링으로 변환 후 URL에 추가
             if (options?.params) {
@@ -107,7 +110,14 @@ const apiService = () => {
                 delete options.params; // fetch에 params가 필요 없으므로 삭제
             }
 
-            const response = await fetch(url, options); // fetch API로 요청 전송
+            const response = await fetch(url, {
+                ...options,
+                headers: {
+                    'Content-Type': 'application/json', // 기본적으로 JSON 형태로 PUT 요청
+                    ...(options?.headers || {}),
+                },
+            }); // fetch API로 요청 전송
+
             const code = response.status as keyof typeof RESPONSE_STATUS_KR; // 응답 상태 코드 추출
 
             if (!response.ok) {
@@ -170,10 +180,6 @@ const apiService = () => {
             options: {
                 ...options,
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json', // 기본적으로 JSON 형태로 POST 요청
-                    ...(options?.headers || {}),
-                },
                 body: body ? JSON.stringify(body) : undefined, // body 데이터를 JSON 형식으로 변환
             },
         });
@@ -191,10 +197,6 @@ const apiService = () => {
             options: {
                 ...options,
                 method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json', // 기본적으로 JSON 형태로 PUT 요청
-                    ...(options?.headers || {}),
-                },
                 body: body ? JSON.stringify(body) : undefined, // body 데이터를 JSON 형식으로 변환
             },
         });
