@@ -2,6 +2,14 @@ import type { Metadata } from 'next';
 import '@devShared/styles/index.css';
 import { ReactNode } from 'react';
 
+import {
+    neoBold,
+    neoExtraBold,
+    neoHeavy,
+    neoLight,
+    neoRegular,
+} from '@devShared/fonts';
+
 export const metadata: Metadata = {
     title: {
         template: '%s | KT', // %s는 동적으로 변경될 제목 부분
@@ -16,7 +24,11 @@ export default function RootLayout({
 }: Readonly<{ children: ReactNode }>) {
     return (
         <html lang="en" data-locator-target="webstorm">
-            <body>{children}</body>
+            <body
+                className={`${neoLight.variable} ${neoRegular.variable} ${neoBold.variable} ${neoExtraBold.variable} ${neoHeavy.variable}`}
+            >
+                {children}
+            </body>
         </html>
     );
 }
