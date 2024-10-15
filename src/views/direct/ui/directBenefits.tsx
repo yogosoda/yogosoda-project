@@ -11,6 +11,93 @@ import DirectBenefitsTop from '@dev/widgets/direct/directBenefitsTop';
 import DirectBenefitsRow from '@dev/widgets/direct/directBenefitsRow';
 import DirectBenefitsBottom from '@dev/widgets/direct/directBenefitsBottom';
 
+const benefitsData = [
+    [
+        {
+            imageSrc: yogoBenefitsImage7,
+            imageAlt: 'Yogo Benefits Image 7',
+            imageWidth: 100,
+            imageHeight: 100,
+            text: (
+                <>
+                    언제 어디서나 간편하게
+                    <br />
+                    KT닷컴에서 가입
+                </>
+            ),
+        },
+        {
+            imageSrc: yogoBenefitsImage8,
+            imageAlt: 'Yogo Benefits Image 8',
+            imageWidth: 100,
+            imageHeight: 100,
+            text: (
+                <>
+                    요금은 42% Down
+                    <br />
+                    약정부담 NO
+                </>
+            ),
+        },
+    ],
+    [
+        {
+            imageSrc: yogoBenefitsImage9,
+            imageAlt: 'Yogo Benefits Image 9',
+            imageWidth: 100,
+            imageHeight: 100,
+            text: (
+                <>
+                    34세 이하 Y라면
+                    <br />
+                    데이터 2배 더!
+                </>
+            ),
+        },
+        {
+            imageSrc: yogoBenefitsImage10,
+            imageAlt: 'Yogo Benefits Image 10',
+            imageWidth: 100,
+            imageHeight: 100,
+            text: (
+                <>
+                    결합할인? OK
+                    <br />
+                    KT멤버쉽? OK
+                </>
+            ),
+        },
+    ],
+    [
+        {
+            imageSrc: yogoBenefitsImage11,
+            imageAlt: 'Yogo Benefits Image 11',
+            imageWidth: 100,
+            imageHeight: 100,
+            text: (
+                <>
+                    데이터는 5GB 단위로
+                    <br />
+                    필요한 만큼만 촘촘하게
+                </>
+            ),
+        },
+        {
+            imageSrc: yogoBenefitsImage12,
+            imageAlt: 'Yogo Benefits Image 12',
+            imageWidth: 100,
+            imageHeight: 100,
+            text: (
+                <>
+                    OTT와 스마트기기를
+                    <br />
+                    요고 하나로 종결!
+                </>
+            ),
+        },
+    ],
+];
+
 export default function DirectBenefits() {
     return (
         <div className="w-[100%] bg-gray-200 bg-gradient-to-r from-[#eceef9] to-[#f6f1ed] h-[fit]">
@@ -30,102 +117,14 @@ export default function DirectBenefits() {
                 <p className="font-bold text-[20px]">무엇이 좋은가요?</p>
             </div>
             <DirectBenefitsTop />
-            <DirectBenefitsRow
-                left="13px"
-                className="text-[12px] text-center mb-3"
-                benefits={[
-                    {
-                        imageSrc: yogoBenefitsImage7,
-                        imageAlt: 'Yogo Benefits Image 7',
-                        imageWidth: 100,
-                        imageHeight: 100,
-                        text: (
-                            <>
-                                언제 어디서나 간편하게
-                                <br />
-                                KT닷컴에서 가입
-                            </>
-                        ),
-                    },
-                    {
-                        imageSrc: yogoBenefitsImage8,
-                        imageAlt: 'Yogo Benefits Image 8',
-                        imageWidth: 100,
-                        imageHeight: 100,
-                        text: (
-                            <>
-                                요금은 42% Down
-                                <br />
-                                약정부담 NO
-                            </>
-                        ),
-                    },
-                ]}
-            />
-            <DirectBenefitsRow
-                left="15px"
-                className="text-[12px] text-center mb-3"
-                benefits={[
-                    {
-                        imageSrc: yogoBenefitsImage9,
-                        imageAlt: 'Yogo Benefits Image 9',
-                        imageWidth: 100,
-                        imageHeight: 100,
-                        text: (
-                            <>
-                                34세 이하 Y라면
-                                <br />
-                                데이터 2배 더!
-                            </>
-                        ),
-                    },
-                    {
-                        imageSrc: yogoBenefitsImage10,
-                        imageAlt: 'Yogo Benefits Image 10',
-                        imageWidth: 100,
-                        imageHeight: 100,
-                        text: (
-                            <>
-                                결합할인? OK
-                                <br />
-                                KT멤버쉽? OK
-                            </>
-                        ),
-                    },
-                ]}
-            />
-            <DirectBenefitsRow
-                left="20px"
-                className="text-[12px] text-center mb-3"
-                benefits={[
-                    {
-                        imageSrc: yogoBenefitsImage11,
-                        imageAlt: 'Yogo Benefits Image 11',
-                        imageWidth: 100,
-                        imageHeight: 100,
-                        text: (
-                            <>
-                                데이터는 5GB 단위로
-                                <br />
-                                필요한 만큼만 촘촘하게
-                            </>
-                        ),
-                    },
-                    {
-                        imageSrc: yogoBenefitsImage12,
-                        imageAlt: 'Yogo Benefits Image 12',
-                        imageWidth: 100,
-                        imageHeight: 100,
-                        text: (
-                            <>
-                                OTT와 스마트기기를
-                                <br />
-                                요고 하나로 종결!
-                            </>
-                        ),
-                    },
-                ]}
-            />
+            {benefitsData.map((benefits, index) => (
+                <DirectBenefitsRow
+                    key={index}
+                    left={`${13 + index * 2}px`} // left값을 동적으로 조정
+                    className="text-[12px] text-center mb-3"
+                    benefits={benefits}
+                />
+            ))}
             <DirectBenefitsBottom
                 width="300px"
                 height="160px"
