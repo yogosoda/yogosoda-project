@@ -5,11 +5,37 @@
 @font-face {
     font-family: 'Cafe24Ssurround';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff')
-        format('woff');
+    format('woff');
     font-weight: normal;
     font-style: normal;
 }
-@layer components {
+@layer base {
+    :root {
+        --font-neo-lt: 'Neo-Light';
+        --font-neo-rg: 'Neo-Regular';
+        --font-neo-bd: 'Neo-Bold';
+        --font-neo-eb: 'Neo-ExBold';
+        --font-neo-hv: 'Neo-Heavy';
+    }
+    .font-neo-lt {
+        font-family: var(--font-neo-lt), sans-serif;
+    }
+
+    .font-neo-rg {
+        font-family: var(--font-neo-rg), sans-serif;
+    }
+
+    .font-neo-bd {
+        font-family: var(--font-neo-bd), sans-serif;
+    }
+
+    .font-neo-eb {
+        font-family: var(--font-neo-eb), sans-serif;
+    }
+
+    .font-neo-hv {
+        font-family: var(--font-neo-hv), sans-serif;
+    }
     .double-underline::after {
         content: '';
         position: absolute;
@@ -21,13 +47,24 @@
         border-bottom-style: double;
     }
 }
+
+@layer components {
+    /* 컴포넌트에 사용할 스타일 */
+    .flex-col-center {
+        @apply flex flex-col items-center;
+    }
+
+    .flex-row-center {
+        @apply flex flex-row justify-center;
+    }
+}
 @layer utilities {
     .rounded-t-30px {
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
     }
     .rounded-b-30px {
-      border-bottom-left-radius: 30px;
-      border-bottom-right-radius: 30px;
-  }
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
 }
