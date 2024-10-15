@@ -3,7 +3,7 @@ import RegisOtherBg from '@devShared/images/bg_otherCarrier.png';
 
 import { twMerge } from 'tailwind-merge';
 import { ReactComponent as RightArrow } from '@devShared/svg/chevron-right-solid.svg';
-import RegistrationButton from '@devShared/components/Button';
+import RegistrationButton from '@devShared/components/button';
 
 export default function RegistrationUsing() {
     return (
