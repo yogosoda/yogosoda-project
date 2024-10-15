@@ -8,9 +8,10 @@ import { ReactComponent as Gift } from '@devShared/svg/gift.svg';
 import { ReactComponent as Question } from '@devShared/svg/Vector.svg';
 import { ReactComponent as Down } from '@devShared/svg/chevron-down-solid.svg';
 import { ReactComponent as Up } from '@devShared/svg/chevron-up-solid.svg';
+import { KTPlansType } from '@dev/entities/kt_plans.type';
 
 export default function Payment() {
-    const [payData, setPayData] = useState<[]>([]);
+    const [payData, setPayData] = useState<KTPlansType[]>([]);
     const [isToggle, setIsToggle] = useState<boolean[]>([]);
 
     const toggleHandler = (index: number) => {
