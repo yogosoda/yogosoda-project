@@ -3,7 +3,6 @@ import RegistrationGuide from '@dev/widgets/registration/components/Registration
 import RegistrationCheck from '@dev/widgets/registration/components/RegistrationCheck';
 import RegistrationUsing from '@dev/widgets/registration/components/RegistrationUsing';
 import RegistrationChange from '@dev/widgets/registration/components/RegistrationChange';
-import Payment from '@dev/shared/components/Payment';
 
 export default function Registration() {
     return (
@@ -13,7 +12,6 @@ export default function Registration() {
                 <RegistrationCheck />
                 <RegistrationUsing />
                 <RegistrationChange />
-                <Payment />
             </section>
         </>
     );
