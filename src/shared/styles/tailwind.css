@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff')
+        format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@layer components {
+    .double-underline::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: 2px solid red; /* 바깥 줄 */
+        height: 1px;
+        border-bottom-style: double;
+    }
+}
+@layer utilities {
+    .rounded-t-30px {
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+    }
+    .rounded-b-30px {
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+  }
+}

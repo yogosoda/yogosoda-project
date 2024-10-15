@@ -16,7 +16,13 @@ export default function RootLayout({
 }: Readonly<{ children: ReactNode }>) {
     return (
         <html lang="en" data-locator-target="webstorm">
-            <body>{children}</body>
+            <body
+                className={
+                    'min-w-full min-h-screen flex items-center justify-center bg-white'
+                }
+            >
+                {children}
+            </body>
         </html>
     );
 }
