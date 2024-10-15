@@ -1,15 +1,7 @@
 import Image from 'next/image';
 import playPauseButton from '@dev/shared/images/directImage/play-and-pause-button.png';
 import videoStopButton from '@dev/shared/images/directImage/video-stop.png';
-
-interface SlideControlsProps {
-    currentIndex: number;
-    totalSlides: number;
-    onPrev: () => void;
-    onNext: () => void;
-    onPause: () => void;
-    isPaused: boolean;
-}
+import { SlideControlsProps } from '../types/component.type';
 
 export default function SlideControls({
     currentIndex,

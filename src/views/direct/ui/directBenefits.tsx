@@ -37,6 +37,8 @@ export default function DirectBenefits() {
                     {
                         imageSrc: yogoBenefitsImage7,
                         imageAlt: 'Yogo Benefits Image 7',
+                        imageWidth: 100,
+                        imageHeight: 100,
                         text: (
                             <>
                                 언제 어디서나 간편하게
@@ -48,6 +50,8 @@ export default function DirectBenefits() {
                     {
                         imageSrc: yogoBenefitsImage8,
                         imageAlt: 'Yogo Benefits Image 8',
+                        imageWidth: 100,
+                        imageHeight: 100,
                         text: (
                             <>
                                 요금은 42% Down
@@ -65,6 +69,8 @@ export default function DirectBenefits() {
                     {
                         imageSrc: yogoBenefitsImage9,
                         imageAlt: 'Yogo Benefits Image 9',
+                        imageWidth: 100,
+                        imageHeight: 100,
                         text: (
                             <>
                                 34세 이하 Y라면
@@ -76,6 +82,8 @@ export default function DirectBenefits() {
                     {
                         imageSrc: yogoBenefitsImage10,
                         imageAlt: 'Yogo Benefits Image 10',
+                        imageWidth: 100,
+                        imageHeight: 100,
                         text: (
                             <>
                                 결합할인? OK
@@ -93,6 +101,8 @@ export default function DirectBenefits() {
                     {
                         imageSrc: yogoBenefitsImage11,
                         imageAlt: 'Yogo Benefits Image 11',
+                        imageWidth: 100,
+                        imageHeight: 100,
                         text: (
                             <>
                                 데이터는 5GB 단위로
@@ -104,6 +114,8 @@ export default function DirectBenefits() {
                     {
                         imageSrc: yogoBenefitsImage12,
                         imageAlt: 'Yogo Benefits Image 12',
+                        imageWidth: 100,
+                        imageHeight: 100,
                         text: (
                             <>
                                 OTT와 스마트기기를

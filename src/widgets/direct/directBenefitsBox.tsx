@@ -1,21 +1,6 @@
 import Box from '@dev/shared/components/box';
-import Image, { StaticImageData } from 'next/image';
-
-interface BenefitsBoxProps {
-    width?: string;
-    height?: string;
-    imageWidth?: number;
-    imageHeight?: number;
-    borderColor?: string;
-    backgroundColor?: string;
-    left?: string;
-    top?: string;
-    imageSrc: StaticImageData;
-    imageAlt: string;
-    text: React.ReactNode;
-    className?: string;
-    children?: React.ReactNode;
-}
+import { BenefitsBoxProps } from '@dev/shared/types/direct.type';
+import Image from 'next/image';
 
 export default function DirectBenefitsBox({
     width,
@@ -27,7 +12,7 @@ export default function DirectBenefitsBox({
     top,
     left,
     imageSrc,
-    imageAlt,
+    imageAlt = '',
     text,
     className,
     children,
@@ -41,13 +26,15 @@ export default function DirectBenefitsBox({
             backgroundColor={backgroundColor}
             className="flex items-end justify-center relative"
         >
-            <Image
-                src={imageSrc}
-                alt={imageAlt}
-                width={imageWidth}
-                height={imageHeight}
-                style={{ position: 'absolute', top: top, left: left }}
-            />
+            {imageSrc && (
+                <Image
+                    src={imageSrc}
+                    alt={imageAlt}
+                    width={imageWidth}
+                    height={imageHeight}
+                    style={{ position: 'absolute', top: top, left: left }}
+                />
+            )}
             <div>
                 <div className={className}>{text}</div>
                 {children}

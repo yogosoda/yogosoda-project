@@ -1,10 +1,6 @@
 import Box from '@dev/shared/components/box';
+import { SubscriptionBenefitsButton } from '@dev/shared/types/subscriptionBenefits.type';
 import Link from 'next/link';
-
-interface SubscriptionBenefitsButton {
-    text: string;
-    url: string;
-}
 
 export default function SubscriptionBenefitsButtonSmall({
     text,

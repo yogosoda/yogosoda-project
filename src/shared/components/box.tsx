@@ -1,15 +1,5 @@
 import React from 'react';
-
-interface BoxProps {
-    width?: string; // 너비
-    height?: string; // 높이
-    borderRadius?: string; // 테두리 반경
-    borderWidth?: string; // 테두리 너비
-    borderColor?: string; // 테두리 색상
-    backgroundColor?: string; // 배경 색상
-    className?: string; // className prop 추가
-    children: React.ReactNode; // 자식 요소
-}
+import { BoxProps } from '../types/component.type';
 
 export default function Box({
     width = '325px',

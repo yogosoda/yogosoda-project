@@ -1,17 +1,6 @@
 import Box from '@dev/shared/components/box';
-import Image, { StaticImageData } from 'next/image';
-
-interface MembershipBenefitsBoxProps {
-    height: string;
-    iconSrc: StaticImageData;
-    iconAlt: string;
-    mainImageSrc: StaticImageData;
-    mainImageAlt: string;
-    title: string;
-    subtitle: string;
-    detailText?: React.ReactNode;
-    additionalInfo?: React.ReactNode;
-}
+import { MembershipBenefitsBoxProps } from '@dev/shared/types/subscriptionBenefits.type';
+import Image from 'next/image';
 
 export default function MembershipBenefitsBox({
     height,

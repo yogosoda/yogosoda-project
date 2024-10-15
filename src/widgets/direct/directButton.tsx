@@ -1,13 +1,7 @@
 import Box from '@dev/shared/components/box';
-import Image, { StaticImageData } from 'next/image';
+import { YogoButtonProps } from '@dev/shared/types/direct.type';
+import Image from 'next/image';
 import Link from 'next/link';
-
-interface YogoButtonProps {
-    text: string; // 버튼에 표시할 텍스트
-    imageSrc?: StaticImageData; // 버튼에 표시할 이미지 소스
-    imageAlt?: string; // 이미지의 alt 텍스트
-    url: string; // 클릭 시 이동할 URL
-}
 
 export default function DirectButton({
     text,
@@ -16,7 +10,7 @@ export default function DirectButton({
     url,
 }: YogoButtonProps) {
     return (
-        <Link href={url} passHref>
+        <Link href={url}>
             <div className="flex justify-center mb-[10px]">
                 <Box
                     width="300px"

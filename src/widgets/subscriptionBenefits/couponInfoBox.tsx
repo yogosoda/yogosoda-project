@@ -1,14 +1,6 @@
 import Box from '@dev/shared/components/box';
-import Image, { StaticImageData } from 'next/image';
-
-interface CouponInfoBoxProps {
-    topImage: StaticImageData;
-    topImageAlt: string;
-    mainImage: StaticImageData;
-    mainImageAlt: string;
-    couponTitle: string;
-    couponSubTitle: string;
-}
+import { CouponInfoBoxProps } from '@dev/shared/types/subscriptionBenefits.type';
+import Image from 'next/image';
 
 export default function CouponInfoBox({
     topImage,

@@ -1,22 +1,7 @@
 import Box from '@dev/shared/components/box';
 import React from 'react';
-import Image, { StaticImageData } from 'next/image';
-
-interface PlanComparisonProps {
-    imageSrc?: StaticImageData;
-    imageAlt?: string;
-    title: string;
-    titleColor: string;
-    subtitle?: string;
-    networkType: string;
-    data: string;
-    dataDetails: React.ReactNode;
-    price: string;
-    benefitTags?: string[];
-    benefits: React.ReactNode[];
-    backgroundColor: string;
-    className?: string;
-}
+import Image from 'next/image';
+import { PlanComparisonProps } from '@dev/shared/types/subscriptionBenefits.type';
 
 export default function PlanComparisonBox({
     imageSrc,
