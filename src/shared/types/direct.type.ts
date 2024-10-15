@@ -26,6 +26,8 @@ export type BenefitsTopRowProps = CommonImageProps & {
 
 export type YogoButtonProps = CommonImageProps & CommonButtonProps;
 
+export type CheckItemProps = { children: React.ReactNode };
+
 export type SignUpGuideProps = CommonTextProps &
     CommonImageProps & {
         buttonData: CommonButtonProps[]; // 버튼 데이터 배열
