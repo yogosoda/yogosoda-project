@@ -5,36 +5,36 @@ import yogoSignUpGuideImage2 from '@dev/shared/images/directImage/yogo_signup_gu
 import yogoSignUpGuideImage3 from '@dev/shared/images/directImage/yogo_signup_guide_image3.png';
 import DirectSignUpGuideBox from '@dev/widgets/direct/directSignUpGuideBox';
 
+const buttonData1 = [
+    {
+        text: '핸드폰 보러가기',
+        url: 'https://shop.kt.com/mobile/products.do?&=&category=mobile&pplId=0920',
+    },
+    {
+        text: '가입 혜택 보기',
+        url: 'https://shop.kt.com/unify/yogoEvent.do',
+    },
+];
+
+const buttonData2 = [
+    {
+        text: 'USIM 가입하기',
+        url: 'https://shop.kt.com/direct/directUsim.do',
+    },
+    {
+        text: '가입 혜택 보기',
+        url: 'https://shop.kt.com/display/olhsPlan.do?plnDispNo=2388',
+    },
+];
+
+const buttonData3 = [
+    {
+        text: '핸드폰 등록하기',
+        url: 'https://shop.kt.com/direct/directChangeRate.do',
+    },
+];
+
 export default function DirectSignUpGuide() {
-    const buttonData1 = [
-        {
-            text: '핸드폰 보러가기',
-            url: 'https://shop.kt.com/mobile/products.do?&=&category=mobile&pplId=0920',
-        },
-        {
-            text: '가입 혜택 보기',
-            url: 'https://shop.kt.com/unify/yogoEvent.do',
-        },
-    ];
-
-    const buttonData2 = [
-        {
-            text: 'USIM 가입하기',
-            url: 'https://shop.kt.com/direct/directUsim.do',
-        },
-        {
-            text: '가입 혜택 보기',
-            url: 'https://shop.kt.com/display/olhsPlan.do?plnDispNo=2388',
-        },
-    ];
-
-    const buttonData3 = [
-        {
-            text: '핸드폰 등록하기',
-            url: 'https://shop.kt.com/direct/directChangeRate.do',
-        },
-    ];
-
     return (
         <div className="w-[100%] flex flex-col items-center bg-[#F8F8F8] h-[860px]">
             <div className="flex items-center font-bold gap-1 my-7 mb-4">
