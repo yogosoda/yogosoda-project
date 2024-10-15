@@ -32,65 +32,53 @@ export default function DirectBenefitsTop() {
                 <DirectBenefitsTopRow
                     imageSrc={yogoBenefitsImage2}
                     imageAlt="Yogo Benefits Image2"
-                    text={
-                        <>
-                            <p>
-                                새로운 OTT
-                                <br />
-                                <span className="text-[#355EFE] font-cafe">
-                                    유튜브 프리미엄 할인{' '}
-                                </span>
-                                혜택 추가!
-                            </p>
-                        </>
-                    }
-                />
+                >
+                    <p>
+                        새로운 OTT
+                        <br />
+                        <span className="text-[#355EFE] font-cafe">
+                            유튜브 프리미엄 할인{' '}
+                        </span>
+                        혜택 추가!
+                    </p>
+                </DirectBenefitsTopRow>
                 <DirectBenefitsTopRow
                     imageSrc={yogoBenefitsImage3}
                     imageAlt="Yogo Benefits Image3"
-                    text={
-                        <>
-                            <p>
-                                전 구간 요금제에
-                                <br />
-                                <span className="text-[#355EFE] font-cafe">
-                                    티빙 무료 제공
-                                </span>
-                                은 오직 요고뿐!
-                            </p>
-                        </>
-                    }
-                />
+                >
+                    <p>
+                        전 구간 요금제에
+                        <br />
+                        <span className="text-[#355EFE] font-cafe">
+                            티빙 무료 제공
+                        </span>
+                        은 오직 요고뿐!
+                    </p>
+                </DirectBenefitsTopRow>
                 <DirectBenefitsTopRow
                     imageSrc={yogoBenefitsImage4}
                     imageAlt="Yogo Benefits Image4"
-                    text={
-                        <>
-                            <p>
-                                <span className="text-[#355EFE] font-cafe">
-                                    디바이스 100% 할인 혜택
-                                </span>
-                                <br />
-                                요고 55까지 확대 적용!
-                            </p>
-                        </>
-                    }
-                />
+                >
+                    <p>
+                        <span className="text-[#355EFE] font-cafe">
+                            디바이스 100% 할인 혜택
+                        </span>
+                        <br />
+                        요고 55까지 확대 적용!
+                    </p>
+                </DirectBenefitsTopRow>
                 <DirectBenefitsTopRow
                     imageSrc={yogoBenefitsImage5}
                     imageAlt="Yogo Benefits Image5"
-                    text={
-                        <>
-                            <p>
-                                데이터 추가 제공 프로모션과 멤버쉽 혜택
-                                <br />
-                                <span className="text-[#355EFE] font-cafe">
-                                    한번 더 연장!
-                                </span>
-                            </p>
-                        </>
-                    }
-                />
+                >
+                    <p>
+                        데이터 추가 제공 프로모션과 멤버쉽 혜택
+                        <br />
+                        <span className="text-[#355EFE] font-cafe">
+                            한번 더 연장!
+                        </span>
+                    </p>
+                </DirectBenefitsTopRow>
                 <div className="mx-auto mt-[80px]">
                     <DirectBenefitsBox
                         width="250px"
