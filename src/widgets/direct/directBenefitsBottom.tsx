@@ -42,10 +42,7 @@ export default function DirectBenefitsBottom({
                 text={text}
                 className={className}
             >
-                <Link
-                    href="https://shop.kt.com/display/olhsPlan.do?plnDispNo=2389"
-                    passHref
-                >
+                <Link href="https://shop.kt.com/display/olhsPlan.do?plnDispNo=2389">
                     <div className="flex justify-between mx-auto mb-[15px] items-center w-[58px] border-b border-black">
                         <p className="text-[10px]">자세히 보기</p>
                         <Image

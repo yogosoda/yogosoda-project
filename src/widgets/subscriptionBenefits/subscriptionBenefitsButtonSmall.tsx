@@ -11,7 +11,7 @@ export default function SubscriptionBenefitsButtonSmall({
     url,
 }: SubscriptionBenefitsButton) {
     return (
-        <Link href={url} passHref>
+        <Link href={url}>
             <div className="mt-4">
                 <Box
                     width="80px"

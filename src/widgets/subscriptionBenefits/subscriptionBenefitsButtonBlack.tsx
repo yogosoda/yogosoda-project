@@ -11,7 +11,7 @@ export default function SubscriptionBenefitsButtonBlack({
     url,
 }: SubscriptionBenefitsButton) {
     return (
-        <Link href={url} passHref>
+        <Link href={url}>
             <div className="flex justify-center mb-[10px]">
                 <Box
                     width="300px"
