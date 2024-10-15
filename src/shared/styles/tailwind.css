@@ -2,7 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    :root {
+        --font-neo-lt: 'Neo-Light';
+        --font-neo-rg: 'Neo-Regular';
+        --font-neo-bd: 'Neo-Bold';
+        --font-neo-eb: 'Neo-ExBold';
+        --font-neo-hv: 'Neo-Heavy';
+    }
+    .font-neo-lt {
+        font-family: var(--font-neo-lt), sans-serif;
+    }
+
+    .font-neo-rg {
+        font-family: var(--font-neo-rg), sans-serif;
+    }
+
+    .font-neo-bd {
+        font-family: var(--font-neo-bd), sans-serif;
+    }
+
+    .font-neo-eb {
+        font-family: var(--font-neo-eb), sans-serif;
+    }
+
+    .font-neo-hv {
+        font-family: var(--font-neo-hv), sans-serif;
+    }
+}
+
 @layer components {
+    /* 컴포넌트에 사용할 스타일 */
+    .flex-col-center {
+        @apply flex flex-col items-center;
+    }
+
+    .flex-row-center {
+        @apply flex flex-row justify-center;
+    }
+
     .shadow-box {
         @apply shadow-xl border border-slate-100;
     }
