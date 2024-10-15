@@ -2,7 +2,6 @@
 import api from '../../utils/api';
 import Divider from '../divider';
 import { useEffect, useState } from 'react';
-import { twMerge } from 'tailwind-merge';
 import { ReactComponent as KtLogo } from '@devShared/svg/KT.svg';
 import { ReactComponent as Gift } from '@devShared/svg/gift.svg';
 import { ReactComponent as Question } from '@devShared/svg/Vector.svg';
@@ -50,11 +49,7 @@ export default function Payment() {
                         key={index}
                         className="pt-14 pb-14 flex flex-col justify-center items-center"
                     >
-                        <div
-                            className={twMerge(
-                                'w-[25rem] shadow-box bg-white rounded-2xl flex flex-col justify-center pl-4 pt-6 gap-4'
-                            )}
-                        >
+                        <div className="w-[25rem] shadow-box bg-white rounded-2xl flex flex-col justify-center pl-4 pt-6 gap-4">
                             <KtLogo width={25} height={25} />
                             <p className="text-[#ADB5BD] text-xs">
                                 {plan.plan_name}
