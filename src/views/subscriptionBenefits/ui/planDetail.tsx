@@ -5,7 +5,7 @@ import SubscriptionBenefitsButtonBlack from '@dev/widgets/subscriptionBenefits/s
 
 export default function PlanDetail() {
     return (
-        <div className="w-[390px] bg-[#FCFAFF] h-[470px]">
+        <div className="w-[390px] bg-[#FCFAFF] h-[fit] pb-[20px]">
             <PlanDetailTitle />
             <Image
                 src={yogoDetailImage1}

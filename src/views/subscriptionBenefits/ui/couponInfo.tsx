@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 export default function CouponInfo() {
     return (
-        <div className="w-[390px] bg-[#FCFAFF] h-[830px]">
+        <div className="w-[390px] bg-[#FCFAFF] h-[fit] pb-[50px]">
             <CouponInfoTitle />
             <CouponInfoBox
                 topImage={yogoCouponImage1}

@@ -3,7 +3,7 @@ import PlanComparisonTitle from '@dev/widgets/subscriptionBenefits/planCompariso
 
 export default function PlanComparison() {
     return (
-        <div className="w-[390px] bg-[#FEFEF6] h-[750px]">
+        <div className="w-[390px] bg-[#FEFEF6] h-[fit] pb-[50px]">
             <PlanComparisonTitle />
             <PlanComparisonBoxTable />
         </div>
