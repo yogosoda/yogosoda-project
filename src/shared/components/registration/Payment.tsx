@@ -45,7 +45,7 @@ export default function Payment() {
     return (
         <>
             <section>
-                {payData.map((e, index) => (
+                {payData.map((plan, index) => (
                     <div
                         key={index}
                         className="pt-14 pb-14 flex flex-col justify-center items-center"
@@ -57,32 +57,32 @@ export default function Payment() {
                         >
                             <KtLogo width={25} height={25} />
                             <p className="text-[#ADB5BD] text-xs">
-                                {e.plan_name}
+                                {plan.plan_name}
                             </p>
                             <div className="flex gap-2 items-center">
                                 <p className="font-bold text-[1.3rem]">
-                                    월 {e.data.total_data}
+                                    월 {plan.data.total_data}
                                 </p>
                                 <Question />
                             </div>
                             <ul className="flex flex-col gap-2 text-[#979797] text-xs font-semibold">
                                 <div className="flex gap-2">
-                                    <li>통화 {e.calls_and_texts}</li>
+                                    <li>통화 {plan.calls_and_texts}</li>
                                     <span>|</span>
-                                    <li>문자 {e.calls_and_texts}</li>
+                                    <li>문자 {plan.calls_and_texts}</li>
                                     <span>|</span>
                                     <li>
                                         공유데이터{' '}
-                                        {`${e.data.shared_data_limit ? e.data.shared_data_limit : '기본 데이터 한도내에서 사용'} `}
+                                        {`${plan.data.shared_data_limit ? plan.data.shared_data_limit : '기본 데이터 한도내에서 사용'} `}
                                     </li>
                                 </div>
                                 <div>
-                                    <li className="text-[0.65rem]">{`Y덤 혜택 (${e.info} / ${e.data.total_data} + ${e.data.total_data})`}</li>
+                                    <li className="text-[0.65rem]">{`Y덤 혜택 (${plan.info} / ${plan.data.total_data} + ${plan.data.total_data})`}</li>
                                 </div>
                             </ul>
                             <div className="flex gap-2 items-center">
                                 <p className="font-semibold text-[#425AD5]">
-                                    {`월 ${e.monthly_fee}`}
+                                    {`월 ${plan.monthly_fee}`}
                                 </p>
                                 <Question />
                             </div>
@@ -96,9 +96,9 @@ export default function Payment() {
                                     {Array.from(
                                         {
                                             length:
-                                                e.benefits.plus_benefits
+                                                plan.benefits.plus_benefits
                                                     .length +
-                                                e.benefits.choice_benefits.split()
+                                                plan.benefits.choice_benefits.split()
                                                     .length,
                                         },
                                         (_, index) => (
@@ -111,8 +111,8 @@ export default function Payment() {
 
                                 <p className="text-[#ADB5BD] text-[0.6rem]">
                                     사은품 최대{' '}
-                                    {e.benefits.plus_benefits.length +
-                                        e.benefits.choice_benefits.split()
+                                    {plan.benefits.plus_benefits.length +
+                                        plan.benefits.choice_benefits.split()
                                             .length}
                                     개
                                 </p>
@@ -143,17 +143,17 @@ export default function Payment() {
                             >
                                 <li className="flex flex-col gap-2">
                                     <p className="text-[0.9rem]">초이스 혜택</p>
-                                    {e.benefits.choice_benefits}
+                                    {plan.benefits.choice_benefits}
                                 </li>
 
                                 <li className="flex flex-col gap-2 pb-6">
-                                    {e.benefits.plus_benefits.length > 0 ? (
+                                    {plan.benefits.plus_benefits.length > 0 ? (
                                         <>
                                             <p className="text-[0.9rem]">
                                                 플러스 혜택
                                             </p>{' '}
                                             <div className="flex flex-col">
-                                                {e.benefits.plus_benefits.map(
+                                                {plan.benefits.plus_benefits.map(
                                                     (e, index) => (
                                                         <p key={index}>{e}</p>
                                                     )
