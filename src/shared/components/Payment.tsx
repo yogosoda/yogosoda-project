@@ -11,14 +11,14 @@ import { ReactComponent as Up } from '@devShared/svg/chevron-up-solid.svg';
 
 export default function Payment() {
     const [payData, setPayData] = useState<[]>([]);
-    const [isToggle, setIsToggle] = useState<boolean[]>(
-        Array(payData.length).fill(false)
-    );
+    const [isToggle, setIsToggle] = useState<boolean[]>([]);
 
     const toggleHandler = (index: number) => {
-        setIsToggle((prevToggle) =>
-            prevToggle.map((toggle, i) => (i === index ? !toggle : toggle))
-        );
+        setIsToggle((prevToggle) => {
+            const newToggle = [...prevToggle]; // 이전 상태 배열을 복사
+            newToggle[index] = !newToggle[index]; // 해당 인덱스의 값만 토글
+            return newToggle; // 새로운 배열을 반환하여 상태 업데이트
+        });
     };
 
     const paymentFetchData = async () => {
@@ -40,10 +40,6 @@ export default function Payment() {
     useEffect(() => {
         paymentFetchData();
     }, []);
-
-    useEffect(() => {
-        setIsToggle(Array(payData.length).fill(false));
-    }, [payData]);
 
     return (
         <>
