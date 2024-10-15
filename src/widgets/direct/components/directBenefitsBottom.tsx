@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import buttonArrow from '@dev/shared/images/directImage/button_arrow.png';
 import Link from 'next/link';
-import DirectBenefitsBox from './directBenefitsBox';
 import { BenefitsBottomProps } from '@dev/shared/types/direct.type';
+import DirectBenefitsBox from './directBenefitsBox';
 
 export default function DirectBenefitsBottom({
     width = '140px',

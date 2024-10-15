@@ -1,5 +1,5 @@
 import { BenefitsRowProps } from '@dev/shared/types/direct.type';
-import DirectBenefitsBox from '@dev/widgets/direct/directBenefitsBox';
+import DirectBenefitsBox from './directBenefitsBox';
 
 export default function DirectBenefitsRow({
     width = '140px',
