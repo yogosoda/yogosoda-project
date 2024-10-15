@@ -6,17 +6,15 @@ export default function RegistrationButton({
     ...props
 }: BtnProps) {
     return (
-        <>
-            <button
-                className={twMerge(
-                    'w-80 h-11 rounded-lg bg-black text-white flex items-center gap-2 justify-center',
-                    className
-                )}
-                {...props}
-            >
-                {children}
-            </button>
-        </>
+        <button
+            className={twMerge(
+                'w-80 h-11 rounded-lg bg-black text-white flex items-center gap-2 justify-center',
+                className
+            )}
+            {...props}
+        >
+            {children}
+        </button>
     );
 }
 

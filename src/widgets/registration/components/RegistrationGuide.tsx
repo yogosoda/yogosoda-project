@@ -8,7 +8,7 @@ import { ReactComponent as RightArrow } from '@devShared/svg/chevron-right-solid
 
 export default function RegistrationGuide() {
     return (
-        <>
+        <section>
             <article className="flex justify-center items-center gap-2">
                 <div className="flex flex-col gap-2">
                     <p className="text-teal-500 text-base font-bold">
@@ -49,6 +49,6 @@ export default function RegistrationGuide() {
                     <p>일요일, 신정/설/추석 당일 개통은 불가합니다.</p>
                 </div>
             </article>
-        </>
+        </section>
     );
 }

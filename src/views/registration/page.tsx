@@ -6,13 +6,11 @@ import RegistrationChange from '@dev/widgets/registration/components/Registratio
 
 export default function Registration() {
     return (
-        <>
-            <section className="flex flex-col justify-center items-center">
-                <RegistrationGuide />
-                <RegistrationCheck />
-                <RegistrationUsing />
-                <RegistrationChange />
-            </section>
-        </>
+        <section className="flex flex-col justify-center items-center">
+            <RegistrationGuide />
+            <RegistrationCheck />
+            <RegistrationUsing />
+            <RegistrationChange />
+        </section>
     );
 }

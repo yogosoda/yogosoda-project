@@ -42,128 +42,123 @@ export default function Payment() {
     }, []);
 
     return (
-        <>
-            <section>
-                {payData.map((plan, index) => (
-                    <div
-                        key={index}
-                        className="pt-14 pb-14 flex flex-col justify-center items-center"
-                    >
-                        <div className="w-[25rem] shadow-box bg-white rounded-2xl flex flex-col justify-center pl-4 pt-6 gap-4">
-                            <KtLogo width={25} height={25} />
-                            <p className="text-[#ADB5BD] text-xs">
-                                {plan.plan_name}
+        <section>
+            {payData.map((plan, index) => (
+                <div
+                    key={index}
+                    className="pt-14 pb-14 flex flex-col justify-center items-center"
+                >
+                    <div className="w-[25rem] shadow-box bg-white rounded-2xl flex flex-col justify-center pl-4 pt-6 gap-4">
+                        <KtLogo width={25} height={25} />
+                        <p className="text-[#ADB5BD] text-xs">
+                            {plan.plan_name}
+                        </p>
+                        <div className="flex gap-2 items-center">
+                            <p className="font-bold text-[1.3rem]">
+                                월 {plan.data.total_data}
                             </p>
-                            <div className="flex gap-2 items-center">
-                                <p className="font-bold text-[1.3rem]">
-                                    월 {plan.data.total_data}
-                                </p>
-                                <Question />
-                            </div>
-                            <ul className="flex flex-col gap-2 text-[#979797] text-xs font-semibold">
-                                <div className="flex gap-2">
-                                    <li>통화 {plan.calls_and_texts}</li>
-                                    <span>|</span>
-                                    <li>문자 {plan.calls_and_texts}</li>
-                                    <span>|</span>
-                                    <li>
-                                        공유데이터{' '}
-                                        {`${plan.data.shared_data_limit ? plan.data.shared_data_limit : '기본 데이터 한도내에서 사용'} `}
-                                    </li>
-                                </div>
-                                <div>
-                                    <li className="text-[0.65rem]">{`Y덤 혜택 (${plan.info} / ${plan.data.total_data} + ${plan.data.total_data})`}</li>
-                                </div>
-                            </ul>
-                            <div className="flex gap-2 items-center">
-                                <p className="font-semibold text-[#425AD5]">
-                                    {`월 ${plan.monthly_fee}`}
-                                </p>
-                                <Question />
-                            </div>
-
-                            <div className="flex justify-center pr-6">
-                                <Divider className="w-[22.5rem]" />
-                            </div>
-
-                            <div className="flex items-center gap-4 pb-4">
-                                <ul className="flex gap-1">
-                                    {Array.from(
-                                        {
-                                            length:
-                                                plan.benefits.plus_benefits
-                                                    .length +
-                                                plan.benefits.choice_benefits.split()
-                                                    .length,
-                                        },
-                                        (_, index) => (
-                                            <li key={index}>
-                                                <Gift width={25} height={25} />
-                                            </li>
-                                        )
-                                    )}
-                                </ul>
-
-                                <p className="text-[#ADB5BD] text-[0.6rem]">
-                                    사은품 최대{' '}
-                                    {plan.benefits.plus_benefits.length +
-                                        plan.benefits.choice_benefits.split()
-                                            .length}
-                                    개
-                                </p>
-
-                                <div className="absolute pl-[21.5rem]">
-                                    {isToggle[index] ? (
-                                        <Up
-                                            onClick={() => toggleHandler(index)}
-                                            fill="#666"
-                                            className="cursor-pointer"
-                                        />
-                                    ) : (
-                                        <Down
-                                            onClick={() => toggleHandler(index)}
-                                            fill="#666"
-                                            className="cursor-pointer"
-                                        />
-                                    )}
-                                </div>
-                            </div>
-
-                            <ul
-                                className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                                    isToggle[index]
-                                        ? 'max-h-[12.5rem]'
-                                        : 'max-h-0'
-                                } flex flex-col gap-2 text-[#666] text-[0.7rem]`}
-                            >
-                                <li className="flex flex-col gap-2">
-                                    <p className="text-[0.9rem]">초이스 혜택</p>
-                                    {plan.benefits.choice_benefits}
-                                </li>
-
-                                <li className="flex flex-col gap-2 pb-6">
-                                    {plan.benefits.plus_benefits.length > 0 ? (
-                                        <>
-                                            <p className="text-[0.9rem]">
-                                                플러스 혜택
-                                            </p>{' '}
-                                            <div className="flex flex-col">
-                                                {plan.benefits.plus_benefits.map(
-                                                    (e, index) => (
-                                                        <p key={index}>{e}</p>
-                                                    )
-                                                )}
-                                            </div>
-                                        </>
-                                    ) : (
-                                        ''
-                                    )}
-                                </li>
-                            </ul>
+                            <Question />
                         </div>
+                        <ul className="flex flex-col gap-2 text-[#979797] text-xs font-semibold">
+                            <div className="flex gap-2">
+                                <li>통화 {plan.calls_and_texts}</li>
+                                <span>|</span>
+                                <li>문자 {plan.calls_and_texts}</li>
+                                <span>|</span>
+                                <li>
+                                    공유데이터{' '}
+                                    {`${plan.data.shared_data_limit ? plan.data.shared_data_limit : '기본 데이터 한도내에서 사용'} `}
+                                </li>
+                            </div>
+                            <div>
+                                <li className="text-[0.65rem]">{`Y덤 혜택 (${plan.info} / ${plan.data.total_data} + ${plan.data.total_data})`}</li>
+                            </div>
+                        </ul>
+                        <div className="flex gap-2 items-center">
+                            <p className="font-semibold text-[#425AD5]">
+                                {`월 ${plan.monthly_fee}`}
+                            </p>
+                            <Question />
+                        </div>
+
+                        <div className="flex justify-center pr-6">
+                            <Divider className="w-[22.5rem]" />
+                        </div>
+
+                        <div className="flex items-center gap-4 pb-4">
+                            <ul className="flex gap-1">
+                                {Array.from(
+                                    {
+                                        length:
+                                            plan.benefits.plus_benefits.length +
+                                            plan.benefits.choice_benefits.split()
+                                                .length,
+                                    },
+                                    (_, index) => (
+                                        <li key={index}>
+                                            <Gift width={25} height={25} />
+                                        </li>
+                                    )
+                                )}
+                            </ul>
+
+                            <p className="text-[#ADB5BD] text-[0.6rem]">
+                                사은품 최대{' '}
+                                {plan.benefits.plus_benefits.length +
+                                    plan.benefits.choice_benefits.split()
+                                        .length}
+                                개
+                            </p>
+
+                            <div className="absolute pl-[21.5rem]">
+                                {isToggle[index] ? (
+                                    <Up
+                                        onClick={() => toggleHandler(index)}
+                                        fill="#666"
+                                        className="cursor-pointer"
+                                    />
+                                ) : (
+                                    <Down
+                                        onClick={() => toggleHandler(index)}
+                                        fill="#666"
+                                        className="cursor-pointer"
+                                    />
+                                )}
+                            </div>
+                        </div>
+
+                        <ul
+                            className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                                isToggle[index] ? 'max-h-[12.5rem]' : 'max-h-0'
+                            } flex flex-col gap-2 text-[#666] text-[0.7rem]`}
+                        >
+                            <li className="flex flex-col gap-2">
+                                <p className="text-[0.9rem]">초이스 혜택</p>
+                                {plan.benefits.choice_benefits}
+                            </li>
+
+                            <li className="flex flex-col gap-2 pb-6">
+                                {plan.benefits.plus_benefits.length > 0 ? (
+                                    <>
+                                        <p className="text-[0.9rem]">
+                                            플러스 혜택
+                                        </p>{' '}
+                                        <div className="flex flex-col">
+                                            {plan.benefits.plus_benefits.map(
+                                                (e, index) => (
+                                                    <p key={index}>{e}</p>
+                                                )
+                                            )}
+                                        </div>
+                                    </>
+                                ) : (
+                                    ''
+                                )}
+                            </li>
+                        </ul>
                     </div>
-                ))}
-            </section>
-        </>
+                </div>
+            ))}
+        </section>
     );
 }
