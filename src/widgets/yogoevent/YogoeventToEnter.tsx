@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import img from '@devShared/images/yogoevent/image 32.png';
+import img from '@devShared/images/yogoevent/yogo_season2_logo.png';
 import Link from 'next/link';
 
 // 상단 4번째 요금제 가입 배너 컴포넌트입니다
-function Yogoevent_ToEnter() {
+function YogoeventToEnter() {
     return (
         <div className="flex-col-center w-full h-fit gap-4 rounded-2xl px-10 py-6 bg-gray-200 shadow-[10px_10px_5px_rgba(0,0,0,0.2)]">
             <div className="flex-row-center gap-2">
@@ -11,15 +11,15 @@ function Yogoevent_ToEnter() {
                 <h2 className="font-bold text-xl">요금제 가입하려면</h2>
             </div>
             <div className="flex-col-center w-full gap-3">
-                <Button link="https://shop.kt.com/mobile/products.do?=&category=mobile&pplId=0946">
+                <LinkButton link="https://shop.kt.com/mobile/products.do?=&category=mobile&pplId=0946">
                     핸드폰 보러가기
-                </Button>
-                <Button link="https://shop.kt.com/direct/directUsim.do">
+                </LinkButton>
+                <LinkButton link="https://shop.kt.com/direct/directUsim.do">
                     USIM 개통하러 가기
-                </Button>
-                <Button link="https://shop.kt.com/direct/directChangeRate.do">
+                </LinkButton>
+                <LinkButton link="https://shop.kt.com/direct/directChangeRate.do">
                     요금제 변경하기
-                </Button>
+                </LinkButton>
             </div>
             <p className="text-[10px] text-gray-500">
                 *기존 KT 고객님이 요금제만 요고로 변경을 원하는 경우 사용할
@@ -29,7 +29,7 @@ function Yogoevent_ToEnter() {
     );
 }
 
-const Button = ({
+const LinkButton = ({
     children,
     link,
 }: {
@@ -46,4 +46,4 @@ const Button = ({
     );
 };
 
-export default Yogoevent_ToEnter;
+export default YogoeventToEnter;

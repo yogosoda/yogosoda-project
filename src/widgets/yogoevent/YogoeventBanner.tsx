@@ -1,9 +1,11 @@
+'use client';
+
 import Image from 'next/image';
-import img from '../../shared/images/yogoevent/image 31.png';
+import img from '../../shared/images/yogoevent/yogomungchi_logo.png';
 import HighlitedSpan from '@dev/shared/components/HighlitedSpan';
 
 // 상단 3번째 이벤트 배너 컴포넌트
-function Yogoevent_Banner() {
+function YogoeventBanner() {
     return (
         <section>
             <div className="w-[350px] max-w-full h-fit rounded-[20px] bg-gradient-to-r from-[#DFFFFC] via-[#EBF0FF] to-[#FFECF1] px-9 py-5">
@@ -23,4 +25,4 @@ function Yogoevent_Banner() {
         </section>
     );
 }
-export default Yogoevent_Banner;
+export default YogoeventBanner;

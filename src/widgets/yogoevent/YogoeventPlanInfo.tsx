@@ -1,18 +1,17 @@
 import { TextBox } from '@dev/shared/components/TextBox';
 import { notosansKr } from '@dev/shared/fonts';
-import { KTPlansType } from '@dev/shared/types/kt_plans.type';
+import { PlanInfoPropsType } from '@dev/shared/types/yogoevent.type';
 import { twMerge } from 'tailwind-merge';
 
 // 상단 2번째 컴포넌트 하단 요금제 표시 컴포넌트입니다
-function Yogoevent_Plan_Info({
+function YogoeventPlanInfo({
     isY,
-    selectedPlan,
-}: {
-    isY: boolean;
-    selectedPlan: KTPlansType;
-}) {
-    const { benefits, calls_and_texts, data, monthly_fee, plan_name } =
-        selectedPlan;
+    benefits,
+    calls_and_texts,
+    data,
+    monthly_fee,
+    plan_name,
+}: PlanInfoPropsType) {
     const basic_data = Number(data.total_data.replace('GB', ''));
     const additional_data = Number(
         benefits.additional_benefits
@@ -112,4 +111,4 @@ function Yogoevent_Plan_Info({
         </div>
     );
 }
-export default Yogoevent_Plan_Info;
+export default YogoeventPlanInfo;

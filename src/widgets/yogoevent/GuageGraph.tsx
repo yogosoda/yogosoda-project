@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import img from '../images/graph_bar.png';
+import img from '@devShared/images/graph_bar.png';
 import { twMerge } from 'tailwind-merge';
+import { Dispatch, SetStateAction } from 'react';
 
 //가입혜택 - 데이터 플랜 보기 메뉴에서 사용하는 게이지 그래프입니다
 function GuageGraph({
@@ -8,7 +9,7 @@ function GuageGraph({
     setPlanIdx,
 }: {
     planIdx: number;
-    setPlanIdx: (_planIdx: number) => void;
+    setPlanIdx: Dispatch<SetStateAction<number>>;
 }) {
     return (
         <div className="relative flex justify-center items-center w-full h-10 px-2 py-1 mr-2">

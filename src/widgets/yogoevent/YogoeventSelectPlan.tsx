@@ -1,22 +1,25 @@
-import GuageGraph from '@dev/shared/components/GuageGraph';
+'use client';
+
 import RoundedButton from '@dev/shared/components/RoundedButton';
 import { TextBox } from '@dev/shared/components/TextBox';
 import ToggleButton from '@dev/shared/components/ToggleButton';
 import { notosansKr } from '@dev/shared/fonts';
-import { PlanPropsType } from '@dev/shared/types/kt_plans.type';
 import { twMerge } from 'tailwind-merge';
+import GuageGraph from './GuageGraph';
+import { SelectPlanType } from '@dev/shared/types/yogoevent.type';
 
-// 상단 2번째 컴포넌트 상단 요금제 선택 컴포넌트입니다
-function Yogoevent_Select_Plan({
+// 상단 2번째 컴포넌트 상단 요금제 선택 컴포넌
+function YogoeventSelectPlan({
     isY,
     isSelectData,
     planIdx,
     setIsY,
     setIsSelectData,
     setPlanIdx,
-    selectedPlan,
-}: PlanPropsType) {
-    const { benefits, data, monthly_fee } = selectedPlan;
+    benefits,
+    data,
+    monthly_fee,
+}: SelectPlanType) {
     const additional_data = benefits.additional_benefits
         .replace('출시기념 데이터', '')
         .replace('추가 제공', '')
@@ -73,8 +76,8 @@ function Yogoevent_Select_Plan({
                 <div className="flex-col-center w-full">
                     <div className="relative flex flex-row justify-between items-center w-full">
                         <RoundedButton
-                            className='bg-[url("../../shared/images/minus.svg")]'
-                            clickHandler={showPrevPlan}
+                            className='w-10 h-10 bg-white border-[3px] border-[#0F807B] bg-[url("../../shared/images/minus.svg")] '
+                            onClick={showPrevPlan}
                         ></RoundedButton>
                         {isSelectData ? (
                             <div className="flex-row-center items-center text-xl font-normal">
@@ -102,8 +105,8 @@ function Yogoevent_Select_Plan({
                             </div>
                         )}
                         <RoundedButton
-                            className='bg-[url("../../shared/images/plus.svg")]'
-                            clickHandler={showNextPlan}
+                            className='w-10 h-10 bg-white border-[3px] border-[#0F807B] bg-[url("../../shared/images/plus.svg")]'
+                            onClick={showNextPlan}
                         ></RoundedButton>
                     </div>
                 </div>
@@ -131,4 +134,4 @@ function Yogoevent_Select_Plan({
         </div>
     );
 }
-export default Yogoevent_Select_Plan;
+export default YogoeventSelectPlan;

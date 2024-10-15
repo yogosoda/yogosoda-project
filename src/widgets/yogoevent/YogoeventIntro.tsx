@@ -1,10 +1,12 @@
+'use client';
+
 import HighlitedSpan from '@dev/shared/components/HighlitedSpan';
-import image from '@devShared/images/yogoevent/image 25.png';
+import image from '@devShared/images/yogoevent/yogoevent_intro.png';
 import Image from 'next/image';
 import { twMerge } from 'tailwind-merge';
 
 // 상단 첫번쨰 배너 컴포넌트
-function Yogoevent_Intro() {
+function YogoeventIntro() {
     return (
         <section className={twMerge('flex-col-center py-5 gap-5')}>
             <Image src={image} alt="소개 이미지" />
@@ -23,4 +25,4 @@ function Yogoevent_Intro() {
         </section>
     );
 }
-export default Yogoevent_Intro;
+export default YogoeventIntro;

@@ -1,21 +1,27 @@
+'use client';
+
+import { ComponentPropsWithoutRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
+type ButtonProps = ComponentPropsWithoutRef<'button'>;
+
 // 원형 버튼
+// 스타일 속성은 className으로 받습니다
+// 이벤트 속성은 props로 전달 받습니다
 function RoundedButton({
     className,
-    clickHandler,
+    ...props
 }: {
     className?: string;
-    clickHandler: () => void;
-}) {
+} & ButtonProps) {
     return (
-        <div
+        <button
             className={twMerge(
-                'w-10 h-10 bg-white border-[3px] border-[#0F807B] rounded-full bg-no-repeat bg-center',
+                'rounded-full bg-no-repeat bg-center',
                 className
             )}
-            onClick={clickHandler}
-        ></div>
+            {...props}
+        ></button>
     );
 }
 export default RoundedButton;

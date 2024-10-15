@@ -1,3 +1,4 @@
+// KT 요금제 플랜의 데이터 타입입니다.
 export interface KTPlansType {
     benefits: {
         additional_benefits: string;
@@ -16,14 +17,4 @@ export interface KTPlansType {
     info: string;
     monthly_fee: string;
     plan_name: string;
-}
-
-export interface PlanPropsType {
-    isY: boolean;
-    isSelectData: boolean;
-    planIdx: number;
-    setIsY: (_isY: boolean | ((_prev: boolean) => boolean)) => void;
-    setIsSelectData: (_data: boolean | ((_prev: boolean) => boolean)) => void;
-    setPlanIdx: (_value: number | ((_prev: number) => number)) => void;
-    selectedPlan: KTPlansType;
 }
