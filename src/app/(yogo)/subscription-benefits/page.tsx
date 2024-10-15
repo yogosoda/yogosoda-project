@@ -1,21 +1,7 @@
-import CheckNotice from '@dev/views/subscriptionBenefits/ui/checkNotice';
-import CouponInfo from '@dev/views/subscriptionBenefits/ui/couponInfo';
-import MembershipBenefits from '@dev/views/subscriptionBenefits/ui/membershipBenefits';
-import PlanComparison from '@dev/views/subscriptionBenefits/ui/planComparison';
-import PlanDetail from '@dev/views/subscriptionBenefits/ui/planDetail';
-import PlanDetailEvent from '@dev/views/subscriptionBenefits/ui/planDetailEvent';
+import SubscriptionBenefitsPage from '@dev/views/subscriptionBenefits/subscriptionBenefitsPage';
 
 const Page = () => {
-    return (
-        <>
-            <MembershipBenefits />
-            <CouponInfo />
-            <PlanComparison />
-            <PlanDetail />
-            <PlanDetailEvent />
-            <CheckNotice />
-        </>
-    );
+    return <SubscriptionBenefitsPage />;
 };
 
 export default Page;
