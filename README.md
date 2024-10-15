@@ -399,6 +399,8 @@ Next.js 또는 TypeScript 환경에서 **경로 별칭**을 설정함으로써 �
         ],
         'react-hooks/exhaustive-deps': 'off',
         // react-hooks 의존성 경고 비활성화
+        "react/display-name": "off"
+        // ESLint의 display-name 규칙을 무시하는 주석
     },
 }
 ```
