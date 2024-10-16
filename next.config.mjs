@@ -16,5 +16,17 @@ const nextConfig = {
 
     return config;
   },
+
+  basePath: "",
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/direct',
+        permanent: false
+      },
+    ];
+  },
 };
+
 export default nextConfig;

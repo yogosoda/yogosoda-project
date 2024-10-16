@@ -5,7 +5,6 @@ import throttle from '@devShared/utils/throttle';
 export const useThrottle = ({ fn, wait = 500 }: ThrottleTypes) => {
     // 상태 관리 (선택 사항, 필요하다면 사용할 수 있음)
     const [state, setState] = useState(false);
-
     const event = useCallback(
         throttle({
             fn: (...args: unknown[]) => {
@@ -16,7 +15,7 @@ export const useThrottle = ({ fn, wait = 500 }: ThrottleTypes) => {
             },
             wait,
         }),
-        []
+        [fn]
     );
 
     return { event, state };
