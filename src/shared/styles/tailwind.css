@@ -69,4 +69,14 @@
         /* Firefox에서 스크롤 바 숨기기 */
         scrollbar-width: none;
     }
+
+    /* .slider-container{
+        z-index: 1;
+    }
+    .slider-container > *{
+        width: 750;
+        height: 1109;
+        position: absolute;
+        z-index: 2;
+    } */
 }
