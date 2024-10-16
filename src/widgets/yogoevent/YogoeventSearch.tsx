@@ -15,7 +15,7 @@ function Yogoevent_Search({ ktPlanData }: { ktPlanData: KTPlansType[] }) {
         ktPlanData[ktPlanData.length - 1 - planIdx];
 
     return (
-        <>
+        <div className="flex-col-center w-full h-fit bg-gray-200 rounded-2xl">
             <YogoeventSelectPlan
                 isY={isY}
                 isSelectData={isSelectData}
@@ -36,7 +36,7 @@ function Yogoevent_Search({ ktPlanData }: { ktPlanData: KTPlansType[] }) {
                 monthly_fee={monthly_fee}
                 plan_name={plan_name}
             />
-        </>
+        </div>
     );
 }
 

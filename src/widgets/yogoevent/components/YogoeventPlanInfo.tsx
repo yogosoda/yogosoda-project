@@ -41,7 +41,7 @@ function YogoeventPlanInfo({
     return (
         <div
             className={twMerge(
-                'flex-col-center w-full h-fit max-h-[360px] rounded-2xl bg-gray-200 px-7 py-3',
+                'flex-col-center w-full h-fit max-h-[360px] rounded-b-2xl bg-gray-200 px-7 py-3',
                 `${notosansKr.className}`
             )}
         >
