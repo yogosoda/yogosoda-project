@@ -1,5 +1,7 @@
+import DirectPage from '@dev/views/direct/directPage';
+
 const Page = () => {
-    return <div>direct</div>;
+    return <DirectPage />;
 };
 
 export default Page;

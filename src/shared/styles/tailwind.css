@@ -2,7 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff')
+    format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 @layer base {
     :root {
         --font-neo-lt: 'Neo-Light';
@@ -30,10 +36,25 @@
     .font-neo-hv {
         font-family: var(--font-neo-hv), sans-serif;
     }
+    .double-underline::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: 2px solid red; /* 바깥 줄 */
+        height: 1px;
+        border-bottom-style: double;
+    }
 }
 
 @layer components {
     /* 컴포넌트에 사용할 스타일 */
+
+    .shadow-box {
+        @apply shadow-xl border border-slate-100;
+    }
+
     .flex-col-center {
         @apply flex flex-col items-center;
     }
@@ -63,5 +84,15 @@
         -ms-overflow-style: none;
         /* Firefox에서 스크롤 바 숨기기 */
         scrollbar-width: none;
+    }
+}
+@layer utilities {
+    .rounded-t-30px {
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+    }
+    .rounded-b-30px {
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
     }
 }

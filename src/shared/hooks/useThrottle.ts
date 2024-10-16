@@ -1,8 +1,11 @@
 import { useCallback, useState } from 'react';
-import { ThrottleTypes } from '@dev/shared/types/throttle.type';
 import throttle from '@devShared/utils/throttle';
 
-export const useThrottle = ({ fn, wait = 500 }: ThrottleTypes) => {
+export const useThrottle = ({
+    fn,
+    wait = 500,
+    dependence = [],
+}: ThrottleTypes) => {
     // 상태 관리 (선택 사항, 필요하다면 사용할 수 있음)
     const [state, setState] = useState(false);
     const event = useCallback(
@@ -15,8 +18,14 @@ export const useThrottle = ({ fn, wait = 500 }: ThrottleTypes) => {
             },
             wait,
         }),
-        [fn]
+        dependence
     );
 
     return { event, state };
+};
+
+type ThrottleTypes = {
+    fn: (..._args: unknown[]) => void; // 더 구체적인 함수 타입 정의;
+    wait?: number;
+    dependence?: unknown[];
 };

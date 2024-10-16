@@ -5,7 +5,7 @@ export const PATH_INFO: Record<string, PathTypes> = {
     },
     'subscription-benefits': {
         path: '/subscription-benefits',
-        label: '요고 가입 해택',
+        label: '요고 가입 혜택',
     },
     'brand-story': {
         path: '/brand-story',
