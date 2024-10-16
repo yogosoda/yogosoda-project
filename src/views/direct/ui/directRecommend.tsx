@@ -5,7 +5,7 @@ import yogoRecommendImage1 from '@dev/shared/images/directImage/yogo_recommend_i
 export default function DirectRecommend() {
     return (
         <div className="w-[100%] bg-[#F7F4EB] h-[fit]">
-            <div className="flex flex-col items-center pt-10 mb-5">
+            <div className="flex flex-col items-center py-10">
                 <p className="font-bold">나에게 맞는</p>
                 <div className="flex items-center gap-1 mb-2">
                     <Image
