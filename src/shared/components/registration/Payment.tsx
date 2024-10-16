@@ -1,6 +1,6 @@
 'use client';
-import api from '../../utils/api';
-import Divider from '../divider';
+import api from '@devShared/utils/api';
+import Divider from '@devShared/components/Divider';
 import { useEffect, useState } from 'react';
 import { ReactComponent as KtLogo } from '@devShared/svg/KT.svg';
 import { ReactComponent as Gift } from '@devShared/svg/gift.svg';
@@ -16,7 +16,7 @@ export default function Payment() {
     const toggleHandler = (index: number) => {
         setIsToggle((prevToggle) => {
             const newToggle = [...prevToggle]; // 이전 상태 배열을 복사
-            newToggle[index] = !newToggle[index]; // 해당 인덱스의 값만 토글
+            newToggle[index] = !newToggle[index]; // 해당 인덱스의 값만 토글'/n'
             return newToggle; // 새로운 배열을 반환하여 상태 업데이트
         });
     };
@@ -91,8 +91,9 @@ export default function Payment() {
                                     {
                                         length:
                                             plan.benefits.plus_benefits.length +
-                                            plan.benefits.choice_benefits.split()
-                                                .length,
+                                            plan.benefits.choice_benefits.split(
+                                                '/n'
+                                            ).length,
                                     },
                                     (_, index) => (
                                         <li key={index}>
@@ -105,7 +106,7 @@ export default function Payment() {
                             <p className="text-[#ADB5BD] text-[0.6rem]">
                                 사은품 최대{' '}
                                 {plan.benefits.plus_benefits.length +
-                                    plan.benefits.choice_benefits.split()
+                                    plan.benefits.choice_benefits.split('/n')
                                         .length}
                                 개
                             </p>

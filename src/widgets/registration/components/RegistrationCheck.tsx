@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import RegisBg from '@devShared/images/bg_dual.png';
 import { ReactComponent as Check } from '@devShared/svg/check-solid.svg';
-import Divider from '@devShared/components/divider';
+import Divider from '@dev/shared/components/Divider';
 
 export default function RegistrationCheck() {
     return (

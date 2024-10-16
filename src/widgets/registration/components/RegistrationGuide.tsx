@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import RegistrationImage from '@devShared/images/registration.png';
 import RegistrationButton from '@devShared/components/RegistrationButton';
-import Divider from '@devShared/components/divider';
+import Divider from '@dev/shared/components/Divider';
 import { twMerge } from 'tailwind-merge';
 import { ReactComponent as Notice } from '@devShared/svg/circle-exclamation-solid.svg';
 import { ReactComponent as RightArrow } from '@devShared/svg/chevron-right-solid.svg';

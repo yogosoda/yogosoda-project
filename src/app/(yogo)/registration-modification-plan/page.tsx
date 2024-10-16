@@ -2,6 +2,7 @@ import RegistrationGuide from '@devWidgets/registration/components/RegistrationG
 import RegistrationCheck from '@devWidgets/registration/components/RegistrationCheck';
 import RegistrationUsing from '@devWidgets/registration/components/RegistrationUsing';
 import RegistrationChange from '@devWidgets/registration/components/RegistrationChange';
+import Payment from '@dev/shared/components/registration/Payment';
 
 const Page = () => {
     return (
@@ -10,6 +11,7 @@ const Page = () => {
             <RegistrationCheck />
             <RegistrationUsing />
             <RegistrationChange />
+            <Payment />
         </section>
     );
 };
