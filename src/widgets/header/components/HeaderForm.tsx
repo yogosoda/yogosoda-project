@@ -1,7 +1,7 @@
 'use client';
 import { twMerge } from 'tailwind-merge';
 import { PATH_INFO } from '@devShared/constants/header/path';
-import Button from '@devShared/components/RegistrationButton';
+
 import Line from '@devShared/components/Line';
 import Image from 'next/image';
 import arrowUp from '@devShared/images/arrow_up.svg';
@@ -9,6 +9,7 @@ import arrowDown from '@devShared/images/arrow_down.svg';
 import React, { Dispatch, SetStateAction, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import HeaderCategory from '@dev/widgets/header/components/HeaderCategory';
+import Button from '@devShared/components/Button';
 
 const HeaderForm = ({ hideForm, isForm, setIsForm, setLabel }: FormProps) => {
     const pathName = usePathname();

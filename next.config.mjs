@@ -1,32 +1,32 @@
-/** @type {import("next").NextConfig} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: [
-        {
-          loader: '@svgr/webpack',
-          options: {
-            icon: true,
-          },
-        },
-        'url-loader',
-      ],
-    });
+    webpack(config) {
+        config.module.rules.push({
+            test: /\.svg$/,
+            use: [
+                {
+                    loader: '@svgr/webpack',
+                    options: {
+                        icon: true,
+                    },
+                },
+                'url-loader',
+            ],
+        });
 
-    return config;
-  },
+        return config;
+    },
 
-  basePath: "",
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/direct',
-        permanent: false
-      },
-    ];
-  },
+    basePath: '',
+    async redirects() {
+        return [
+            {
+                source: '/',
+                destination: '/direct',
+                permanent: false,
+            },
+        ];
+    },
 };
 
 export default nextConfig;
