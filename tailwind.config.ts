@@ -10,10 +10,6 @@ const config: Config = {
     ],
     theme: {
         extend: {
-            colors: {
-                background: "var(--background)",
-                foreground: "var(--foreground)",
-            },
             fontFamily: {
                 'neo-lt' : ['Neo-Light'],
                 'neo-rg' : ['Neo-Regular'],

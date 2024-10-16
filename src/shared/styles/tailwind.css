@@ -36,6 +36,11 @@
 
 @layer components {
     /* 컴포넌트에 사용할 스타일 */
+
+    .shadow-box {
+        @apply shadow-xl border border-slate-100;
+    }
+
     .flex-col-center {
         @apply flex flex-col items-center;
     }

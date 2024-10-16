@@ -24,7 +24,7 @@
             "@devShared/*": ["./src/shared/*"],
             "@devViews/*": ["./src/views/*"],
             "@devEntities/*": ["./src/widgets/*"],
-            "@devWidgets/*": ["./src/widgets/*"],
+            "@devWidgets/*": ["./src/widgets/*"]
         }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

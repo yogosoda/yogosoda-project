@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge';
 import Line from '@devShared/components/Line';
 import arrowUp from '@devShared/images/arrow_up.svg';
 import arrowDown from '@devShared/images/arrow_down.svg';
-import Button from '@devShared/components/Button';
+import Button from '@dev/shared/components/Button';
 
 const HeaderTitle = ({ label, isForm, setIsForm, hideForm }: TitleProps) => {
     useEffect(() => {
