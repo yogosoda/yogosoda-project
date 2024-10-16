@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge';
 import Line from '@devShared/components/Line';
 import arrowUp from '@devShared/images/arrow_up.svg';
 import arrowDown from '@devShared/images/arrow_down.svg';
-import Button from '@devShared/components/Button';
+import Button from '@dev/shared/components/Button';
 
 const HeaderTitle = ({ label, isForm, setIsForm, hideForm }: TitleProps) => {
     useEffect(() => {
@@ -16,7 +16,7 @@ const HeaderTitle = ({ label, isForm, setIsForm, hideForm }: TitleProps) => {
     }, [hideForm]);
 
     return (
-        <div className={`w-[390px] bg-white fixed`}>
+        <div className={`w-[390px] bg-white fixed z-40`}>
             <div
                 className={twMerge(
                     'flex flex-row items-center gap-[6px] pl-[20px] pr-[20px] h-[65px] box-border',

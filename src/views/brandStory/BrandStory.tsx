@@ -3,12 +3,12 @@ import React, { useRef, useState } from 'react';
 import background1 from '@devShared/images/brandStory/brand-story-background1.svg';
 import arrowLeft from '@devShared/images/brandStory/brand-arrow-left.svg';
 import arrowRight from '@devShared/images/brandStory/brand-arrow-right.svg';
-import slide1 from '@devShared/images/brandStory/slide-1.svg';
-import slide2 from '@devShared/images/brandStory/slide-2.svg';
-import slide3 from '@devShared/images/brandStory/slide-3.svg';
-import slide4 from '@devShared/images/brandStory/slide-4.svg';
-import slide5 from '@devShared/images/brandStory/slide-5.svg';
-import slide6 from '@devShared/images/brandStory/slide-6.svg';
+import slide1 from '@devShared/images/brandStory/slider1.png';
+import slide2 from '@devShared/images/brandStory/slider2.png';
+import slide3 from '@devShared/images/brandStory/slider3.png';
+import slide4 from '@devShared/images/brandStory/slider4.png';
+import slide5 from '@devShared/images/brandStory/slider5.png';
+import slide6 from '@devShared/images/brandStory/slider6.png';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import Skeleton from '@devShared/components/Skeleton';
@@ -47,7 +47,7 @@ export default function BrandStory() {
         <div className="w-[24.375rem] font-neo-hv">
             <div
                 className={`bg-cover pt-[3.75rem] overflow-hidden`}
-                style={{ backgroundImage: `url(${background1.src})` }}
+                style={{ backgroundImage: `url(${background1})` }}
             >
                 <Slider ref={sliderRef} {...settings}>
                     <Image src={slide1} alt={'slide1'} />
