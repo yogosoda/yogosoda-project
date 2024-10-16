@@ -41,16 +41,16 @@
         @apply flex flex-row justify-center;
     }
 
-    .item-center{
-        @apply flex flex-col items-center justify-center
+    .item-center {
+        @apply flex flex-col items-center justify-center;
     }
 
-    .flex-with-row{
-        @apply flex flex-row
+    .flex-with-row {
+        @apply flex flex-row;
     }
 
-    .flex-with-col{
-        @apply flex flex-col
+    .flex-with-col {
+        @apply flex flex-col;
     }
 
     .no-scrollbar {
