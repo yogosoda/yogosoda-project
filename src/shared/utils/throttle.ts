@@ -1,4 +1,3 @@
-import { ThrottleTypes } from '@devShared/types/throttle.type';
 import { CustomError } from '@devShared/utils/error';
 
 const throttle = ({ fn, wait = 500 }: ThrottleTypes) => {
@@ -18,4 +17,10 @@ const throttle = ({ fn, wait = 500 }: ThrottleTypes) => {
         fn(...args);
     };
 };
+
 export default throttle;
+
+type ThrottleTypes = {
+    fn: (..._args: unknown[]) => void; // 더 구체적인 함수 타입 정의;
+    wait?: number;
+};

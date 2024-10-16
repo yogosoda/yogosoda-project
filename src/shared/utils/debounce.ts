@@ -1,5 +1,3 @@
-import { DebounceType } from '@devShared/types/debounce.type';
-
 export const debounce = ({ fn, wait = 500 }: DebounceType) => {
     let debounceCall: ReturnType<typeof setTimeout> | null = null;
 
@@ -9,4 +7,9 @@ export const debounce = ({ fn, wait = 500 }: DebounceType) => {
             fn(...args);
         }, wait);
     };
+};
+
+type DebounceType = {
+    fn: (..._args: unknown[]) => void; // 더 구체적인 함수 타입 정의;
+    wait?: number;
 };
