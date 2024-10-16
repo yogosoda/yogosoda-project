@@ -1,6 +1,6 @@
 'use client';
-import api from '../utils/api';
-import Divider from './Divider';
+import api from '@devShared/utils/api';
+import Divider from '@devShared/components/Divider';
 
 import { useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
@@ -9,9 +9,10 @@ import { ReactComponent as Gift } from '@devShared/svg/gift.svg';
 import { ReactComponent as Question } from '@devShared/svg/Vector.svg';
 import { ReactComponent as Down } from '@devShared/svg/chevron-down-solid.svg';
 import { ReactComponent as Up } from '@devShared/svg/chevron-up-solid.svg';
+import { KTPlansType } from '@dev/entities/kt_plans.type';
 
 export default function Payment() {
-    const [payData, setPayData] = useState<[]>([]);
+    const [payData, setPayData] = useState<KTPlansType[]>([]);
     const [isToggle, setIsToggle] = useState<boolean[]>([]);
 
     const toggleHandler = (index: number) => {
@@ -98,8 +99,9 @@ export default function Payment() {
                                             length:
                                                 e.benefits.plus_benefits
                                                     .length +
-                                                e.benefits.choice_benefits.split()
-                                                    .length,
+                                                e.benefits.choice_benefits.split(
+                                                    '/n'
+                                                ).length,
                                         },
                                         (_, index) => (
                                             <li key={index}>
@@ -112,7 +114,7 @@ export default function Payment() {
                                 <p className="text-[#ADB5BD] text-[0.6rem]">
                                     사은품 최대{' '}
                                     {e.benefits.plus_benefits.length +
-                                        e.benefits.choice_benefits.split()
+                                        e.benefits.choice_benefits.split('/n')
                                             .length}
                                     개
                                 </p>
