@@ -11,12 +11,16 @@ const config: Config = {
     theme: {
         extend: {
             fontFamily: {
+                cafe: ['Cafe24Ssurround', 'sans-serif'],
                 'neo-lt' : ['Neo-Light'],
                 'neo-rg' : ['Neo-Regular'],
                 'neo-bd' : ['Neo-Bold'],
                 'neo-eb' : ['Neo-ExBold'],
                 'neo-hv' : ['Neo-Heavy'],
-            }
+            },
+            width: {
+                'calc-92': 'calc(100% - 8%)',
+            },
         },
     },
     plugins: [],
