@@ -46,7 +46,7 @@ const HeaderForm = ({ hideForm, isForm, setIsForm, setLabel }: FormProps) => {
                     ref={container}
                     className={twMerge(
                         `min-h-[53px] flex-1 flex-with-row gap-x-2 items-center
-                         pl-[20px] pr-[20px] pt-[10px] pb-[10px]`,
+                         px-[20px] py-[10px]`,
                         isForm
                             ? 'flex-wrap gap-y-4'
                             : 'overflow-x-auto no-scrollbar'
