@@ -61,7 +61,10 @@ const Page = () => {
 
         setInputMessage(''); // 입력 필드 초기화
     };
-    const { state, event } = useThrottle({ fn: handleSendMessage });
+    const { state, event } = useThrottle({
+        fn: handleSendMessage,
+        dependence: [inputMessage],
+    });
 
     return (
         <div className="flex flex-col items-center justify-center min-h-fit bg-gray-100 border">
