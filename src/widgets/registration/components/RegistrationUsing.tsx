@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import RegisOtherBg from '@devShared/images/bg_otherCarrier.png';
-import RegistrationButton from '@devShared/components/button';
+import RegistrationButton from '@devShared/components/RegistrationButton';
 import { ReactComponent as RightArrow } from '@devShared/svg/chevron-right-solid.svg';
 
 export default function RegistrationUsing() {

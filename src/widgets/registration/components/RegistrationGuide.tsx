@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import RegistrationImage from '@devShared/images/registration.png';
-import RegistrationButton from '@devShared/components/button';
+import RegistrationButton from '@devShared/components/RegistrationButton';
 import Divider from '@devShared/components/divider';
 import { twMerge } from 'tailwind-merge';
 import { ReactComponent as Notice } from '@devShared/svg/circle-exclamation-solid.svg';
