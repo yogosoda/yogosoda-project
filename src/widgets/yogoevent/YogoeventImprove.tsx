@@ -97,16 +97,40 @@ const Improvements = ({
 
 const ImprovementBanner = () => {
     return (
-        <div className="w-full h-fit">
-            <div className="flex-col-center">
-                <Image src={yogo_asset} alt="요고이미지"></Image>
+        <div className="w-full h-[325px] px-6 py-8">
+            <div className="relative flex-col-center">
+                <Image src={yogo_asset} alt="요고이미지" width={200}></Image>
                 <div
-                    className="w-1/4 h-12"
+                    className="relative w-1/4 h-10 z-10"
                     style={{
                         background:
                             'repeating-linear-gradient(-45deg, #74e1fe, #74e1fe 15px, #e41a84 0, #e41a84 35px)',
                     }}
-                ></div>
+                />
+                <div className="absolute flex-col-center gap-1 top-[87.5%] w-full h-fit bg-white pt-8 pb-6 rounded-xl shadow-md">
+                    <p className="font-neo-rg text-xs text-center">
+                        더욱 다양해진 혜택 선택으로
+                        <br />
+                        OTT/스마트기기/멤버십까지 모두 즐겨요!
+                    </p>
+                    <p className="font-neo-eb text-lg text-center">
+                        나에게 딱 맞는
+                        <span
+                            className="font-cafe-sr text-xl"
+                            style={{
+                                background:
+                                    'linear-gradient(to right, #24c7b6, #345bfe)',
+                                color: 'transparent',
+                                WebkitBackgroundClip: 'text',
+                            }}
+                        >
+                            요금제와 혜택
+                        </span>
+                        을
+                        <br />
+                        선택해 보세요!
+                    </p>
+                </div>
             </div>
         </div>
     );
