@@ -1,7 +1,7 @@
 'use client';
 import { twMerge } from 'tailwind-merge';
 import { PATH_INFO } from '@devShared/constants/header/path';
-import Button from '@devShared/components/Button';
+import Button from '@devShared/components/RegistrationButton';
 import Line from '@devShared/components/Line';
 import Image from 'next/image';
 import arrowUp from '@devShared/images/arrow_up.svg';
