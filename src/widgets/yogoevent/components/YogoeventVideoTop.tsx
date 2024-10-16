@@ -9,11 +9,11 @@ function YogoeventVideoTop() {
     return (
         <div
             className={twMerge(
-                'flex-col-center gap-3 w-full h-fit px-6 pt-12 pb-6 bg-[#F1FFFF] bg-contain bg-no-repeat',
+                'flex-col-center gap-3 w-full h-fit px-6 pt-12 pb-6 bg-[#F1FFFF] bg-cover bg-no-repeat',
                 background
             )}
         >
-            <div className="flex-row-center items-end w-full h-fit mb-6">
+            <div className="flex-row-center items-end w-full h-fit mb-8">
                 <Image src={logo} alt="요고뭉치로고" width={80} height={28} />
                 <span className="font-neo-hv text-xl">를 소개합니다!</span>
             </div>

@@ -20,6 +20,7 @@ const config: Config = {
                 'neo-bd' : ['Neo-Bold'],
                 'neo-eb' : ['Neo-ExBold'],
                 'neo-hv' : ['Neo-Heavy'],
+                'cafe-sr' : ['Cafe-Surround'],
             }
         },
     },

@@ -1,6 +1,7 @@
 import { KTPlansType } from '@dev/entities/kt_plans.type';
 import api from '@dev/shared/utils/api';
 import YogoeventBanner from '@dev/widgets/yogoevent/YogoeventBanner';
+import YogoeventImprove from '@dev/widgets/yogoevent/YogoeventImprove';
 import YogoeventIntro from '@dev/widgets/yogoevent/YogoeventIntro';
 import YogoeventSearch from '@dev/widgets/yogoevent/YogoeventSearch';
 import YogoeventToEnter from '@dev/widgets/yogoevent/YogoeventToEnter';
@@ -16,6 +17,7 @@ async function YogoEvent() {
             <YogoeventBanner />
             <YogoeventToEnter />
             <YogoeventVideo />
+            <YogoeventImprove />
         </div>
     );
 }

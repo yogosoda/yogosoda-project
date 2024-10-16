@@ -29,6 +29,9 @@
     .font-neo-hv {
         font-family: var(--font-neo-hv), sans-serif;
     }
+    .font-cafe-sur {
+        font-family: var(--font-cafe-sr), sans-serif;
+    }
 }
 
 @layer components {

@@ -3,6 +3,7 @@ import '@devShared/styles/index.css';
 import { ReactNode } from 'react';
 
 import {
+    cafeSurround,
     neoBold,
     neoExtraBold,
     neoHeavy,
@@ -25,7 +26,7 @@ export default function RootLayout({
     return (
         <html lang="en" data-locator-target="webstorm">
             <body
-                className={`${neoLight.variable} ${neoRegular.variable} ${neoBold.variable} ${neoExtraBold.variable} ${neoHeavy.variable}`}
+                className={`${neoLight.variable} ${neoRegular.variable} ${neoBold.variable} ${neoExtraBold.variable} ${neoHeavy.variable} ${cafeSurround.variable}`}
             >
                 {children}
             </body>

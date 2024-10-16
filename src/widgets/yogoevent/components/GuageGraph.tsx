@@ -25,7 +25,7 @@ function GuageGraph({
                         'w-full h-8 bg-gradient-to-r from-[#69F1FA] to-[#0DD9D3]'
                     )}
                     style={{
-                        transform: `translateX(-${(12 - planIdx) * 18.5}px)`,
+                        transform: `translateX(-${(12 - planIdx) * 21.5}px)`,
                     }}
                 ></div>
             </div>
