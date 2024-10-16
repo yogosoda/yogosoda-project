@@ -1,5 +1,7 @@
+import BrandStory from '@dev/views/brandStory/BrandStory';
+
 const Page = () => {
-    return <div>brand-story</div>;
+    return <BrandStory />;
 };
 
 export default Page;
