@@ -21,8 +21,7 @@ function YogoeventSelectPlan({
     monthly_fee,
 }: SelectPlanType) {
     const additional_data = benefits.additional_benefits
-        .replace('출시기념 데이터', '')
-        .replace('추가 제공', '')
+        .replace(/출시기념 데이터|추가 제공/g, '')
         .trim();
 
     const showPrevPlan = () => {
@@ -67,8 +66,10 @@ function YogoeventSelectPlan({
                 <span onClick={() => setIsSelectData(true)}>데이터 용량</span>
                 <ToggleButton
                     className="bg-[#0F807B]"
-                    value={isSelectData}
-                    setValue={setIsSelectData}
+                    isSelectData={isSelectData}
+                    onClick={() =>
+                        setIsSelectData((isSelectData) => !isSelectData)
+                    }
                 ></ToggleButton>
                 <span onClick={() => setIsSelectData(false)}>월정액</span>
             </TextBox>

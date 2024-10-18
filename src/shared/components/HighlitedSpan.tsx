@@ -18,7 +18,7 @@ function HighlitedSpan({
 } & SpanProps) {
     return (
         <span
-            className={twMerge('relative z-10 my-10', className)}
+            className={twMerge('relative z-10', className)}
             style={{
                 background:
                     'linear-gradient(to bottom, transparent 50%, #b3fdf5 50%)',

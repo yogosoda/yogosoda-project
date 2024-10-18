@@ -14,11 +14,12 @@ function YogoeventPlanInfo({
 }: PlanInfoPropsType) {
     const basic_data = Number(data.total_data.replace('GB', ''));
     const additional_data = Number(
-        benefits.additional_benefits
-            .replace('출시기념 데이터', '')
-            .replace('추가 제공', '')
-            .replace('GB', '')
+        benefits.additional_benefits.replace(
+            /출시기념 데이터|추가 제공|GB/g,
+            ''
+        )
     );
+
     const limit_speed = data.speed_limit.replace('속도제한', '').trim();
     const benefit_data = [
         {

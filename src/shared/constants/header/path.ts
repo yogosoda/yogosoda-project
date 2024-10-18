@@ -12,7 +12,7 @@ export const PATH_INFO: Record<string, PathTypes> = {
         label: '요고 브랜드 스토리',
     },
     'registration-modification-plan': {
-        path: '/registration-modification-plan',
+        path: '/yogo-event',
         label: '핸드폰 등록 및 요금제 변경',
     },
 } as const;

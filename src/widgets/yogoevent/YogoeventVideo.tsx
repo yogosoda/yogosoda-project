@@ -3,10 +3,10 @@ import YogoeventVideoTop from './components/YogoeventVideoTop';
 
 function YogoeventVideo() {
     return (
-        <div className="flex-col-center w-full h-fit">
+        <section className="flex-col-center w-full h-fit">
             <YogoeventVideoTop />
             <YogoeventVideoBottom />
-        </div>
+        </section>
     );
 }
 export default YogoeventVideo;

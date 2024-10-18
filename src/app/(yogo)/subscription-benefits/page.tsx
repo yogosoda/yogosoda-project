@@ -1,4 +1,4 @@
-import YogoEvent from '@dev/views/YogoEvent';
+import YogoEvent from '@dev/views/yogoevent/YogoEvent';
 import { twMerge } from 'tailwind-merge';
 import SubscriptionBenefitsPage from '@devViews/subscriptionBenefits/subscriptionBenefitsPage';
 

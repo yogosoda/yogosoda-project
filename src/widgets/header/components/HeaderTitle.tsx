@@ -19,7 +19,7 @@ const HeaderTitle = ({ label, isForm, setIsForm, hideForm }: TitleProps) => {
         <div className={`w-[390px] bg-white fixed z-40`}>
             <div
                 className={twMerge(
-                    'flex flex-row items-center gap-[6px] pl-[20px] pr-[20px] h-[65px] box-border',
+                    'flex flex-row items-center gap-[6px] px-[20px] h-[65px] box-border',
                     hideForm && 'justify-between'
                 )}
             >

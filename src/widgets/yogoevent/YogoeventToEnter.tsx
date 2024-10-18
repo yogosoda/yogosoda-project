@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import img from '@devShared/images/yogoevent/yogo_season2_logo.png';
-import Link from 'next/link';
+import { LinkButton } from '@dev/shared/components/LinkButton';
 
 // 상단 4번째 요금제 가입 배너 컴포넌트입니다
 function YogoeventToEnter() {
     return (
-        <div className="flex-col-center w-full h-fit gap-4 rounded-2xl px-10 py-6 bg-gray-200 shadow-[10px_10px_5px_rgba(0,0,0,0.2)]">
+        <section className="flex-col-center w-full h-fit gap-4 rounded-2xl px-10 py-6 bg-gray-200 shadow-[10px_10px_5px_rgba(0,0,0,0.2)]">
             <div className="flex-row-center gap-2">
                 <Image src={img} alt="요고뭉치" width={80} height={24} />
                 <h2 className="font-bold text-xl">요금제 가입하려면</h2>
@@ -25,25 +25,8 @@ function YogoeventToEnter() {
                 *기존 KT 고객님이 요금제만 요고로 변경을 원하는 경우 사용할
                 핸드폰 등록 후 요금제 변경이 가능합니다.
             </p>
-        </div>
+        </section>
     );
 }
-
-const LinkButton = ({
-    children,
-    link,
-}: {
-    children: React.ReactNode;
-    link: string;
-}) => {
-    return (
-        <Link
-            href={link}
-            className="flex-row-center items-center w-full h-fit rounded-md bg-black text-white py-2"
-        >
-            {children}
-        </Link>
-    );
-};
 
 export default YogoeventToEnter;
