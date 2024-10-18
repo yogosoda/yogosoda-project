@@ -7,16 +7,20 @@ import {
 } from '@firebase/firestore';
 import { firestore } from '@dev/firebase';
 import { PlanMeta } from '@dev/entities/plans.types';
+import { NextRequest } from 'next/server';
 
-export const GET = async () => {
+export const GET = async (
+    _request: NextRequest,
+    {
+        params,
+    }: {
+        params: { mvno: string };
+    }
+) => {
     try {
-        const searchKeyword = '요고';
-
         const q = query(
             collection(firestore, 'plans'),
-            where('name', '>=', searchKeyword),
-            where('name', '<=', searchKeyword + '\uf8ff'), // 요고로 시작하는 단어 포함
-            where('mvno', '==', 'KT'), // 검색 조건 추가
+            where('mvno', '==', params.mvno),
             orderBy('fee', 'asc')
         );
 
