@@ -3,9 +3,9 @@ import MembershipBenefitsTitle from '@dev/widgets/subscriptionBenefits/component
 
 export default function MembershipBenefits() {
     return (
-        <div className="w-[390px] bg-[#FEFEF6] h-[fit] pb-[20px]">
+        <section id="2" className="w-[390px] bg-[#FEFEF6] h-[fit] pb-[20px]">
             <MembershipBenefitsTitle />
             <MembershipBenefitsRow />
-        </div>
+        </section>
     );
 }

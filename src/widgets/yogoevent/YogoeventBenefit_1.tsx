@@ -7,6 +7,9 @@ import benefit_up from '@devShared/images/yogoevent/yogoevent_benefit_up.png';
 import arrow_down from '@devShared/images/arrow_down_simple.svg';
 import { yogoevent_benefits } from '@dev/shared/images';
 import { twMerge } from 'tailwind-merge';
+import { ComponentPropsWithoutRef, useEffect, useState } from 'react';
+
+type DivPropsTypes = ComponentPropsWithoutRef<'div'>;
 
 interface BenefitBoxPropsType {
     src: string;
@@ -23,6 +26,19 @@ interface BenefitBoxPropsType {
 }
 
 function YogoeventBenefit_1() {
+    const [selectedId, setSelectedId] = useState(-1);
+
+    useEffect(() => {
+        const selectedSection = document.getElementById(`${selectedId}`);
+        if (selectedSection) {
+            const rect = selectedSection.getBoundingClientRect();
+            window.scrollTo({
+                top: rect.top + window.scrollY - 65,
+                behavior: 'smooth', // 부드러운 스크롤을 유지
+            });
+        }
+    }, [selectedId]);
+
     const boxPropsArr = [
         {
             fontColor: 'text-[#a569af]',
@@ -92,6 +108,7 @@ function YogoeventBenefit_1() {
                             width={width}
                             height={height}
                             boxProps={boxProps}
+                            onClick={() => setSelectedId(idx)}
                         >
                             {idx === 0 && (
                                 <Image
@@ -116,12 +133,17 @@ const BenefitsBox = ({
     height,
     boxProps,
     children,
-}: BenefitBoxPropsType) => {
+    ...props
+}: BenefitBoxPropsType & DivPropsTypes) => {
     const { fontColor, borderGradient, bgGradient, arrowColor, text } =
         boxProps;
     return (
-        <div className="relative flex-col-center justify-center gap-2">
+        <div
+            className="relative flex-col-center justify-center gap-2"
+            {...props}
+        >
             {children}
+
             <div
                 className={twMerge(
                     'flex-row-center items-center rounded-3xl p-0.5',

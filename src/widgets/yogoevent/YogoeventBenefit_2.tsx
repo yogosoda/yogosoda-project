@@ -79,7 +79,10 @@ function YogoeventBenefit_2() {
     ];
 
     return (
-        <section className="flex-col-center w-full h-fit gap-4 bg-[#fefef6] px-4 py-8">
+        <section
+            id="0"
+            className="flex-col-center w-full h-fit gap-4 bg-[#fefef6] px-4 py-8"
+        >
             <div className="flex-col-center w-full h-fit gap-1">
                 <SpeechBubble />
                 <p className="font-neo-rg">혜택 초이스 하고 또 플러스 하고</p>
