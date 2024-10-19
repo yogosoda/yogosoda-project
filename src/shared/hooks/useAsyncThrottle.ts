@@ -1,28 +1,25 @@
 import { useCallback, useState } from 'react';
 
-export const useThrottle = ({
+export const useAsyncThrottle = ({
     action,
     dependence = [],
-    wait = 500,
-}: UseThrottleProps) => {
+}: UseAsyncThrottleProps) => {
     const [state, setState] = useState(false);
 
-    const event = useCallback(() => {
+    const event = useCallback(async () => {
         if (state) {
             return;
         }
         setState(true);
-        action();
-        setTimeout(() => {
-            setState(false);
-        }, wait);
+        await action();
+        setState(false);
     }, dependence);
 
     return { event, state };
 };
 
-type UseThrottleProps = {
-    action: () => void;
+type UseAsyncThrottleProps = {
+    action: () => Promise<void>;
     wait?: number;
     dependence?: unknown[];
 };
