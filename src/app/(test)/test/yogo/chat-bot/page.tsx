@@ -40,7 +40,7 @@ const Page = () => {
         ]);
         // 서버에 사용자 메시지를 전송하여 챗봇 응답을 가져옴 (POST 요청)
 
-        api.post<string>('/api/chat-bot', { message: inputMessage })
+        api.post<string>('/api/chat-bot/yogo', { message: inputMessage })
             .then((res) => {
                 const text = res.data ?? '응답 에러';
 
