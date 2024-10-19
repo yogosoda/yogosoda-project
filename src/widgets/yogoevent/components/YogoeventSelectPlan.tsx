@@ -7,6 +7,9 @@ import { notosansKr } from '@dev/shared/fonts';
 import { twMerge } from 'tailwind-merge';
 import GuageGraph from './GuageGraph';
 import { SelectPlanType } from '@dev/shared/types/yogoevent.type';
+import minus from '@devShared/images/minus.svg';
+import plus from '@devShared/images/plus.svg';
+import CustomCheckbox from '@dev/shared/components/CustomCheckbox';
 
 // 상단 2번째 컴포넌트 상단 요금제 선택 컴포넌
 function YogoeventSelectPlan({
@@ -45,16 +48,11 @@ function YogoeventSelectPlan({
                     <p className={twMerge('text-[#0F807B] text-sm font-bold')}>
                         34세 이하의 Y라면? Y덤 혜택받기!
                     </p>
-                    <input
-                        type="checkbox"
-                        className={twMerge(
-                            'appearance-none w-4 h-4 border-[1px] border-gray-500 rounded',
-                            'bg-[url("../../shared/images/yogoevent/check_gray-300.svg")] bg-no-repeat bg-center',
-                            isY &&
-                                'checked:bg-[url("../../shared/images/yogoevent/check_white.svg")] checked:bg-[#0F807B]'
-                        )}
-                        onClick={() => setIsY((isY) => !isY)}
-                    ></input>
+                    <CustomCheckbox
+                        isSelected={isY}
+                        className="checked:bg-[#0F807B]"
+                        onClick={() => setIsY(!isY)}
+                    />
                 </div>
             </TextBox>
             <TextBox
@@ -77,7 +75,8 @@ function YogoeventSelectPlan({
                 <div className="flex-col-center w-full">
                     <div className="relative flex flex-row justify-between items-center w-full">
                         <RoundedButton
-                            className='w-10 h-10 bg-white border-[3px] border-[#0F807B] bg-[url("../../shared/images/minus.svg")] '
+                            className="w-10 h-10 bg-white border-[3px] border-[#0F807B]"
+                            src={minus}
                             onClick={showPrevPlan}
                         ></RoundedButton>
                         {isSelectData ? (
@@ -106,7 +105,8 @@ function YogoeventSelectPlan({
                             </div>
                         )}
                         <RoundedButton
-                            className='w-10 h-10 bg-white border-[3px] border-[#0F807B] bg-[url("../../shared/images/plus.svg")]'
+                            className="w-10 h-10 bg-white border-[3px] border-[#0F807B]"
+                            src={plus}
                             onClick={showNextPlan}
                         ></RoundedButton>
                     </div>
