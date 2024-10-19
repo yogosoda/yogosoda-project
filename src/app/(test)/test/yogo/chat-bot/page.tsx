@@ -62,7 +62,7 @@ const Page = () => {
         setInputMessage(''); // 입력 필드 초기화
     };
     const { state, event } = useThrottle({
-        fn: handleSendMessage,
+        action: handleSendMessage,
         dependence: [inputMessage],
     });
 
