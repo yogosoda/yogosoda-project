@@ -6,13 +6,18 @@ export const useAsyncThrottle = ({
 }: UseAsyncThrottleProps) => {
     const [state, setState] = useState(false);
 
-    const event = useCallback(async () => {
+    const run = async () => {
+        await action();
+    };
+
+    const event = useCallback(() => {
         if (state) {
             return;
         }
         setState(true);
-        await action();
-        setState(false);
+        run().finally(() => {
+            setState(false);
+        });
     }, dependence);
 
     return { event, state };
