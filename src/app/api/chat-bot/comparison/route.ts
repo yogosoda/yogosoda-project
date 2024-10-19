@@ -164,8 +164,11 @@ const createChatBot = async (): Promise<GenerativeModel> => {
             tools: [
                 {
                     functionDeclarations: [
+                        // @ts-ignore
                         fetchTelecomPlansFunctionDeclaration,
+                        // @ts-ignore
                         fetchMVNOCarriersFunctionDeclaration,
+                        // @ts-ignore
                         fetchMVNOPlansFunctionDeclaration,
                     ],
                 },
