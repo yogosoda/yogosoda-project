@@ -1,9 +1,10 @@
 import yogoMembershipLogo from '@dev/shared/images/subscriptionImage/yogo_membership_logo.png';
+import yogoComparisionImage1 from '@dev/shared/images/subscriptionImage/yogo_comparision_image1.png';
 import Image from 'next/image';
 
 export default function SplashTitle() {
     return (
-        <div className="w-[100%] h-[844px] bg-[#FEFEF6] pb-[10px]">
+        <div className="w-[100%] h-[844px] bg-[#FEFEF6] pb-[10px] relative overflow-hidden">
             <div className="w-fit h-[300px] text-xl mx-auto pt-[130px]">
                 <p>
                     <span className="text-[#01A59B] font-bold">약정</span> 부담
@@ -32,6 +33,14 @@ export default function SplashTitle() {
                     <p className="text-xl">만나보세요 :)</p>
                 </div>
             </div>
+            <Image
+                src={yogoComparisionImage1}
+                alt="Yogo Comparision Image"
+                width={250}
+                height={250}
+                className="absolute bottom-[-40px] right-[-45px]"
+                style={{ transform: 'rotate(-30deg)' }}
+            />
         </div>
     );
 }
