@@ -13,11 +13,11 @@ export default function Layout({
     return (
         <div
             className={
-                'max-w-[390px]  min-h-screen flex flex-col items-center relative'
+                'max-w-[500px] min-h-screen flex flex-col items-center relative'
             }
         >
             {!isSplashPage && <Header />}
-            <main className="relative">{children}</main>
+            <main className="w-[100%] h-[100vh]">{children}</main>
             {!isSplashPage && <Footer />}
         </div>
     );

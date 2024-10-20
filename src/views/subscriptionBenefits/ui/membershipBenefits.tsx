@@ -3,7 +3,7 @@ import MembershipBenefitsTitle from '@dev/widgets/subscriptionBenefits/component
 
 export default function MembershipBenefits() {
     return (
-        <div className="w-[390px] bg-[#FEFEF6] h-[fit] pb-[20px]">
+        <div className="bg-[#FEFEF6] h-[fit] pb-[20px]">
             <MembershipBenefitsTitle />
             <MembershipBenefitsRow />
         </div>

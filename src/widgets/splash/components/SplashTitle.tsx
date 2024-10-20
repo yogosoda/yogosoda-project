@@ -4,8 +4,8 @@ import Image from 'next/image';
 
 export default function SplashTitle() {
     return (
-        <div className="w-[390px] h-[844px] bg-[#FEFEF6] pb-[10px] relative overflow-hidden">
-            <div className="w-fit h-[300px] text-xl mx-auto pt-[130px]">
+        <div className="h-[100vh] bg-[#FEFEF6] pb-[10px] relative overflow-hidden">
+            <div className="w-fit h-[330px] text-xl mx-auto pt-[130px]">
                 <p>
                     <span className="text-[#01A59B] font-bold">약정</span> 부담
                     없이,
