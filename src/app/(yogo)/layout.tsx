@@ -17,7 +17,7 @@ export default function Layout({
             }
         >
             {!isSplashPage && <Header />}
-            <main className="w-[100%] h-[100vh]">{children}</main>
+            <main className="w-full flex-grow">{children}</main>
             {!isSplashPage && <Footer />}
         </div>
     );
