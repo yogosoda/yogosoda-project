@@ -37,7 +37,7 @@ const HeaderForm = ({ hideForm, isForm, setIsForm, setLabel }: FormProps) => {
     return (
         <div
             className={twMerge(
-                ' bg-white',
+                ' bg-white z-[999px]',
                 hideForm && isForm && 'fixed top-[66px]'
             )}
         >
