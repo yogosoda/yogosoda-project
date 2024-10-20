@@ -9,7 +9,7 @@ export default function SplashSwiper() {
     const router = useRouter();
 
     const handlers = useSwipeable({
-        onSwipedRight: () => router.push('/direct'),
+        onSwipedRight: () => router.push('/landing'),
         trackMouse: true,
     });
 

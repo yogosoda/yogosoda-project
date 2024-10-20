@@ -10,15 +10,17 @@ export default function Layout({
     const pathname = usePathname();
 
     const isSplashPage = pathname === '/splash';
+    const isLandingPage = pathname === '/landing';
+
     return (
         <div
             className={
                 'max-w-[500px] min-h-screen flex flex-col items-center relative'
             }
         >
-            {!isSplashPage && <Header />}
+            {!isSplashPage && !isLandingPage && <Header />}
             <main className="w-full flex-grow">{children}</main>
-            {!isSplashPage && <Footer />}
+            {!isSplashPage && !isLandingPage && <Footer />}
         </div>
     );
 }
