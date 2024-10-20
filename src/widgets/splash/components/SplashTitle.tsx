@@ -4,8 +4,8 @@ import Image from 'next/image';
 
 export default function SplashTitle() {
     return (
-        <div className="h-[100vh] bg-[#FEFEF6] pb-[10px] relative overflow-hidden">
-            <div className="w-fit h-[330px] text-xl mx-auto pt-[130px]">
+        <>
+            <div className="w-[260px] h-[330px] text-xl mx-auto pt-[100px]">
                 <p>
                     <span className="text-[#01A59B] font-bold">약정</span> 부담
                     없이,
@@ -41,6 +41,6 @@ export default function SplashTitle() {
                 className="absolute bottom-[-40px] right-[-45px]"
                 style={{ transform: 'rotate(-30deg)' }}
             />
-        </div>
+        </>
     );
 }
