@@ -42,7 +42,6 @@ const Page = () => {
                 message: inputMessage,
                 messages,
             });
-            console.warn('res', res);
             if (res?.data) {
                 text = res.data;
             }
