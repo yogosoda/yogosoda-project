@@ -3,6 +3,7 @@ import landingLogoKT from '@dev/shared/images/landing/landing_logo_kt.png';
 import chatbotIconver2 from '@dev/shared/images/landing/chatbot_icon_ver2.png';
 import chatbotNotice from '@dev/shared/images/landing/chatbot_notice.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function LandingTitle() {
     return (
@@ -21,12 +22,15 @@ export default function LandingTitle() {
                     width={100}
                     height={100}
                 />
-                <Image
-                    src={chatbotIconver2}
-                    alt="Chatbot Icon.ver2"
-                    width={17}
-                    height={20}
-                />
+                {/* 챗봇 추가 후, 경로 수정 */}
+                <Link href="/">
+                    <Image
+                        src={chatbotIconver2}
+                        alt="Chatbot Icon.ver2"
+                        width={17}
+                        height={20}
+                    />
+                </Link>
                 <Image
                     src={landingLogoKT}
                     alt="Landing Logo KT"
