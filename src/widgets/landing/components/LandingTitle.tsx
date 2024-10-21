@@ -22,8 +22,7 @@ export default function LandingTitle() {
                     width={100}
                     height={100}
                 />
-                {/* 챗봇 추가 후, 경로 수정 */}
-                <Link href="/">
+                <Link href="/chat-bot">
                     <Image
                         src={chatbotIconver2}
                         alt="Chatbot Icon.ver2"

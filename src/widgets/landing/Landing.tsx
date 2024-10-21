@@ -1,3 +1,4 @@
+import Chatbot from '@dev/shared/components/Chatbot';
 import LandingImage from './components/LandingImage';
 import LandingMenu from './components/LandingMenu';
 import LandingTitle from './components/LandingTitle';
@@ -8,6 +9,7 @@ export default function Landing() {
             <LandingTitle />
             <LandingImage />
             <LandingMenu />
+            <Chatbot />
         </div>
     );
 }
