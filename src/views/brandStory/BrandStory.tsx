@@ -9,6 +9,7 @@ import slide5 from '@devShared/images/brandStory/slider5.png';
 import slide6 from '@devShared/images/brandStory/slider6.png';
 import Top from '@dev/widgets/brandStory/Top';
 import Bottom from '@dev/widgets/brandStory/Bottom';
+import Chatbot from '@dev/shared/components/Chatbot';
 
 export default function BrandStory() {
     const images = [
@@ -27,6 +28,7 @@ export default function BrandStory() {
         <div className="w-[24.375rem] font-neo-hv">
             <Top images={images} />
             <Bottom />
+            <Chatbot />
         </div>
     );
 }
