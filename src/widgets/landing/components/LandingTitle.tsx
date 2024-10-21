@@ -1,7 +1,7 @@
 import yogoMembershipLogo from '@dev/shared/images/subscriptionImage/yogo_membership_logo.png';
-import landinglogokt from '@dev/shared/images/landing/landing_logo_kt.png';
-import chatboticonver2 from '@dev/shared/images/landing/chatbot_icon_ver2.png';
-import chatbotnotice from '@dev/shared/images/landing/chatbot_notice.png';
+import landingLogoKT from '@dev/shared/images/landing/landing_logo_kt.png';
+import chatbotIconver2 from '@dev/shared/images/landing/chatbot_icon_ver2.png';
+import chatbotNotice from '@dev/shared/images/landing/chatbot_notice.png';
 import Image from 'next/image';
 
 export default function LandingTitle() {
@@ -16,19 +16,19 @@ export default function LandingTitle() {
             />
             <div className="flex items-center gap-2 m-[10px]">
                 <Image
-                    src={chatbotnotice}
+                    src={chatbotNotice}
                     alt="Chatbot Notice"
                     width={100}
                     height={100}
                 />
                 <Image
-                    src={chatboticonver2}
+                    src={chatbotIconver2}
                     alt="Chatbot Icon.ver2"
                     width={17}
                     height={20}
                 />
                 <Image
-                    src={landinglogokt}
+                    src={landingLogoKT}
                     alt="Landing Logo KT"
                     width={90}
                     height={100}
