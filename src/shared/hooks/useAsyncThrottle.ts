@@ -25,6 +25,5 @@ export const useAsyncThrottle = ({
 
 type UseAsyncThrottleProps = {
     action: () => Promise<void>;
-    wait?: number;
     dependence?: unknown[];
 };
