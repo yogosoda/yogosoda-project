@@ -538,20 +538,21 @@ const deleteData = async () => {
 
 ---
 
-## **useDebounce, debounce, useThrottle, throttle 사용 방법**
+## **useDebounce, useThrottle, 사용 방법**
 
 이 모듈들은 사용자 입력 또는 이벤트 처리를 효율적으로 제어하기 위해 설계되었습니다.
 
-**useDebounce**와 **debounce**는 디바운싱을 제공하고, **useThrottle**와 **throttle**은 스로틀링 기능을 지원합니다.
+**useDebounce**는 디바운싱을 제공하고, **useThrottle**은 스로틀링 기능을 지원합니다.
 
-**useDebounce**와 **useThrottle**은 React에서 **hooks** 형태로, **debounce**와 **throttle**은 어디서든 사용할 수 있는 **유틸리티 함수**로 제공됩니다.
+**useDebounce**와 **useThrottle**은  **hooks** 형태로 제공됩니다.
 
 ### 주요 기능
-
--   **Debounce**: 사용자가 빠르게 반복하는 이벤트나 입력을 일정 시간 동안 모아서 처리합니다. 이를 통해 서버로의 불필요한 요청을 줄이고 사용자 경험을 최적화합니다.
--   **useDebounce**: **React 컴포넌트**에서의 상태 관리와 재렌더링을 고려한 debounce 처리.
--   **Throttle**: 반복적인 이벤트나 함수 호출을 일정 시간 동안 제한하여 **일정한 간격**으로만 실행되도록 제어합니다.
--   **useThrottle**: **React 컴포넌트**에서 상태 관리와 재렌더링을 고려한 throttle 처리.
+-   **useDebounce**:
+    - 사용자가 빠르게 반복하는 이벤트나 입력을 일정 시간 동안 모아서 처리합니다. 이를 통해 서버로의 불필요한 요청을 줄이고 사용자 경험을 최적화합니다.
+    - **React 컴포넌트**에서의 상태 관리와 재렌더링을 고려한 debounce 처리. 
+- **useThrottle**: 
+    - 반복적인 이벤트나 함수 호출을 일정 시간 동안 제한하여 **일정한 간격**으로만 실행되도록 제어합니다.
+    - **React 컴포넌트**에서 상태 관리와 재렌더링을 고려한 throttle 처리.
 
 #### **useDebounce 사용 예시**
 
@@ -564,7 +565,7 @@ const SearchComponent = () => {
 
     // 디바운스 처리된 함수
     const { event: debounceEvent } = useDebounce({
-        fn: (input: string) => console.log('검색어:', input),
+        action: (input: string) => console.log('검색어:', input),
         wait: 1000, // 1초 대기 후 실행
     });
 
@@ -580,22 +581,6 @@ const SearchComponent = () => {
 };
 ```
 
-#### **debounce 사용 예시**
-
-```typescript
-import { debounce } from '@devUtils/common/debounce';
-
-const searchData = debounce({
-    fn: (input: string) => {
-        console.log('검색어:', input);
-    },
-    wait: 1000, // 1초 대기 후 실행
-});
-
-// 이벤트 예시
-window.addEventListener('scroll', () => searchData('스크롤 중...'));
-```
-
 #### **useThrottle 사용 예시**
 
 ```tsx
@@ -603,7 +588,7 @@ import { useThrottle } from '@devHooks/common/useThrottle';
 
 const ThrottleComponent = () => {
     const { event: throttleEvent, state } = useThrottle({
-        fn: () => console.log('클릭 처리'),
+        action: () => console.log('클릭 처리'),
         wait: 1000, // 1초 간격으로만 실행
     });
 
@@ -614,32 +599,4 @@ const ThrottleComponent = () => {
     );
 };
 ```
-
-#### **throttle 사용 예시**
-
-```typescript
-import { throttle } from '@devUtils/common/throttle';
-
-const throttleClick = throttle({
-    fn: () => {
-        console.log('버튼 클릭 처리');
-    },
-    wait: 1000, // 1초 간격으로만 실행
-});
-
-// 이벤트 예시
-document.querySelector('button').addEventListener('click', throttleClick);
-```
-
-#### **Hooks와 Utils의 차이점**
-
--   **useDebounce**와 **useThrottle**은 **React Hook**으로, **컴포넌트 재렌더링을 고려**하여 작성되었습니다. 상태 변화와 함께 함수가 재선언되거나 이벤트가 중복 호출되는 문제를 방지합니다.
--   **debounce**와 **throttle**은 **유틸리티 함수**로, React 외부나 전역적으로 사용이 가능하지만, React 컴포넌트 내부에서는 렌더링마다 함수가 재선언될 수 있어 hooks 버전이 더 적합할 수 있습니다.
-
-### 요약
-
--   **useDebounce**와 **useThrottle**은 React 컴포넌트에서 사용하는 **Hooks**로, **상태 관리**와 **재렌더링**을 고려해 설계되었습니다.
--   **debounce**와 **throttle**은 React 외부에서 사용할 수 있는 **유틸리티 함수**입니다.
--   **Hooks** 버전은 React 컴포넌트에서 **상태 변화**를 관리하는 데 유용하며, **Utils** 버전은 전역 또는 비React 환경에서 활용할 수 있습니다.
-
 ---
