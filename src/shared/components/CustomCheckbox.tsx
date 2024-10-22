@@ -24,7 +24,7 @@ function CustomCheckbox({
                     : `url(${check_gray})`,
             }}
             {...props}
-        ></input>
+        />
     );
 }
 export default CustomCheckbox;

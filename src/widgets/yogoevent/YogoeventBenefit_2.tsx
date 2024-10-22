@@ -11,7 +11,7 @@ import { LinkButton } from '@dev/shared/components/LinkButton';
 import { contentPropsArr } from '@dev/shared/constants/yogoevent/style';
 import { urls } from '@dev/shared/constants/yogoevent/url';
 
-interface ContentBoxProps {
+type ContentBoxProps = {
     item: {
         src: string;
         width: number;
@@ -25,7 +25,7 @@ interface ContentBoxProps {
         isNew: boolean;
     };
     className: string;
-}
+};
 
 // 요고 초이스/플러스 혜택 컴포넌트입니다
 function YogoeventBenefit_2() {
