@@ -1,9 +1,11 @@
 import { KTPlansType } from '@dev/entities/kt_plans.type';
 import api from '@devShared/utils/api';
 import YogoeventBanner from '@dev/widgets/yogoevent/YogoeventBanner';
+import YogoeventImprove from '@dev/widgets/yogoevent/YogoeventImprove';
 import YogoeventIntro from '@dev/widgets/yogoevent/YogoeventIntro';
 import YogoeventSearch from '@dev/widgets/yogoevent/YogoeventSearch';
 import YogoeventToEnter from '@dev/widgets/yogoevent/YogoeventToEnter';
+import YogoeventVideo from '@dev/widgets/yogoevent/YogoeventVideo';
 
 // 요고 가입 혜택 페이지
 async function YogoEvent() {
@@ -14,6 +16,8 @@ async function YogoEvent() {
             <YogoeventSearch ktPlanData={ktPlanData} />
             <YogoeventBanner />
             <YogoeventToEnter />
+            <YogoeventVideo />
+            <YogoeventImprove />
         </div>
     );
 }
