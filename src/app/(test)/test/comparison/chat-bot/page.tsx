@@ -89,7 +89,7 @@ const Page = () => {
                                         </pre>
                                         <pre
                                             className={
-                                                'whitespace-pre-wrap word-break max-w-[390px]'
+                                                'whitespace-pre-wrap word-break max-w-full'
                                             }
                                         >
                                             <ReactMarkdown

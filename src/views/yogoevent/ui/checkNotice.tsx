@@ -8,7 +8,7 @@ export default function CheckNotice() {
     const [showDetails2, setShowDetails2] = useState(false);
 
     return (
-        <div className="pt-[30px]">
+        <div className="w-full pt-[30px]">
             <div className="flex justify-center items-center gap-2 mb-[25px]">
                 <Image
                     src="https://image.shop.kt.com/upload/editor/display/event_galS105G_0305_m_icon_note.png"

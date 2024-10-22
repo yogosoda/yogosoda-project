@@ -24,7 +24,7 @@ export default function BrandStory() {
     ];
 
     return (
-        <div className="w-[24.375rem] font-neo-hv">
+        <div className="w-full font-neo-hv">
             <Top images={images} />
             <Bottom />
         </div>
