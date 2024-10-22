@@ -8,6 +8,7 @@ import arrow_down from '@devShared/images/arrow_down_simple.svg';
 import { yogoevent_benefits } from '@dev/shared/images';
 import { twMerge } from 'tailwind-merge';
 import { ComponentPropsWithoutRef, useEffect, useState } from 'react';
+import { boxPropsArr } from '@dev/shared/constants/yogoevent/style';
 
 type DivPropsTypes = ComponentPropsWithoutRef<'div'>;
 
@@ -25,6 +26,8 @@ interface BenefitBoxPropsType {
     children?: React.ReactNode;
 }
 
+// 요고 혜택 설명 컴포넌트입니다
+// 각 이미지 컴포넌트를 클릭하면 해당 페이지로 스크롤 합니다
 function YogoeventBenefit_1() {
     const [selectedId, setSelectedId] = useState(-1);
 
@@ -34,45 +37,11 @@ function YogoeventBenefit_1() {
             const rect = selectedSection.getBoundingClientRect();
             window.scrollTo({
                 top: rect.top + window.scrollY - 65,
-                behavior: 'smooth', // 부드러운 스크롤을 유지
+                behavior: 'smooth',
             });
         }
     }, [selectedId]);
 
-    const boxPropsArr = [
-        {
-            fontColor: 'text-[#a569af]',
-            borderGradient: 'bg-gradient-to-b from-[#aadcdd] to-[#e5c3e8]',
-            bgGradient: 'bg-gradient-to-b from-[#f7fbfc] to-[#faf3fb]',
-            arrowColor:
-                'invert(96%) sepia(63%) saturate(778%) hue-rotate(228deg) brightness(90%) contrast(96%)',
-            text: '초이스 + 플러스',
-        },
-        {
-            fontColor: 'text-[#627ba3]',
-            borderGradient: 'bg-gradient-to-b from-[#ded2f8] to-[#b4caf1]',
-            bgGradient: 'bg-gradient-to-b from-[#fbfaff] to-[#f1fbfd]',
-            arrowColor:
-                'invert(77%) sepia(6%) saturate(3022%) hue-rotate(189deg) brightness(98%) contrast(91%)',
-            text: '데이터 추가 혜택',
-        },
-        {
-            fontColor: 'text-[#dc8f85]',
-            borderGradient: 'bg-gradient-to-b from-[#a6a8db] to-[#fadeb9]',
-            bgGradient: 'bg-gradient-to-b from-[#f7f6fc] to-[#fdf8f2]',
-            arrowColor:
-                'invert(82%) sepia(4%) saturate(1728%) hue-rotate(346deg) brightness(101%) contrast(94%)',
-            text: '멤버십 프로모션',
-        },
-        {
-            fontColor: 'text-[#8383bf]',
-            borderGradient: 'bg-gradient-to-b from-[#f6bad4] to-[#bcbbf7]',
-            bgGradient: 'bg-gradient-to-b from-[#fef8fa] to-[#f8f5fe]',
-            arrowColor:
-                'invert(67%) sepia(83%) saturate(187%) hue-rotate(203deg) brightness(95%) contrast(91%)',
-            text: 'KT 쿠폰팩 혜택',
-        },
-    ];
     return (
         <section className="flex-col-center gap-8 p-8">
             <div className="flex-con-center">

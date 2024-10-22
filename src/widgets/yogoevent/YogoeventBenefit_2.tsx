@@ -8,6 +8,8 @@ import new_button from '@devShared/images/new_button.png';
 import { twMerge } from 'tailwind-merge';
 import Link from 'next/link';
 import { LinkButton } from '@dev/shared/components/LinkButton';
+import { contentPropsArr } from '@dev/shared/constants/yogoevent/style';
+import { urls } from '@dev/shared/constants/yogoevent/url';
 
 interface ContentBoxProps {
     item: {
@@ -25,59 +27,8 @@ interface ContentBoxProps {
     className: string;
 }
 
+// 요고 초이스/플러스 혜택 컴포넌트입니다
 function YogoeventBenefit_2() {
-    const boxPropsArr = [
-        {
-            bgGradient: 'bg-gradient-to-br from-[#fff2ea] to-[#fee8ea]',
-            maintext: '유튜브 프리미엄',
-            subText: null,
-            link: null,
-            isNew: true,
-        },
-        {
-            bgGradient: 'bg-gradient-to-br from-[#e4f7fb] to-[#e5edfa]',
-            maintext: '디즈니+',
-            subText: null,
-            link: null,
-            isNew: false,
-        },
-        {
-            bgGradient: 'bg-gradient-to-br from-[#e7edf9] to-[#f9ecf5]',
-            maintext: '티빙',
-            subText: '(베이직, 광고형 스탠다드)',
-            link: null,
-            isNew: false,
-        },
-        {
-            bgGradient: 'bg-gradient-to-br from-[#efeeec] to-[#f0eceb]',
-            maintext: '디바이스 할인',
-            subText: '(A/B/Lite형)',
-            link: 'https://shop.kt.com/unify/yogoEvent.do#layerPop01',
-            isNew: true,
-        },
-        {
-            bgGradient: 'bg-white',
-            maintext: '지니뮤직',
-            subText: null,
-            link: null,
-            isNew: false,
-        },
-        {
-            bgGradient: 'bg-white',
-            maintext: '밀리의 서재',
-            subText: null,
-            link: null,
-            isNew: false,
-        },
-        {
-            bgGradient: 'bg-white',
-            maintext: '블라이스',
-            subText: null,
-            link: null,
-            isNew: false,
-        },
-    ];
-
     return (
         <section
             id="0"
@@ -109,7 +60,7 @@ function YogoeventBenefit_2() {
                             <ContentBox
                                 key={idx}
                                 item={item}
-                                style={boxPropsArr[idx]}
+                                style={contentPropsArr[idx]}
                                 className="w-1/2 mb-4"
                             ></ContentBox>
                         ))}
@@ -128,7 +79,7 @@ function YogoeventBenefit_2() {
                             <ContentBox
                                 key={idx}
                                 item={item}
-                                style={boxPropsArr[4 + idx]}
+                                style={contentPropsArr[4 + idx]}
                                 className="w-1/3"
                             ></ContentBox>
                         ))}
@@ -141,10 +92,7 @@ function YogoeventBenefit_2() {
                 </div>
             </div>
             <div className="flex-col-center w-full gap-2">
-                <LinkButton
-                    link="https://product.kt.com/wDic/productDetail.do?ItemCode=1567&benefit=season2&_ga=2.183259238.1990336362.1728868213-20960216.1717459451"
-                    className="w-3/4 my-2"
-                >
+                <LinkButton link={urls.benefit} className="w-3/4 my-2">
                     혜택 자세히 보기
                 </LinkButton>
                 <div className="flex flex-col items-start font-neo-rg text-[10px] text-gray-500">

@@ -1,12 +1,13 @@
 import VideoPlayer from '@dev/shared/components/VideoPlayer';
+import { urls } from '@dev/shared/constants/yogoevent/url';
 
 function YogoeventVideoBottom() {
     return (
         <div className="flex-row-center w-full h-fit gap-1 py-6 bg-[#F1FFFF]">
-            <VideoDiv src="https://www.youtube.com/embed/RStVl4lilxM?si=8mvWveBryt-NNAZG">
+            <VideoDiv src={urls.youtube.videoBottom_1}>
                 요고 69 (시즌 2)
             </VideoDiv>
-            <VideoDiv src="https://www.youtube.com/embed/bxFI64dzg1E?si=6JKtXgIOH7B-IPUZ">
+            <VideoDiv src={urls.youtube.videoBottom_2}>
                 요고 30 (시즌 2)
             </VideoDiv>
         </div>

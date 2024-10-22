@@ -6,6 +6,7 @@ import yogo_asset from '@devShared/images/yogoevent/yogo_asset_img.png';
 import { TextBox } from '@dev/shared/components/TextBox';
 import { twMerge } from 'tailwind-merge';
 
+// 요고 혜택 개선점 컴포넌트입니다
 function YogoeventImprove() {
     return (
         <section className="flex-col-center w-full p-6 bg-gray-100">
