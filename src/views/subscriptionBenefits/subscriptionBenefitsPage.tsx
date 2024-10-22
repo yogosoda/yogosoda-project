@@ -1,4 +1,3 @@
-import Chatbot from '@dev/shared/components/Chatbot';
 import CheckNotice from './ui/checkNotice';
 import CouponInfo from './ui/couponInfo';
 import MembershipBenefits from './ui/membershipBenefits';
@@ -15,7 +14,6 @@ export default function SubscriptionBenefitsPage() {
             <PlanDetail />
             <PlanDetailEvent />
             <CheckNotice />
-            <Chatbot />
         </>
     );
 }

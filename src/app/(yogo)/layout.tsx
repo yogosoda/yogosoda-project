@@ -3,6 +3,7 @@ import React, { ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
 import Header from '@devWidgets/header/Header';
 import Footer from '@devWidgets/footer/Footer';
+import Chatbot from '@dev/shared/components/Chatbot';
 
 export default function Layout({
     children,
@@ -21,6 +22,7 @@ export default function Layout({
             {!isSplashPage && !isLandingPage && <Header />}
             <main className="w-full flex-grow">{children}</main>
             {!isSplashPage && !isLandingPage && <Footer />}
+            {!isSplashPage && <Chatbot />}
         </div>
     );
 }
