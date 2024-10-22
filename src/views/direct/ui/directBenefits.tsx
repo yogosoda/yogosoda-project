@@ -100,7 +100,7 @@ const benefitsData = [
 
 export default function DirectBenefits() {
     return (
-        <div className="w-[100%] bg-gray-200 bg-gradient-to-r from-[#eceef9] to-[#f6f1ed] h-[fit] pb-[10px]">
+        <div className="bg-gray-200 bg-gradient-to-r from-[#eceef9] to-[#f6f1ed] h-[fit] pb-[10px]">
             <div className="flex flex-col items-center pt-10 mb-5">
                 <p className="font-bold">
                     KT닷컴에서만 만날 수 있는 온라인 전용 요금제
