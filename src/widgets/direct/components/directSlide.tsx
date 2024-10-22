@@ -35,7 +35,7 @@ export default function DirectSlide() {
     }, []);
 
     return (
-        <div className="relative w-[390px] h-[234px] mx-auto overflow-hidden flex items-center">
+        <div className="relative h-[234px] mx-auto overflow-hidden flex items-center">
             <div className="w-full flex transition-transform duration-500 ease-in-out">
                 {slideImages.map((image, index) => (
                     <div

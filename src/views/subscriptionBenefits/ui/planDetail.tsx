@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function PlanDetail() {
     return (
-        <div className="w-[390px] bg-[#FCFAFF] h-[fit] pb-[20px]">
+        <div className="bg-[#FCFAFF] h-[fit] pb-[20px]">
             <PlanDetailTitle />
             <Image
                 src={yogoDetailImage1}

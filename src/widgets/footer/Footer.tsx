@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 const Footer = () => {
     return (
-        <div className={'bg-[#F2F2F2] '}>
+        <div className={'bg-[#F2F2F2]'}>
             <Line className={'mb-[15px]'} />
             <div
                 className={
