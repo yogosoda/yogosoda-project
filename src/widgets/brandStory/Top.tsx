@@ -1,22 +1,17 @@
 'use client';
 
+import slide1 from '@devShared/images/brandStory/slider1.png';
+import slide2 from '@devShared/images/brandStory/slider2.png';
+import slide3 from '@devShared/images/brandStory/slider3.png';
+import slide4 from '@devShared/images/brandStory/slider4.png';
+import slide5 from '@devShared/images/brandStory/slider5.png';
+import slide6 from '@devShared/images/brandStory/slider6.png';
+
 import React, { useRef, useState } from 'react';
 import Slider from 'react-slick';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
-export default function Top({ images }: { images: StaticImageData[] }) {
-    const [
-        slide1,
-        slide2,
-        slide3,
-        slide4,
-        slide5,
-        slide6,
-        background1,
-        arrowLeft,
-        arrowRight,
-    ] = images;
-
+export default function Top() {
     const sliderRef = useRef<Slider | null>(null);
 
     const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -45,7 +40,9 @@ export default function Top({ images }: { images: StaticImageData[] }) {
     return (
         <div
             className={`bg-cover pt-[3.75rem] overflow-hidden`}
-            style={{ backgroundImage: `url(${background1})` }}
+            style={{
+                backgroundImage: `url(/images/brandStory/brand-story-background1.svg)`,
+            }}
         >
             <Slider ref={sliderRef} {...settings}>
                 <Image src={slide1} alt={'slide1'} />
@@ -64,7 +61,7 @@ export default function Top({ images }: { images: StaticImageData[] }) {
                     <Image
                         width={31}
                         height={41}
-                        src={arrowLeft}
+                        src={'/images/brandStory/brand-arrow-left.svg'}
                         alt={'brand-arrow-left'}
                     />
                 </button>
@@ -77,7 +74,7 @@ export default function Top({ images }: { images: StaticImageData[] }) {
                     <Image
                         width={31}
                         height={41}
-                        src={arrowRight}
+                        src={'/images/brandStory/brand-arrow-right.svg'}
                         alt={'brand-arrow-right'}
                     />
                 </button>
