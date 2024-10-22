@@ -4,13 +4,14 @@
 
 @layer base {
     .shimmer-effect {
-        @apply bg-gradient-to-r from-[#00D2BB] via-[#009A90] to-[#00D2BB] bg-[length:200%_100%] animate-shimmer;    }
+        @apply bg-gradient-to-r from-[#00D2BB] via-[#009A90] to-[#00D2BB] bg-[length:200%_100%] animate-shimmer;
+    }
 }
 
 @font-face {
     font-family: 'Cafe24Ssurround';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff')
-    format('woff');
+        format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -51,6 +52,9 @@
         height: 1px;
         border-bottom-style: double;
     }
+    .font-cafe-sur {
+        font-family: var(--font-cafe-sr), sans-serif;
+    }
 }
 
 @layer components {
@@ -68,16 +72,16 @@
         @apply flex flex-row justify-center;
     }
 
-    .item-center{
-        @apply flex flex-col items-center justify-center
+    .item-center {
+        @apply flex flex-col items-center justify-center;
     }
 
-    .flex-with-row{
-        @apply flex flex-row
+    .flex-with-row {
+        @apply flex flex-row;
     }
 
-    .flex-with-col{
-        @apply flex flex-col
+    .flex-with-col {
+        @apply flex flex-col;
     }
 
     .no-scrollbar {

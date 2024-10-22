@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { KTPlansType } from '@dev/entities/kt_plans.type';
-import YogoeventPlanInfo from './YogoeventPlanInfo';
-import YogoeventSelectPlan from './YogoeventSelectPlan';
+import YogoeventPlanInfo from './components/YogoeventPlanInfo';
+import YogoeventSelectPlan from './components/YogoeventSelectPlan';
 
 // 상단 2번째 요금제 컴포넌트입니다
 function Yogoevent_Search({ ktPlanData }: { ktPlanData: KTPlansType[] }) {
@@ -15,7 +15,7 @@ function Yogoevent_Search({ ktPlanData }: { ktPlanData: KTPlansType[] }) {
         ktPlanData[ktPlanData.length - 1 - planIdx];
 
     return (
-        <>
+        <section className="flex-col-center w-full h-fit bg-gray-200 rounded-2xl">
             <YogoeventSelectPlan
                 isY={isY}
                 isSelectData={isSelectData}
@@ -36,7 +36,7 @@ function Yogoevent_Search({ ktPlanData }: { ktPlanData: KTPlansType[] }) {
                 monthly_fee={monthly_fee}
                 plan_name={plan_name}
             />
-        </>
+        </section>
     );
 }
 

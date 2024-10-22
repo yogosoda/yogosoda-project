@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 export default function CouponInfo() {
     return (
-        <div className="bg-[#FCFAFF] h-[fit] pb-[50px]">
+        <section id="3" className="w-[390px] bg-[#FCFAFF] h-[fit] pb-[50px]">
             <CouponInfoTitle />
             <CouponInfoBox
                 topImage={yogoCouponImage1}
@@ -35,6 +35,6 @@ export default function CouponInfo() {
                 couponTitle="스타벅스 아메리카노 4,500원 이용권"
                 couponSubTitle="최대 108,000원"
             />
-        </div>
+        </section>
     );
 }

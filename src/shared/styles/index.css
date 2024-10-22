@@ -20,6 +20,10 @@
     font-family: 'Neo-Heavy';
     src: url('../fonts/NanumSquareNeo-eHv.ttf');
 }
+@font-face {
+    font-family: 'Cafe-Surround';
+    src: url('../fonts/Cafe24Ssurround-v2.0.ttf');
+}
 
 .flex-col-center {
     display: flex;
