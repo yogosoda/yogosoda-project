@@ -26,13 +26,18 @@ const neoHeavy = localFont({
     variable: '--font-neo-hv',
 });
 
-const cafeSurround = localFont({
+const cafe24Ssurround = localFont({
     src: './Cafe24Ssurround-v2.0.ttf',
-    variable: '--font-cafe-sr',
+    variable: '--font-cafe',
 });
 
-export const notosansKr = Noto_Sans_KR({
-    subsets: ['latin'], // 또는 preload: false
-});
+export const notosansKr = Noto_Sans_KR({ subsets: ['latin'] });
 
-export { neoLight, neoRegular, neoBold, neoExtraBold, neoHeavy, cafeSurround };
+export {
+    neoLight,
+    neoRegular,
+    neoBold,
+    neoExtraBold,
+    neoHeavy,
+    cafe24Ssurround,
+};

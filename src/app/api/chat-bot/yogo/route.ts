@@ -1,6 +1,15 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import api from '@devShared/utils/api';
 import { PlanMeta } from '@dev/entities/plans.types';
+import {
+    collection,
+    doc,
+    getDoc,
+    getDocs,
+    orderBy,
+    query,
+    where,
+} from '@firebase/firestore';
+import { firestore } from '@dev/firebase';
 
 const genAI = new GoogleGenerativeAI(
     process.env.NEXT_PUBLIC_OPENAI_API_KEY ?? ''
@@ -26,13 +35,27 @@ export const POST = async (req: Request) => {
         let planDescription: PlanMeta | undefined;
 
         try {
-            const plansResponse = await api.get<PlanMeta[]>('/api/plans/yogo');
-            yogoPlans = plansResponse?.data;
-
-            const planDescriptionResponse = await api.get<PlanMeta>(
-                '/api/plans/description'
+            const q = query(
+                collection(firestore, 'plans'),
+                where('mvno', '==', 'KT'),
+                orderBy('fee', 'asc')
             );
-            planDescription = planDescriptionResponse?.data;
+            const querySnapshot = await getDocs(q);
+
+            yogoPlans = querySnapshot.docs.map((doc) => doc.data() as PlanMeta);
+
+            const docRef = doc(
+                firestore,
+                'plan_key_description',
+                'tMqTOCswa2dD7Xqa7uCD'
+            );
+
+            // 문서 가져오기
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                planDescription = docSnap.data() as PlanMeta;
+            }
         } catch (e) {
             console.error(e);
         }

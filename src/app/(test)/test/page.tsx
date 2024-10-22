@@ -1,7 +1,7 @@
 'use client';
+import Button from '@devShared/components/Button';
 import api from '@devShared/utils/api';
 import { useState } from 'react';
-import Button from '@dev/shared/components/RegistrationButton';
 
 const Page = () => {
     const [tempGet, setTempGet] = useState<string>('');

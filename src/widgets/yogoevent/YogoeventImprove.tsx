@@ -16,7 +16,7 @@ function YogoeventImprove() {
             </div>
             <Improvements category="NEW" src={balloon_gradient} filter="">
                 새로운 OTT&nbsp;
-                <span className="font-cafe-sur text-lg text-[#325eff] align-middle">
+                <span className="font-cafe text-lg text-[#325eff] align-middle">
                     유튜브 프리미엄 할인
                 </span>
                 &nbsp;혜택 추가!
@@ -27,7 +27,7 @@ function YogoeventImprove() {
                 filter="invert(29%) sepia(41%) saturate(6724%) hue-rotate(255deg) brightness(97%) contrast(109%)"
             >
                 전 구간 요금제에&nbsp;
-                <span className="font-cafe-sur text-lg text-[#8934ff] align-middle">
+                <span className="font-cafe text-lg text-[#8934ff] align-middle">
                     티빙 무료 제공
                 </span>
                 은 오직 요고뿐!
@@ -37,7 +37,7 @@ function YogoeventImprove() {
                 src={balloon_black}
                 filter="invert(48%) sepia(51%) saturate(7382%) hue-rotate(283deg) brightness(85%) contrast(109%)"
             >
-                <span className="font-cafe-sur text-lg text-[#ff34ef] align-middle">
+                <span className="font-cafe text-lg text-[#ff34ef] align-middle">
                     디바이스 100% 할인
                 </span>
                 &nbsp;혜택 요고 55까지 확대 적용!
@@ -48,7 +48,7 @@ function YogoeventImprove() {
                 filter="invert(29%) sepia(61%) saturate(2479%) hue-rotate(329deg) brightness(80%) contrast(101%)"
             >
                 데이터 추가 프로모션과 멤버십&nbsp;
-                <span className="font-cafe-sur text-lg text-[#ff3455] align-middle">
+                <span className="font-cafe text-lg text-[#ff3455] align-middle">
                     혜택 한번 더 연장!
                 </span>
             </Improvements>
