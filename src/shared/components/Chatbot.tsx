@@ -10,7 +10,7 @@ export default function Chatbot() {
                 alt="Chatbot Icon.ver1"
                 width={50}
                 height={50}
-                className="fixed bottom-4 right-4 z-50"
+                className="fixed bottom-4 right-4 z-40"
             ></Image>
         </Link>
     );

@@ -33,7 +33,7 @@ export default function Splash() {
         <div
             ref={ref}
             className={twMerge(
-                'fixed top-0 left-0 w-full h-[100vh] bg-[#FEFEF6] pb-[10px] overflow-hidden z-40',
+                'fixed top-0 left-0 w-full h-[100vh] bg-[#FEFEF6] pb-[10px] overflow-hidden z-50',
                 'transition-transform duration-300 ease-in-out'
             )}
             onTouchStart={startSwipe}
