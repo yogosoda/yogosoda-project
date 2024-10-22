@@ -24,8 +24,8 @@ const nextConfig = {
         return [
             {
                 source: '/',
-                destination: '/direct',
-                permanent:false
+                destination: '/landing',
+                permanent: false,
             },
         ];
     },
