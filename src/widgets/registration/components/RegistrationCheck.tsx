@@ -9,7 +9,7 @@ export default function RegistrationCheck() {
             <div className="bg-[#ECF5F8]  h-[46.875rem] w-[25rem]">
                 <div className=" flex flex-col justify-center items-center">
                     <Image
-                        className="absolute top-[28rem]"
+                        className="absolute top-[34rem]"
                         src={RegisBg}
                         width={400}
                         alt="img"
