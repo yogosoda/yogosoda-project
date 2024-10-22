@@ -21,6 +21,16 @@
         }
     }
 
+    @keyframes moveLR {
+        0%, 100% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(-10px);
+        }
+    }
+
+
     .font-cafe {
         font-family: var(--font-cafe), sans-serif;
     }
@@ -56,6 +66,10 @@
 
     .animate-shimmer {
         animation: shimmer 2s infinite linear;
+    }
+
+    .animate-moveLR {
+        animation: moveLR 1s ease-in-out infinite;
     }
 
     .shimmer-effect {
