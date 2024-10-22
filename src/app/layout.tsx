@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import {
+    cafe24Ssurround,
     neoBold,
     neoExtraBold,
     neoHeavy,
@@ -27,7 +28,7 @@ export default function RootLayout({
     return (
         <html lang="en" data-locator-target="webstorm">
             <body
-                className={`${neoLight.variable} ${neoRegular.variable} ${neoBold.variable} ${neoExtraBold.variable} ${neoHeavy.variable}`}
+                className={`${neoLight.variable} ${neoRegular.variable} ${neoBold.variable} ${neoExtraBold.variable} ${neoHeavy.variable} ${cafe24Ssurround.variable}`}
             >
                 {children}
             </body>

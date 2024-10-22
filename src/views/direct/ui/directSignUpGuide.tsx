@@ -36,7 +36,7 @@ const buttonData3 = [
 
 export default function DirectSignUpGuide() {
     return (
-        <div className="w-[100%] flex flex-col items-center bg-[#F8F8F8] h-[fit] pb-[10px]">
+        <div className="flex flex-col items-center bg-[#F8F8F8] h-[fit] pb-[10px]">
             <div className="flex items-center font-bold gap-1 my-7 mb-4">
                 <Image src={yogoLogo} alt="Yogo Logo" width={50} height={50} />
                 <p>

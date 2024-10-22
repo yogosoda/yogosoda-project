@@ -6,7 +6,7 @@ const apiService = () => {
     // 환경 변수에서 API의 기본 URL을 설정하고, 없다면 빈 문자열로 설정
     const baseUrl: string = process.env.NEXT_PUBLIC_API_BASE_URL ?? '';
     // 각 요청별 마지막 호출 시간을 기록하여 스로틀링을 관리하는 객체
-    const lastCallMap: { [key: string]: number } = {};
+    const isProcessingMap: { [key: string]: boolean } = {};
 
     // 쿼리 스트링을 생성하는 메서드
     // params: 쿼리 스트링으로 변환할 객체
@@ -53,46 +53,44 @@ const apiService = () => {
     };
 
     // 스로틀링을 적용하여 요청을 처리하는 메서드
-    // wait: 스로틀링 시간 (디폴트는 0.5초)
     const throttleRequest = async <T = unknown>({
         uri,
         options,
-        wait = 500, // 스로틀링 시간 기본값 (0.5초)
     }: {
         uri: string;
         options: RequestInitTypes;
-        wait?: number;
     }): Promise<{
         status: number;
         msg: string;
         data?: T;
     }> => {
         const requestKey = createRequestKey(uri, options.params, options.body); // 요청에 대한 고유한 키 생성
-        const now = Date.now(); // 현재 시간을 밀리초 단위로 가져옴
 
-        // 마지막 호출 시간 확인 후, wait 시간 안에 동일한 요청이 발생하면 스로틀링 처리
-        if (lastCallMap[requestKey] && now - lastCallMap[requestKey] < wait) {
-            // 스로틀링 발생 시 `THROTTLED-ERROR` 에러를 발생시킴
+        // 동일한 요청이 이미 처리 중이면 스로틀링 에러 발생
+        if (isProcessingMap[requestKey]) {
+            // 요청 중복 시 'THROTTLED-ERROR' 에러를 발생시켜 처리 제한
             throw new CustomError(
                 'THROTTLED-ERROR',
                 `The request to "${uri}" is being throttled due to too many requests in a short period. Please wait before trying again.`
             );
         }
 
-        // 마지막 호출 시간을 현재 시간으로 업데이트
-        lastCallMap[requestKey] = now;
+        // 요청을 처리 중으로 표시하여 중복 요청을 방지
+        isProcessingMap[requestKey] = true;
 
         // 실제 요청 처리 메서드 호출
-        return request<T>({ uri, options });
+        return request<T>({ uri, options, requestKey });
     };
 
     // 실제 요청을 처리하는 메서드 (GET, POST, PUT, DELETE 모두에서 호출됨)
     const request = async <T = unknown>({
         uri,
         options,
+        requestKey,
     }: {
         uri: string;
         options: RequestInitTypes;
+        requestKey: string;
     }): Promise<{
         status: number;
         msg: string;
@@ -121,8 +119,8 @@ const apiService = () => {
             const code = response.status as keyof typeof RESPONSE_STATUS_KR; // 응답 상태 코드 추출
 
             if (!response.ok) {
-                // 응답이 성공하지 않았을 경우, 에러 발생 (에러 코드와 메시지를 함께 배출)
                 throw new CustomError(code, RESPONSE_STATUS_KR[code]);
+                // 응답이 성공하지 않았을 경우, 에러 발생 (에러 코드와 메시지를 함께 배출)
             }
 
             const contentType = response.headers.get('Content-Type'); // 응답의 콘텐츠 타입 확인
@@ -153,6 +151,9 @@ const apiService = () => {
             };
         } catch (e) {
             throw new CustomError('REQUEST-ERROR', (e as Error).message);
+        } finally {
+            // 요청이 완료되거나 실패하면 요청 상태를 해제하여 다음 요청을 허용
+            isProcessingMap[requestKey] = false;
         }
     };
 
