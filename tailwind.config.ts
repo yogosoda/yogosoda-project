@@ -26,9 +26,15 @@ const config: Config = {
                     '0%': { backgroundPosition: '-100% 0' },
                     '100%': { backgroundPosition: '100% 0' },
                 },
+                moveLR: {
+                  '0%, 100%': { transform: 'translateX(0)' },
+                  '50%': { transform: 'translateX(-10px)' },
+                },
             },
             animation: {
                 shimmer: 'shimmer 2s infinite linear',
+                moveLR: 'moveLR 1s ease-in-out infinite',
+
             },
         },
     },
