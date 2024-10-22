@@ -40,7 +40,6 @@ export default function Payment() {
     useEffect(() => {
         paymentFetchData();
     }, []);
-
     return (
         <section>
             {payData.map((plan, index) => (
@@ -48,7 +47,7 @@ export default function Payment() {
                     key={index}
                     className="pt-14 pb-14 flex flex-col justify-center items-center"
                 >
-                    <div className="w-[25rem] shadow-box bg-white rounded-2xl flex flex-col justify-center pl-4 pt-6 gap-4">
+                    <div className="w-[20rem] shadow-box bg-white rounded-2xl flex flex-col justify-center gap-4 p-4">
                         <KtLogo width={25} height={25} />
                         <p className="text-[#ADB5BD] text-xs">
                             {plan.plan_name}
@@ -81,8 +80,8 @@ export default function Payment() {
                             <Question />
                         </div>
 
-                        <div className="flex justify-center pr-6">
-                            <Divider className="w-[22.5rem]" />
+                        <div className="flex justify-center">
+                            <Divider className="w-[17.5rem]" />
                         </div>
 
                         <div className="flex items-center gap-4 pb-4">
@@ -111,7 +110,7 @@ export default function Payment() {
                                 개
                             </p>
 
-                            <div className="absolute pl-[21.5rem]">
+                            <div className="pl-16">
                                 {isToggle[index] ? (
                                     <Up
                                         onClick={() => toggleHandler(index)}
