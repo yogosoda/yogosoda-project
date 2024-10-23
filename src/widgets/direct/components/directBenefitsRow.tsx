@@ -2,9 +2,9 @@ import { BenefitsRowProps } from '@dev/shared/types/direct.type';
 import DirectBenefitsBox from './directBenefitsBox';
 
 export default function DirectBenefitsRow({
-    width = '140px',
-    height = '140px',
-    left = '10px',
+    width,
+    height = '150px',
+    left,
     top = '-30px',
     className = '',
     benefits = [],

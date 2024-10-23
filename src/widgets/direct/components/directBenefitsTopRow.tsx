@@ -7,7 +7,7 @@ export default function DirectBenefitsTopRow({
     children,
 }: BenefitsTopRowProps) {
     return (
-        <div className="flex items-center gap-2 w-[270px] mx-auto py-2 border-t border-[#DADADA]">
+        <div className="flex items-center gap-2 w-[70vw] mx-auto py-2 border-t border-[#DADADA]">
             {imageSrc && (
                 <Image src={imageSrc} alt={imageAlt} width={55} height={35} />
             )}
