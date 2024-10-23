@@ -38,9 +38,10 @@ const Page = () => {
         let text: string =
             '죄송합니다. 현재 요청에 대한 응답 처리 중 문제가 발생했습니다.';
         try {
-            const res = await api.post<string>('/api/chat-bot/comparison', {
+            const res = await api.post<string>('/api/chat-bot', {
                 message: inputMessage,
                 messages,
+                prompt: 'recommend',
             });
             if (res?.data) {
                 text = res.data;
