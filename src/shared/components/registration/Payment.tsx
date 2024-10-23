@@ -71,24 +71,26 @@ export default function Payment() {
                             {plan.plan_name}
                         </p>
 
-                        <div className="flex gap-2 items-center">
+                        <div className="flex gap-3 items-center relative">
                             <p className="font-bold text-[1.3rem]">
                                 월 {plan.data.total_data}
                             </p>
+
                             <button onClick={() => questionHandler(index)}>
                                 <Question />
                             </button>
-                            <div>
+
+                            <div className="absolute bottom-8 left-24 ">
                                 {isQuestion === index && payAllData[index] && (
-                                    <div className="border rounded-lg p-2 text-white bg-slate-700">
+                                    <div className="border rounded-lg p-2 text-white bg-slate-700 ">
                                         {plan.data.total_data.includes(
                                             '무제한'
                                         ) ? (
-                                            <p className="text-[0.6rem] font-semibold">
+                                            <p className="text-[0.55rem] font-semibold">
                                                 무제한
                                             </p>
                                         ) : (
-                                            <p className="text-[0.6rem] font-semibold">
+                                            <p className="text-[0.55rem] font-semibold">
                                                 {
                                                     payAllData[index]
                                                         .speedWhenExhaustedDescription
