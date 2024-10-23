@@ -13,7 +13,7 @@ export default function DirectBenefitsTop() {
     return (
         <div className="flex flex-wrap justify-center items-center gap-4 mb-[40px]">
             <Box
-                width="300px"
+                width="calc(100vw - 10vw)"
                 height="570px"
                 borderRadius="15px"
                 borderColor="#D6E7F7"
@@ -81,7 +81,7 @@ export default function DirectBenefitsTop() {
                 </DirectBenefitsTopRow>
                 <div className="mx-auto mt-[80px]">
                     <DirectBenefitsBox
-                        width="250px"
+                        width="75vw"
                         height="110px"
                         borderColor="#F8F8F8"
                         backgroundColor="#F8F8F8"
@@ -90,17 +90,18 @@ export default function DirectBenefitsTop() {
                         imageWidth={120}
                         imageHeight={70}
                         top="-75px"
+                        left="50%"
                         text={
                             <>
                                 <div className="mb-3 flex flex-col gap-2">
-                                    <span className="text-[9px]">
+                                    <span className="text-[0.7rem]">
                                         <p>더욱 다양해진 혜택 선택으로</p>
                                         <p>
                                             OTT/스마트기기/멤버쉽까지 모두
                                             즐겨요!
                                         </p>
                                     </span>
-                                    <p className="text-[12px]">
+                                    <p className="text-[0.85rem]">
                                         나에게 딱 맞는{' '}
                                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01CBB3] to-[#365DFD] font-cafe">
                                             요금제와 혜택

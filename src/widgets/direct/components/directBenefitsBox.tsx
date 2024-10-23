@@ -32,7 +32,12 @@ export default function DirectBenefitsBox({
                     alt={imageAlt}
                     width={imageWidth}
                     height={imageHeight}
-                    style={{ position: 'absolute', top: top, left: left }}
+                    style={{
+                        position: 'absolute',
+                        top: top,
+                        left: left,
+                        transform: 'translateX(-50%)',
+                    }}
                 />
             )}
             <div>

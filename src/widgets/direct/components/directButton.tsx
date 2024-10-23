@@ -13,7 +13,7 @@ export default function DirectButton({
         <Link href={url}>
             <div className="flex justify-center mb-[10px]">
                 <Box
-                    width="300px"
+                    width="calc(90vw - 10vw)"
                     height="40px"
                     borderRadius="8px"
                     borderColor="#A8A8A8"

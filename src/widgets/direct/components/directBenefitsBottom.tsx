@@ -31,8 +31,8 @@ export default function DirectBenefitsBottom({
                 className={className}
             >
                 <Link href="https://shop.kt.com/display/olhsPlan.do?plnDispNo=2389">
-                    <div className="flex justify-between mx-auto mb-[15px] items-center w-[58px] border-b border-black">
-                        <p className="text-[10px]">자세히 보기</p>
+                    <div className="flex justify-between mx-auto mb-[15px] items-center w-[65px] border-b border-black">
+                        <p className="text-[0.7rem]">자세히 보기</p>
                         {imageSrc && (
                             <Image
                                 src={buttonArrow}

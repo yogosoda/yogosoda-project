@@ -17,7 +17,7 @@ export default function RatePlan({
 }: RatePlanProps) {
     return (
         <section>
-            <Box className="mb-[15px]" height="fit">
+            <Box className="mb-[15px]" height="fit" width="calc(100vw - 10vw)">
                 <div className="flex flex-col relative">
                     {imageSrc && (
                         <Image
