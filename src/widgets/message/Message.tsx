@@ -2,6 +2,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { twMerge } from 'tailwind-merge';
 import { getKoreanTime } from '@devShared/utils/date';
+import { memo } from 'react';
 
 const Message = ({
     type = 'user',
@@ -64,7 +65,7 @@ const Message = ({
     );
 };
 
-export default Message;
+export default memo(Message);
 
 type MessageProps = {
     type?: 'user' | 'model';

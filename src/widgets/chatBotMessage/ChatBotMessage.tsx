@@ -1,5 +1,6 @@
 import bot from '@devShared/images/chatBot/yogo-chat-bot.svg';
 import Message from '@devWidgets/message/Message';
+import { memo } from 'react';
 
 const ChatBotMessage = ({
     text,
@@ -30,7 +31,7 @@ const ChatBotMessage = ({
     );
 };
 
-export default ChatBotMessage;
+export default memo(ChatBotMessage);
 
 type ChatBotMessageProps = {
     text: string;
