@@ -1,6 +1,7 @@
-import Message from '@devWidgets/message/Message';
-import ChatBotMessage from '@devWidgets/chatBotMessage/ChatBotMessage';
 import { MessageType } from '@devfeatures/chatBot/chatting/api';
+import ChatBotMessage from '@devWidgets/chatBot/botMessage/ChatBotMessage';
+import React from 'react';
+import Message from '@devWidgets/chatBot/message/Message';
 
 const Chatting = ({ messages }: ChattingProps) => {
     return messages.map((message, index) => {

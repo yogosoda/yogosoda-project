@@ -1,6 +1,6 @@
 import bot from '@devShared/images/chatBot/yogo-chat-bot.svg';
-import Message from '@devWidgets/message/Message';
-import { memo } from 'react';
+import React, { memo } from 'react';
+import Message from '@devWidgets/chatBot/message/Message';
 
 const ChatBotMessage = ({
     text,

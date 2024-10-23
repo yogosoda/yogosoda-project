@@ -2,7 +2,6 @@
 
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { PlanMeta } from '@dev/entities/plans.types';
-import ChatBotMessage from '@devWidgets/chatBotMessage/ChatBotMessage';
 import {
     FirstMessage,
     QuestionAffordableTelecom,
@@ -15,6 +14,7 @@ import {
     UseGetAffordableTelecomPlans,
     UseGetGeneralTelecomPlans,
 } from '@devfeatures/chatBot/getUserPlan/model';
+import ChatBotMessage from '@devWidgets/chatBot/botMessage/ChatBotMessage';
 
 const GetUserPlan = ({
     setUserTelecom,

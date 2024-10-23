@@ -4,11 +4,11 @@ import send from '@devShared/images/chatBot/send.svg';
 import React, { useEffect, useRef, useState } from 'react';
 import { PlanMeta } from '@dev/entities/plans.types';
 import GetUserPlan from '@devfeatures/chatBot/getUserPlan/ui/GetUserPlan';
-import ChatBotMessage from '@devWidgets/chatBotMessage/ChatBotMessage';
 import { MessageType } from '@devfeatures/chatBot/chatting/api';
-import Chatting from '@devWidgets/chatBot/Chatting';
 import { UseSendMessage } from '@devfeatures/chatBot/chatting/model';
 import { StartMessage } from '@devShared/constants/chatBot/message';
+import ChatBotMessage from '@devWidgets/chatBot/botMessage/ChatBotMessage';
+import Chatting from '@devWidgets/chatBot/chatting/Chatting';
 
 const Comparison = () => {
     const messagesEndRef = useRef<HTMLDivElement | null>(null);

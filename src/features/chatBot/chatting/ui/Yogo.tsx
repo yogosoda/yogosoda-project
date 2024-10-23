@@ -2,11 +2,11 @@
 import yogo from '@devShared/images/chatBot/yogo.svg';
 import send from '@devShared/images/chatBot/send.svg';
 import React, { useEffect, useRef, useState } from 'react';
-import ChatBotMessage from '@devWidgets/chatBotMessage/ChatBotMessage';
 import { MessageType } from '@devfeatures/chatBot/chatting/api';
 import { UseSendMessage } from '@devfeatures/chatBot/chatting/model';
 import { StartMessage } from '@devShared/constants/chatBot/message';
-import Chatting from '@devWidgets/chatBot/Chatting';
+import ChatBotMessage from '@devWidgets/chatBot/botMessage/ChatBotMessage';
+import Chatting from '@devWidgets/chatBot/chatting/Chatting';
 
 const Yogo = () => {
     const messagesEndRef = useRef<HTMLDivElement | null>(null);
