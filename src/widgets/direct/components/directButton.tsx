@@ -11,9 +11,9 @@ export default function DirectButton({
 }: YogoButtonProps) {
     return (
         <Link href={url}>
-            <div className="flex justify-center mb-[10px]">
+            <div className="flex justify-center my-[10px]">
                 <Box
-                    width="300px"
+                    width="80vw"
                     height="40px"
                     borderRadius="8px"
                     borderColor="#A8A8A8"

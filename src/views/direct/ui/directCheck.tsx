@@ -2,7 +2,7 @@ import DirectCheckItem from '@dev/widgets/direct/components/directCheckItem';
 
 export default function DirectCheck() {
     return (
-        <div className="mt-8 mb-5 mx-auto w-calc-92">
+        <div className="mt-8 mb-5 p-4 mx-auto w-calc-92">
             <p className="flex justify-center font-bold mb-5 text-[25px]">
                 꼭 확인하세요!
             </p>

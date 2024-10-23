@@ -119,19 +119,20 @@ export default function DirectBenefits() {
             <DirectBenefitsTop />
             {benefitsData.map((benefits, index) => (
                 <DirectBenefitsRow
+                    width="42vw"
                     key={index}
-                    left={`${13 + index * 2}px`} // left값을 동적으로 조정
-                    className="text-[12px] text-center mb-3"
+                    left="50%"
+                    className="text-[0.8rem] text-center mb-5"
                     benefits={benefits}
                 />
             ))}
             <DirectBenefitsBottom
-                width="300px"
+                width="calc(100vw - 10vw)"
                 height="160px"
                 imageWidth={180}
                 top="-45px"
-                left="55px"
-                className="text-[12px] text-center mb-[15px]"
+                left="50%"
+                className="text-[0.8rem] text-center mb-[15px]"
                 imageSrc={yogoBenefitsImage13}
                 imageAlt="Yogo Benefits Image 13"
                 text={

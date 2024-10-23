@@ -13,7 +13,7 @@ export default function DirectSignUpGuideBox({
     height,
 }: SignUpGuideProps) {
     return (
-        <Box className="mb-[15px]" height={height}>
+        <Box className="mb-[20px]" height={height} width="calc(100vw - 10vw)">
             <div className="flex justify-around my-4">
                 {imageSrc && (
                     <Image
