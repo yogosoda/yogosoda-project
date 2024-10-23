@@ -11,7 +11,6 @@ import { KTPlansType } from '@dev/entities/kt_plans.type';
 
 export default function Payment() {
     const [payData, setPayData] = useState<KTPlansType[]>([]);
-    // const [payAllData, setPayAllData] = useState([]);
     const [isToggle, setIsToggle] = useState<boolean[]>([]);
 
     const toggleHandler = (index: number) => {
@@ -24,12 +23,7 @@ export default function Payment() {
 
     const paymentFetchData = async () => {
         try {
-            const res = await api.post<[]>(
-                'http://3.35.51.214/api/search_kt_plan',
-                {
-                    searchKeyword: '',
-                }
-            );
+            const res = await api.get<[]>('/api/yogos');
             if (res.data) {
                 setPayData(res.data);
             }
@@ -38,25 +32,8 @@ export default function Payment() {
         }
     };
 
-    // const paymentAllFetchData = async () => {
-    //     try {
-    //         const res = await api.post<[]>(
-    //             'http://3.35.51.214/api/search_plan',
-    //             {
-    //                 searchText: '요고',
-    //             }
-    //         );
-    //         if (res.data) {
-    //             setPayAllData(res.data);
-    //         }
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // };
-
     useEffect(() => {
         paymentFetchData();
-        // paymentAllFetchData();
     }, []);
 
     return (
@@ -66,7 +43,7 @@ export default function Payment() {
                     key={index}
                     className="pt-14 pb-14 flex flex-col justify-center items-center"
                 >
-                    <div className="w-[21rem] shadow-box bg-white rounded-2xl flex flex-col justify-center gap-4 p-4">
+                    <div className="w-[25rem] shadow-box bg-white rounded-2xl flex flex-col justify-center pl-4 pt-6 gap-4">
                         <KtLogo width={25} height={25} />
                         <p className="text-[#ADB5BD] text-xs">
                             {plan.plan_name}
@@ -77,7 +54,7 @@ export default function Payment() {
                             </p>
                             <Question />
                         </div>
-                        <ul className="flex flex-col gap-2 text-[#979797] text-[0.65rem] font-semibold">
+                        <ul className="flex flex-col gap-2 text-[#979797] text-xs font-semibold">
                             <div className="flex gap-2">
                                 <li>통화 {plan.calls_and_texts}</li>
                                 <span>|</span>
@@ -99,14 +76,11 @@ export default function Payment() {
                             <Question />
                         </div>
 
-                        <div className="flex justify-center">
-                            <Divider className="w-[18.5rem]" />
+                        <div className="flex justify-center pr-6">
+                            <Divider className="w-[22.5rem]" />
                         </div>
 
-                        <div
-                            onClick={() => toggleHandler(index)}
-                            className="flex items-center gap-4"
-                        >
+                        <div className="flex items-center gap-4 pb-4">
                             <ul className="flex gap-1">
                                 {Array.from(
                                     {
@@ -132,14 +106,16 @@ export default function Payment() {
                                 개
                             </p>
 
-                            <div className="absolute pl-[17rem]">
+                            <div className="absolute pl-[21.5rem]">
                                 {isToggle[index] ? (
                                     <Up
+                                        onClick={() => toggleHandler(index)}
                                         fill="#666"
                                         className="cursor-pointer"
                                     />
                                 ) : (
                                     <Down
+                                        onClick={() => toggleHandler(index)}
                                         fill="#666"
                                         className="cursor-pointer"
                                     />
@@ -157,7 +133,7 @@ export default function Payment() {
                                 {plan.benefits.choice_benefits}
                             </li>
 
-                            <li className="flex flex-col gap-2 pb-2">
+                            <li className="flex flex-col gap-2 pb-6">
                                 {plan.benefits.plus_benefits.length > 0 ? (
                                     <>
                                         <p className="text-[0.9rem]">
