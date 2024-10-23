@@ -11,3 +11,5 @@ export const QuestionAffordableTelecom = `
 거의 다 왔습니다! 🚀  
 ## 사용 중인 알뜰폰 **통신망**을 선택해주세요! 📱  
 어느 통신망을 사용하고 계신가요?`;
+
+export const StartMessage = `무엇이 궁금하신가요? 제가 도와드릴게요! 🤖💬`;
