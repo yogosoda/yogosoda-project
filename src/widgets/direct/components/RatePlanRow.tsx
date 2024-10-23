@@ -1,8 +1,8 @@
 import RatePlan from '@dev/shared/components/RatePlan';
 import yogoRecommendImage2 from '@dev/shared/images/directImage/yogo_recommend_image2.png';
 import yogoRecommendImage3 from '@dev/shared/images/directImage/yogo_recommend_image3.png';
-import buttonPlus from '@dev/shared/images/directImage/button_plus.png';
-import DirectButton from './directButton';
+import yogoRecommendMore from '@dev/shared/images/directImage/yogo_recommend_more.png';
+import ModalButton from './ModalButton';
 
 export default function RatePlanRow() {
     return (
@@ -61,13 +61,10 @@ export default function RatePlanRow() {
                 smartDevice="스마트기기 2회선 무료"
                 price="69,000"
             />
-            <DirectButton
+            <ModalButton
                 text="요고 요금제 더 보기"
-                width="172px"
-                className="font-bold text-[15px] m-auto ml-[17px]"
-                imageSrc={buttonPlus}
-                imageAlt="Button Plus"
-                url="/"
+                imageSrc={yogoRecommendMore}
+                imageAlt="Yogo Recommend More"
             />
         </>
     );

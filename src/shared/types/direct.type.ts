@@ -24,9 +24,7 @@ export type BenefitsTopRowProps = CommonImageProps & {
     children: React.ReactNode;
 };
 
-export type YogoButtonProps = CommonLayoutProps &
-    CommonImageProps &
-    CommonButtonProps;
+export type YogoButtonProps = CommonImageProps & CommonButtonProps;
 
 export type CheckItemProps = { children: React.ReactNode };
 

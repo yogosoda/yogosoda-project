@@ -4,8 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function DirectButton({
-    width,
-    className,
     text,
     imageSrc,
     imageAlt = '',
@@ -15,13 +13,13 @@ export default function DirectButton({
         <Link href={url}>
             <div className="flex justify-center my-[10px]">
                 <Box
-                    width={width}
+                    width="80vw"
                     height="40px"
                     borderRadius="8px"
                     borderColor="#A8A8A8"
                     className="flex items-center relative cursor-pointer"
                 >
-                    <p className={className}>{text}</p>
+                    <p className="font-bold text-[15px] m-auto">{text}</p>
                     {imageSrc && (
                         <Image
                             src={imageSrc}

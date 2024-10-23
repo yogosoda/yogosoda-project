@@ -32,8 +32,6 @@ export default function DirectSignUpGuideBox({
             {buttonData.map((button, index) => (
                 <DirectButton
                     key={index}
-                    width="80vw"
-                    className="font-bold text-[15px] m-auto"
                     text={button.text}
                     imageSrc={buttonArrow}
                     imageAlt="Button Arrow"
