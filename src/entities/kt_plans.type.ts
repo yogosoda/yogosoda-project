@@ -18,3 +18,7 @@ export interface KTPlansType {
     monthly_fee: string;
     plan_name: string;
 }
+
+export interface KTPlansALLType {
+    speedWhenExhaustedDescription: string;
+}
