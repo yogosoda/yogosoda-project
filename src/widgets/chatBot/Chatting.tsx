@@ -7,7 +7,7 @@ const Chatting = ({ messages }: ChattingProps) => {
         const isUser = message.role === 'user';
 
         return (
-            <div key={index} className="w-full">
+            <div key={index} className="w-full mt-2.5">
                 {isUser ? (
                     <Message text={message.message} />
                 ) : (
