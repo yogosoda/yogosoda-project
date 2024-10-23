@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function DirectButton({
+    width,
+    className,
     text,
     imageSrc,
     imageAlt = '',
@@ -11,15 +13,15 @@ export default function DirectButton({
 }: YogoButtonProps) {
     return (
         <Link href={url}>
-            <div className="flex justify-center mb-[10px]">
+            <div className="flex justify-center my-[10px]">
                 <Box
-                    width="calc(90vw - 10vw)"
+                    width={width}
                     height="40px"
                     borderRadius="8px"
                     borderColor="#A8A8A8"
                     className="flex items-center relative cursor-pointer"
                 >
-                    <p className="font-bold text-[15px] m-auto">{text}</p>
+                    <p className={className}>{text}</p>
                     {imageSrc && (
                         <Image
                             src={imageSrc}

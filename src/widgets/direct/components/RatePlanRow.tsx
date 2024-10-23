@@ -1,6 +1,8 @@
 import RatePlan from '@dev/shared/components/RatePlan';
 import yogoRecommendImage2 from '@dev/shared/images/directImage/yogo_recommend_image2.png';
 import yogoRecommendImage3 from '@dev/shared/images/directImage/yogo_recommend_image3.png';
+import buttonPlus from '@dev/shared/images/directImage/button_plus.png';
+import DirectButton from './directButton';
 
 export default function RatePlanRow() {
     return (
@@ -58,6 +60,14 @@ export default function RatePlanRow() {
                 plusBenefit="지니뮤직 or 밀리의 서재 or 블라이스 셀렉트 무료"
                 smartDevice="스마트기기 2회선 무료"
                 price="69,000"
+            />
+            <DirectButton
+                text="요고 요금제 더 보기"
+                width="40vw"
+                className="font-bold text-[15px] m-auto ml-[17px]"
+                imageSrc={buttonPlus}
+                imageAlt="Button Plus"
+                url="/"
             />
         </>
     );

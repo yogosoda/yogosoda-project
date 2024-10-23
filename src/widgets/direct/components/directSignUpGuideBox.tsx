@@ -13,7 +13,7 @@ export default function DirectSignUpGuideBox({
     height,
 }: SignUpGuideProps) {
     return (
-        <Box className="mb-[15px]" height={height} width="calc(100vw - 10vw)">
+        <Box className="mb-[20px]" height={height} width="calc(100vw - 10vw)">
             <div className="flex justify-around my-4">
                 {imageSrc && (
                     <Image
@@ -32,6 +32,8 @@ export default function DirectSignUpGuideBox({
             {buttonData.map((button, index) => (
                 <DirectButton
                     key={index}
+                    width="80vw"
+                    className="font-bold text-[15px] m-auto"
                     text={button.text}
                     imageSrc={buttonArrow}
                     imageAlt="Button Arrow"
