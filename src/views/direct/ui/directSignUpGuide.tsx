@@ -8,29 +8,29 @@ import DirectSignUpGuideBox from '@dev/widgets/direct/components/directSignUpGui
 const buttonData1 = [
     {
         text: '핸드폰 보러가기',
-        url: 'https://shop.kt.com/mobile/products.do?&=&category=mobile&pplId=0920',
+        url: 'https://m.shop.kt.com:444/m/mobile/products.do?&=&category=mobile&pplId=0920',
     },
     {
         text: '가입 혜택 보기',
-        url: 'https://shop.kt.com/unify/yogoEvent.do',
+        url: '/subscription-benefits',
     },
 ];
 
 const buttonData2 = [
     {
         text: 'USIM 가입하기',
-        url: 'https://shop.kt.com/direct/directUsim.do',
+        url: 'https://m.shop.kt.com:444/m/direct/directUsim.do',
     },
     {
         text: '가입 혜택 보기',
-        url: 'https://shop.kt.com/display/olhsPlan.do?plnDispNo=2388',
+        url: 'https://m.shop.kt.com:444/m/display/olhsPlan.do?plnDispNo=2388',
     },
 ];
 
 const buttonData3 = [
     {
         text: '핸드폰 등록하기',
-        url: 'https://shop.kt.com/direct/directChangeRate.do',
+        url: '/yogo-event',
     },
 ];
 
