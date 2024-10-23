@@ -12,7 +12,7 @@ function Yogoevent_Search({ ktPlanData }: { ktPlanData: KTPlansType[] }) {
     const [planIdx, setPlanIdx] = useState(6);
 
     const { benefits, calls_and_texts, data, monthly_fee, plan_name } =
-        ktPlanData[ktPlanData.length - 1 - planIdx];
+        ktPlanData[planIdx];
 
     return (
         <section className="flex-col-center w-full h-fit bg-gray-200 rounded-2xl">
