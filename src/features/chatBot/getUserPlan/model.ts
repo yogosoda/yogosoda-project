@@ -13,6 +13,7 @@ export const UseGetGeneralTelecomPlans = ({
 }: UseGetGeneralTelecomPlansProps) => {
     const [isAffordableTelecom, setISAffordableTelecom] =
         useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(false);
 
     useEffect(() => {
         if (!telecom) {
@@ -26,16 +27,22 @@ export const UseGetGeneralTelecomPlans = ({
         if (!['KT', 'LGU+', 'SKT'].includes(telecom)) {
             return;
         }
+        setLoading(true);
+
         const param = telecom === 'LGU+' ? 'lgu' : telecom;
-        getGeneralTelecomPlans({ telecom: param }).then((plans) => {
-            if (plans) {
-                setUserTelecom(telecom);
-                setUserPlan(plans);
-            }
-        });
+        getGeneralTelecomPlans({ telecom: param })
+            .then((plans) => {
+                if (plans) {
+                    setUserTelecom(telecom);
+                    setUserPlan(plans);
+                }
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     }, [telecom]);
 
-    return isAffordableTelecom;
+    return { isAffordableTelecom, loading };
 };
 
 type UseGetGeneralTelecomPlansProps = {
@@ -50,6 +57,8 @@ export const UseGetAffordableTelecomPlans = ({
     setUserPlan,
     setUserTelecom,
 }: UseGetAffordableTelecomPlansProps) => {
+    const [loading, setLoading] = useState<boolean>(false);
+
     useEffect(() => {
         if (!network || !affordableTelecom) {
             return;
@@ -57,17 +66,23 @@ export const UseGetAffordableTelecomPlans = ({
         if (!['KT', 'LGU+', 'SKT'].includes(network)) {
             return;
         }
+        setLoading(true);
         const param = network === 'LGU+' ? 'LGU' : network;
         getAffordableTelecomPlans({
             network: param,
             id: affordableTelecom,
-        }).then((plans) => {
-            if (plans) {
-                setUserTelecom(affordableTelecom);
-                setUserPlan(plans);
-            }
-        });
+        })
+            .then((plans) => {
+                if (plans) {
+                    setUserTelecom(affordableTelecom);
+                    setUserPlan(plans);
+                }
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     }, [network, affordableTelecom]);
+    return { loading };
 };
 
 type UseGetAffordableTelecomPlansProps = {
@@ -101,7 +116,7 @@ export const UseGetAffordableTelecomList = ({
                 }
             })
             .finally(() => {
-                setLoading(true);
+                setLoading(false);
             });
     }, [network]);
 

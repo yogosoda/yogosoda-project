@@ -1,6 +1,6 @@
 'use client';
 
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { PlanMeta } from '@dev/entities/plans.types';
 import ChatBotMessage from '@devWidgets/chatBotMessage/ChatBotMessage';
 import {
@@ -16,27 +16,43 @@ import {
     UseGetGeneralTelecomPlans,
 } from '@devfeatures/chatBot/getUserPlan/model';
 
-const GetUserPlan = ({ setUserTelecom, setUserPlan }: GetUserPlanProps) => {
+const GetUserPlan = ({
+    setUserTelecom,
+    setUserPlan,
+    setLoading,
+}: GetUserPlanProps) => {
     const [isTelecom, setIsTelecom] = useState<TelecomTypes>(null);
     const [network, setNetwork] = useState<TelecomTypes>(null);
 
     const [affordableTelecom, setAffordableTelecom] = useState<string | null>(
         null
     );
-    const isAffordableTelecom = UseGetGeneralTelecomPlans({
-        telecom: isTelecom,
-        setUserPlan,
-        setUserTelecom,
-    });
+
+    const { isAffordableTelecom, loading: generalTelecomPlansLoading } =
+        UseGetGeneralTelecomPlans({
+            telecom: isTelecom,
+            setUserPlan,
+            setUserTelecom,
+        });
+
     const { affordableTelecomCategory, loading: affordableTelecomListLoading } =
         UseGetAffordableTelecomList({ network });
 
-    UseGetAffordableTelecomPlans({
-        network,
-        affordableTelecom,
-        setUserPlan,
-        setUserTelecom,
-    });
+    const { loading: affordableTelecomPlansLoading } =
+        UseGetAffordableTelecomPlans({
+            network,
+            affordableTelecom,
+            setUserPlan,
+            setUserTelecom,
+        });
+
+    useEffect(() => {
+        if (isAffordableTelecom) {
+            setLoading(affordableTelecomPlansLoading);
+        } else {
+            setLoading(generalTelecomPlansLoading);
+        }
+    }, [affordableTelecomPlansLoading, generalTelecomPlansLoading]);
 
     return (
         <div className={'w-full flex-with-col p-[1.5rem] gap-2.5'}>
@@ -80,4 +96,5 @@ export default GetUserPlan;
 type GetUserPlanProps = {
     setUserTelecom: Dispatch<SetStateAction<string | null>>;
     setUserPlan: Dispatch<SetStateAction<PlanMeta[] | null>>;
+    setLoading: Dispatch<SetStateAction<boolean>>;
 };
