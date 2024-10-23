@@ -25,14 +25,15 @@ export default function DirectSlide() {
         setIsPaused((prev) => !prev);
     };
 
-    // 자동 슬라이드 전환 설정
     useEffect(() => {
-        const interval = setInterval(() => {
-            nextSlide();
-        }, 3000); // 3초마다 전환
+        if (!isPaused) {
+            const interval = setInterval(() => {
+                nextSlide();
+            }, 3000);
 
-        return () => clearInterval(interval); // 컴포넌트가 언마운트될 때 클리어
-    }, []);
+            return () => clearInterval(interval);
+        }
+    }, [isPaused, currentIndex]);
 
     return (
         <div className="relative h-[234px] mx-auto overflow-hidden flex items-center">
