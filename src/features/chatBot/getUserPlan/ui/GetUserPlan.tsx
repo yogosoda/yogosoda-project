@@ -55,7 +55,7 @@ const GetUserPlan = ({
     }, [affordableTelecomPlansLoading, generalTelecomPlansLoading]);
 
     return (
-        <div className={'w-full flex-with-col p-[1.5rem] gap-2.5'}>
+        <div className={'w-full flex-with-col gap-2.5 mb-[10px]'}>
             <ChatBotMessage text={FirstMessage} />
             <ChatBotQuestionButtonList
                 value={isTelecom}
