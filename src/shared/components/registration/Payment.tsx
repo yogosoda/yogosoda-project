@@ -13,6 +13,7 @@ export default function Payment() {
     const [payData, setPayData] = useState<KTPlansType[]>([]);
     const [payAllData, setPayAllData] = useState<KTPlansALLType[]>([]);
     const [isToggle, setIsToggle] = useState<boolean[]>([]);
+    const [isQuestion, setIsQuestion] = useState<number | null>(null);
 
     const toggleHandler = (index: number) => {
         setIsToggle((prevToggle) => {
@@ -20,6 +21,14 @@ export default function Payment() {
             newToggle[index] = !newToggle[index]; // 해당 인덱스의 값만 토글'/n'
             return newToggle; // 새로운 배열을 반환하여 상태 업데이트
         });
+    };
+
+    const questionHandler = (index: number) => {
+        if (isQuestion === index) {
+            setIsQuestion(null);
+        } else {
+            setIsQuestion(index);
+        }
     };
 
     const paymentFetchData = async () => {
@@ -66,11 +75,11 @@ export default function Payment() {
                             <p className="font-bold text-[1.3rem]">
                                 월 {plan.data.total_data}
                             </p>
-                            <button>
+                            <button onClick={() => questionHandler(index)}>
                                 <Question />
                             </button>
                             <div>
-                                {payAllData[index] && (
+                                {isQuestion === index && payAllData[index] && (
                                     <div className="border rounded-lg p-2 text-white bg-slate-700">
                                         {plan.data.total_data.includes(
                                             '무제한'
