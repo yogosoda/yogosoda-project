@@ -11,6 +11,7 @@ import { KTPlansType } from '@dev/entities/kt_plans.type';
 
 export default function Payment() {
     const [payData, setPayData] = useState<KTPlansType[]>([]);
+    // const [payAllData, setPayAllData] = useState<[]>([]);
     const [isToggle, setIsToggle] = useState<boolean[]>([]);
 
     const toggleHandler = (index: number) => {
@@ -32,8 +33,20 @@ export default function Payment() {
         }
     };
 
+    // const paymentFetchAllData = async () => {
+    //     try {
+    //         const res = await api.get<[]>('/api/plans/KT');
+    //         if (res.data) {
+    //             setPayAllData(res.data);
+    //         }
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // };
+
     useEffect(() => {
         paymentFetchData();
+        // paymentFetchAllData();
     }, []);
 
     return (
@@ -66,7 +79,7 @@ export default function Payment() {
                                 </li>
                             </div>
                             <div>
-                                <li className="text-[0.65rem]">{`Y덤 혜택 (${plan.info} / ${plan.data.total_data} + ${plan.data.total_data})`}</li>
+                                {`Y덤 혜택 (${plan.info} / ${plan.data.total_data.includes('무제한') ? plan.data.total_data : `${plan.data.total_data} + ${plan.data.total_data}`})`}
                             </div>
                         </ul>
                         <div className="flex gap-2 items-center">
