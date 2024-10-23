@@ -63,7 +63,7 @@ export default function RatePlanRow() {
             />
             <DirectButton
                 text="요고 요금제 더 보기"
-                width="40vw"
+                width="172px"
                 className="font-bold text-[15px] m-auto ml-[17px]"
                 imageSrc={buttonPlus}
                 imageAlt="Button Plus"
