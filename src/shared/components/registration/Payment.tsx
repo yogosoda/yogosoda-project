@@ -80,26 +80,30 @@ export default function Payment() {
                                 <Question />
                             </button>
 
-                            <div className="absolute bottom-8 left-24 ">
-                                {isQuestion === index && payAllData[index] && (
-                                    <div className="border rounded-lg p-2 text-white bg-slate-700 ">
-                                        {plan.data.total_data.includes(
-                                            '무제한'
-                                        ) ? (
-                                            <p className="text-[0.55rem] font-semibold">
-                                                무제한
-                                            </p>
-                                        ) : (
-                                            <p className="text-[0.55rem] font-semibold">
-                                                {
-                                                    payAllData[index]
-                                                        .speedWhenExhaustedDescription
-                                                }
-                                            </p>
-                                        )}
-                                    </div>
-                                )}
-                            </div>
+                            {isQuestion === index && payAllData[index] && (
+                                <div>
+                                    {plan.data.total_data.includes('무제한') ? (
+                                        <div className="absolute bottom-[1.8rem] left-[11rem]">
+                                            <div className="border rounded-lg p-2 text-white bg-slate-700 ">
+                                                <p className="text-[0.55rem] font-semibold">
+                                                    무제한
+                                                </p>
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <div className="absolute bottom-[1.8rem] left-[6.5rem]">
+                                            <div className="border rounded-lg p-2 text-white bg-slate-700 ">
+                                                <p className="text-[0.55rem] font-semibold">
+                                                    {
+                                                        payAllData[index]
+                                                            .speedWhenExhaustedDescription
+                                                    }
+                                                </p>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            )}
                         </div>
 
                         <ul className="flex flex-col gap-2 text-[#979797] text-[0.65rem] font-semibold">
