@@ -11,12 +11,15 @@ import {
 } from '@firebase/firestore';
 import { CustomError } from '@devShared/utils/error';
 import { firestore } from '@dev/firebase';
+import { Prompt } from '@devShared/constants/chatBot/propmt';
 
 export const POST = async (req: Request) => {
     try {
-        const model = await createChatBot();
         const body = await req.json();
-        const { message, messages } = body;
+
+        const { message, messages, modelType, userPlans } = body;
+
+        const model = await createChatBot({ modelType, userPlans });
 
         if (!message) {
             return new Response(
@@ -84,28 +87,40 @@ export const POST = async (req: Request) => {
     }
 };
 
-const createChatBot = async (): Promise<GenerativeModel> => {
+const createChatBot = async ({
+    modelType,
+    userPlans,
+}: {
+    modelType: string;
+    userPlans?: {
+        telecom: string;
+        plans: PlanMeta[];
+    };
+}): Promise<GenerativeModel> => {
     const genAI = new GoogleGenerativeAI(
         process.env.NEXT_PUBLIC_OPENAI_API_KEY ?? ''
     );
 
-    let prompt = `너는 지금 친절하고 전문적인 KT 통신사의 요금제 상담원인 YOGO 상담사야. 
-                            현재 고객이 사용 중인 요금제 또는 타 통신사의 요금제 정보를 바탕으로 KT 최신 요금제를 비교해줘. 
-                            요금, 데이터 제공량, 추가 혜택 등을 기준으로 명확하고 간결하게 설명하며, 고객의 요구에 가장 적합한 요금제를 추천해줘. 
-                            고객이 쉽게 이해할 수 있도록 친절한 말투로 답변하되, 불필요한 질문 없이 핵심 정보만 전달해줘
-                            추가적으로, 고객이 현재 사용 중인 요금제를 파악해야 합니다. 
-                            고객의 현재 요금제의 가격, 데이터 제공량, 추가 혜택 등을 비교하여 가장 적합한 KT의 요금제를 추천해야 합니다.
-                            `;
-
+    let prompt = `너는 지금 친절하고 전문적인 KT 통신사의 요금제 상담원인 YOGO 상담사야.
+                          ${Prompt[modelType] ?? ''} `;
     try {
+        if (modelType === 'comparison' && userPlans) {
+            prompt = `${prompt} 
+                        현재 고객은 통신사 ${userPlans.telecom}를 사용중입니다.
+                        또한, 고객이 현재 사용 중인 통신사의 최신 요금제 리스트를 확인해야합니다. 
+                        고객이 현재 사용 중인 통신사의 최신 요금제 리스트는 다음과 같습니다:
+                        - 요금제 리스트 정보: ${JSON.stringify(userPlans)}.`;
+        }
         const yogoPlans = await getYogoPlans();
         const planDescription = await getPlansKeyDescription();
 
         if (yogoPlans && planDescription) {
             prompt = `${prompt} 
-                        또한 제공하는 최신 요금제 데이터를 분석하여 상담을 진행해줘. 
-                        최신 요금제 데이터는 다음과 같아: 
+                        또한 KT에서 제공하는 아래의 최신 요금제 데이터를 분석하여 상담을 진행해줘. 
+                        최신 요금제 정보는 다음과 같습니다:
                         - 요금제 정보: ${JSON.stringify(yogoPlans)}.
+                       
+                        각 요금제 데이터 필드에 대한 설명은 다음과 같습니다:
                         - 각 데이터 필드 설명: ${JSON.stringify(planDescription)}.
                         
                         필요한 경우 추가 정보도 안내해줘. 하지만 중복된 질문을 던지지 말고, 정보가 명확하게 제공될 수 있도록 노력해줘.`;

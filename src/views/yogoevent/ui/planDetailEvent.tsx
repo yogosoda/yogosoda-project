@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function PlanDetailEvent() {
     return (
-        <div className="relative">
+        <div className="w-full relative">
             <Image
                 src={yogoDetailImage2}
                 alt="Yogo Detail Image2"

@@ -1,5 +1,7 @@
+import ChatLanding from '@devViews/chatLanding/ChatLanding';
+
 const Page = () => {
-    return <div>chat-bot</div>;
+    return <ChatLanding />;
 };
 
 export default Page;
