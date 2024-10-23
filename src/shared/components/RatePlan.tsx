@@ -28,10 +28,10 @@ export default function RatePlan({
                             className="absolute top-[-4px] left-[15px]"
                         />
                     )}
-                    <p className="w-[90%] font-bold text-center text-[1.4rem] mt-5 mx-auto pb-5 border-b-[2px] border-[#D9D9D9]">
+                    <p className="w-[90%] font-bold text-center text-[1.2rem] mt-5 mx-auto pb-5 border-b-[2px] border-[#D9D9D9]">
                         {ratePlanName}
                     </p>
-                    <div className="w-[90%] my-5 mx-auto pb-5 border-b-[2px] border-[#D9D9D9] flex flex-col gap-2">
+                    <div className="w-[90%] my-5 mx-auto pb-5 border-b-[2px] border-[#D9D9D9] flex flex-col gap-2 text-sm">
                         <div className="flex justify-between">
                             <p className="text-[#161616]">데이터</p>
                             <div className="flex flex-col items-end text-right">
@@ -64,7 +64,7 @@ export default function RatePlan({
                     {(choiceBenefit || plusBenefit || smartDevice) && (
                         <div className="w-[90%] mx-auto mb-5 pb-5 border-b-[2px] border-[#D9D9D9] flex flex-col gap-2">
                             {choiceBenefit && (
-                                <div className="flex flex-col gap-1 text-sm font-bold">
+                                <div className="flex flex-col gap-1 text-xs font-bold">
                                     <p className="text-[#2CB5AF]">
                                         초이스 혜택
                                     </p>
@@ -74,7 +74,7 @@ export default function RatePlan({
                                 </div>
                             )}
                             {plusBenefit && (
-                                <div className="flex flex-col gap-1 text-sm font-bold">
+                                <div className="flex flex-col gap-1 text-xs font-bold">
                                     <p className="text-[#2CB5AF]">
                                         플러스 혜택
                                     </p>
@@ -84,7 +84,7 @@ export default function RatePlan({
                                 </div>
                             )}
                             {smartDevice && (
-                                <div className="flex flex-col gap-1 text-sm font-bold">
+                                <div className="flex flex-col gap-1 text-xs font-bold">
                                     <p className="text-[#2CB5AF]">
                                         {smartDevice}
                                     </p>
@@ -92,9 +92,9 @@ export default function RatePlan({
                             )}
                         </div>
                     )}
-                    <p className="w-[90%] mb-5 mx-auto text-right text-xl">
+                    <p className="w-[90%] mb-5 mx-auto text-right text-[1rem]">
                         월{' '}
-                        <span className="font-bold text-[1.4rem]">{price}</span>
+                        <span className="font-bold text-[1.2rem]">{price}</span>
                         원
                     </p>
                 </div>
