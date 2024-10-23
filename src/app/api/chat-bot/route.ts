@@ -106,8 +106,10 @@ const createChatBot = async ({
     try {
         if (modelType === 'comparison' && userPlans) {
             prompt = `${prompt} 
-                        현재 고객은 통신사 ${userPlans.telecom}를 사용중이며, 해당 통신사의 요금제 정보는 다음과 같습니다:
-                        - 요금제 정보: ${JSON.stringify(userPlans)}.`;
+                        현재 고객은 통신사 ${userPlans.telecom}를 사용중입니다.
+                        또한, 고객이 현재 사용 중인 통신사의 최신 요금제 리스트를 확인해야합니다. 
+                        고객이 현재 사용 중인 통신사의 최신 요금제 리스트는 다음과 같습니다:
+                        - 요금제 리스트 정보: ${JSON.stringify(userPlans)}.`;
         }
         const yogoPlans = await getYogoPlans();
         const planDescription = await getPlansKeyDescription();
