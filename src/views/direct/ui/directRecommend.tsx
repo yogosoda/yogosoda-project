@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import yogoLogo from '@dev/shared/images/directImage/yogo_logo.png';
 import yogoRecommendImage1 from '@dev/shared/images/directImage/yogo_recommend_image1.png';
+import RatePlanRow from '@dev/widgets/direct/components/RatePlanRow';
 
 export default function DirectRecommend() {
     return (
@@ -16,7 +17,7 @@ export default function DirectRecommend() {
                     />
                     <p className="font-bold text-[25px]">요금제는?</p>
                 </div>
-                <div className="flex items-center gap-1 mb-2">
+                <div className="flex items-center gap-1 mb-5">
                     <Image
                         src={yogoRecommendImage1}
                         alt="Yogo Recommend Image1"
@@ -25,6 +26,7 @@ export default function DirectRecommend() {
                     />
                     <p className="text-[12px]">34세 이하는 데이터 2배 적용!</p>
                 </div>
+                <RatePlanRow />
             </div>
         </div>
     );
