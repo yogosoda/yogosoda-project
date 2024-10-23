@@ -7,11 +7,13 @@ import { ReactComponent as Gift } from '@devShared/svg/gift.svg';
 import { ReactComponent as Question } from '@devShared/svg/Vector.svg';
 import { ReactComponent as Down } from '@devShared/svg/chevron-down-solid.svg';
 import { ReactComponent as Up } from '@devShared/svg/chevron-up-solid.svg';
-import { KTPlansType } from '@dev/entities/kt_plans.type';
+import { KTPlansALLType, KTPlansType } from '@dev/entities/kt_plans.type';
 
 export default function Payment() {
     const [payData, setPayData] = useState<KTPlansType[]>([]);
+    const [payAllData, setPayAllData] = useState<KTPlansALLType[]>([]);
     const [isToggle, setIsToggle] = useState<boolean[]>([]);
+    const [isQuestion, setIsQuestion] = useState<number | null>(null);
 
     const toggleHandler = (index: number) => {
         setIsToggle((prevToggle) => {
@@ -21,14 +23,17 @@ export default function Payment() {
         });
     };
 
+    const questionHandler = (index: number) => {
+        if (isQuestion === index) {
+            setIsQuestion(null);
+        } else {
+            setIsQuestion(index);
+        }
+    };
+
     const paymentFetchData = async () => {
         try {
-            const res = await api.post<[]>(
-                'http://3.35.51.214/api/search_kt_plan',
-                {
-                    searchKeyword: '',
-                }
-            );
+            const res = await api.get<[]>('/api/yogos');
             if (res.data) {
                 setPayData(res.data);
             }
@@ -37,8 +42,20 @@ export default function Payment() {
         }
     };
 
+    const paymentFetchAllData = async () => {
+        try {
+            const res = await api.get<[]>('/api/plans/KT');
+            if (res.data) {
+                setPayAllData(res.data);
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     useEffect(() => {
         paymentFetchData();
+        paymentFetchAllData();
     }, []);
 
     return (
@@ -48,18 +65,48 @@ export default function Payment() {
                     key={index}
                     className="pt-14 pb-14 flex flex-col justify-center items-center"
                 >
-                    <div className="w-[25rem] shadow-box bg-white rounded-2xl flex flex-col justify-center pl-4 pt-6 gap-4">
+                    <div className="w-[21rem] shadow-box bg-white rounded-2xl flex flex-col justify-center gap-4 p-4">
                         <KtLogo width={25} height={25} />
                         <p className="text-[#ADB5BD] text-xs">
                             {plan.plan_name}
                         </p>
-                        <div className="flex gap-2 items-center">
+
+                        <div className="flex gap-3 items-center relative">
                             <p className="font-bold text-[1.3rem]">
                                 월 {plan.data.total_data}
                             </p>
-                            <Question />
+
+                            <button onClick={() => questionHandler(index)}>
+                                <Question />
+                            </button>
+
+                            {isQuestion === index && payAllData[index] && (
+                                <div>
+                                    {plan.data.total_data.includes('무제한') ? (
+                                        <div className="absolute bottom-[1.8rem] left-[11rem]">
+                                            <div className="border rounded-lg p-2 text-white bg-slate-700 ">
+                                                <p className="text-[0.55rem] font-semibold">
+                                                    무제한
+                                                </p>
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <div className="absolute bottom-[1.8rem] left-[6.5rem]">
+                                            <div className="border rounded-lg p-2 text-white bg-slate-700 ">
+                                                <p className="text-[0.55rem] font-semibold">
+                                                    {
+                                                        payAllData[index]
+                                                            .speedWhenExhaustedDescription
+                                                    }
+                                                </p>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            )}
                         </div>
-                        <ul className="flex flex-col gap-2 text-[#979797] text-xs font-semibold">
+
+                        <ul className="flex flex-col gap-2 text-[#979797] text-[0.65rem] font-semibold">
                             <div className="flex gap-2">
                                 <li>통화 {plan.calls_and_texts}</li>
                                 <span>|</span>
@@ -70,22 +117,26 @@ export default function Payment() {
                                     {`${plan.data.shared_data_limit ? plan.data.shared_data_limit : '기본 데이터 한도내에서 사용'} `}
                                 </li>
                             </div>
+
                             <div>
-                                <li className="text-[0.65rem]">{`Y덤 혜택 (${plan.info} / ${plan.data.total_data} + ${plan.data.total_data})`}</li>
+                                {`Y덤 혜택 (${plan.info} / ${plan.data.total_data.includes('무제한') ? plan.data.total_data : `${plan.data.total_data} + ${plan.data.total_data}`})`}
                             </div>
                         </ul>
+
                         <div className="flex gap-2 items-center">
                             <p className="font-semibold text-[#425AD5]">
                                 {`월 ${plan.monthly_fee}`}
                             </p>
-                            <Question />
                         </div>
 
-                        <div className="flex justify-center pr-6">
-                            <Divider className="w-[22.5rem]" />
+                        <div className="flex justify-center">
+                            <Divider className="w-[18.5rem]" />
                         </div>
 
-                        <div className="flex items-center gap-4 pb-4">
+                        <div
+                            onClick={() => toggleHandler(index)}
+                            className="flex items-center gap-4"
+                        >
                             <ul className="flex gap-1">
                                 {Array.from(
                                     {
@@ -111,16 +162,14 @@ export default function Payment() {
                                 개
                             </p>
 
-                            <div className="absolute pl-[21.5rem]">
+                            <div className="absolute pl-[17rem]">
                                 {isToggle[index] ? (
                                     <Up
-                                        onClick={() => toggleHandler(index)}
                                         fill="#666"
                                         className="cursor-pointer"
                                     />
                                 ) : (
                                     <Down
-                                        onClick={() => toggleHandler(index)}
                                         fill="#666"
                                         className="cursor-pointer"
                                     />
@@ -138,7 +187,7 @@ export default function Payment() {
                                 {plan.benefits.choice_benefits}
                             </li>
 
-                            <li className="flex flex-col gap-2 pb-6">
+                            <li className="flex flex-col gap-2 pb-2">
                                 {plan.benefits.plus_benefits.length > 0 ? (
                                     <>
                                         <p className="text-[0.9rem]">
