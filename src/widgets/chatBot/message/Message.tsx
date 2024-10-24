@@ -50,6 +50,21 @@ const Message = ({
                         p: ({ ...props }) => (
                             <p className="w-full break-words" {...props} />
                         ),
+                        table: ({ ...props }) => (
+                            <table
+                                className="table-auto w-full border-collapse"
+                                {...props}
+                            />
+                        ),
+                        th: ({ ...props }) => (
+                            <th
+                                className="border px-2 py-1 text-left"
+                                {...props}
+                            />
+                        ),
+                        td: ({ ...props }) => (
+                            <td className="border px-2 py-1" {...props} />
+                        ),
                     }}
                 >
                     {text}
