@@ -8,7 +8,11 @@ const ChatBotMessage = ({
     loading = false,
 }: ChatBotMessageProps) => {
     return (
-        <div className={'flex-with-row justify-items-start gap-2.5 max-w-full'}>
+        <div
+            className={
+                'flex-with-row justify-items-start gap-2.5 max-w-full mt-7'
+            }
+        >
             <img src={bot} alt={'챗봇'} className={'w-[3.5rem] h-[3.5rem]'} />
             <div
                 className={'font-[1rem] font-neo-bd flex-with-col gap-2 flex-1'}

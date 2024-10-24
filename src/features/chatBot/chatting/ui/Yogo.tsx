@@ -34,7 +34,7 @@ const Yogo = () => {
             </header>
             <main
                 className={
-                    'block border-t-2 overflow-auto no-scrollbar p-[1.5rem]'
+                    'block border-t-2 overflow-auto no-scrollbar px-[1.5rem] pb-[1.5rem]'
                 }
                 style={{
                     height: 'calc(100vh - 10.5rem)',
@@ -63,7 +63,7 @@ const Yogo = () => {
                         }
                     }}
                     disabled={state}
-                    placeholder="메시지를 입력하세요..."
+                    placeholder="메시지를 입력해주세요."
                     className="h-[3rem] flex-1 p-3 border-none rounded-full focus:outline-none resize-none overflow-y-auto bg-[#DDD] disabled:opacity-50 font-neo-rg text[#7C7C7C]"
                 />
                 <button
