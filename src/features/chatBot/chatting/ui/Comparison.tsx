@@ -79,7 +79,7 @@ const Comparison = () => {
                     onKeyDown={(e) => {
                         if (e.key === 'Enter' && !e.shiftKey) {
                             e.preventDefault();
-                            if (state) {
+                            if (state || inputMessage.trim() === '') {
                                 return;
                             }
                             event();
@@ -91,12 +91,12 @@ const Comparison = () => {
                           }
                         : { disabled: true })}
                     placeholder="메시지를 입력해주세요."
-                    className="h-[3rem] flex-1 p-3 border-none rounded-full focus:outline-none resize-none overflow-y-auto bg-[#DDD] disabled:opacity-50 font-neo-rg text[#7C7C7C]"
+                    className="h-[3rem] flex-1 p-3 pl-5 border-none rounded-full focus:outline-none resize-none overflow-y-auto bg-[#DDD] disabled:opacity-50 font-neo-rg text[#7C7C7C]"
                 />
                 <button
                     onClick={event}
                     className="h-[3rem] w-[3rem] rounded-full bg-[#DDD] disabled:opacity-50 relative"
-                    {...(canChatting
+                    {...(canChatting && inputMessage.trim() !== ''
                         ? {
                               disabled: state,
                           }
