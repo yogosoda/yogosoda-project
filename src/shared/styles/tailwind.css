@@ -22,7 +22,8 @@
     }
 
     @keyframes moveLR {
-        0%, 100% {
+        0%,
+        100% {
             transform: translateX(0);
         }
         50% {
@@ -30,9 +31,15 @@
         }
     }
 
-
-    .font-cafe {
-        font-family: var(--font-cafe), sans-serif;
+    @keyframes slide-down {
+        0% {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 
     .font-neo-lt {
@@ -54,8 +61,6 @@
     .font-neo-hv {
         font-family: var(--font-neo-hv), sans-serif;
     }
-
-
 }
 
 @layer components {
@@ -71,6 +76,9 @@
     .animate-moveLR {
         animation: moveLR 1s ease-in-out infinite;
     }
+    .anumate-slide-down {
+        animation: slide-down 0.5s ease forwards;
+    }
 
     .shimmer-effect {
         @apply bg-gradient-to-r from-[#00D2BB] via-[#009A90] to-[#00D2BB] bg-[length:200%_100%] animate-shimmer;
@@ -81,11 +89,11 @@
     }
 
     .flex-with-row {
-        @apply flex flex-row
+        @apply flex flex-row;
     }
 
     .flex-with-col {
-        @apply flex flex-col
+        @apply flex flex-col;
     }
 
     .flex-col-center {
@@ -97,9 +105,8 @@
     }
 
     .item-center {
-        @apply flex items-center justify-center
+        @apply flex items-center justify-center;
     }
-
 
     .no-scrollbar {
         /* Webkit 기반 브라우저에서 스크롤 바 숨기기 */

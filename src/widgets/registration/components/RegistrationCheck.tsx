@@ -6,7 +6,7 @@ import Divider from '@dev/shared/components/Divider';
 export default function RegistrationCheck() {
     return (
         <article className="pt-14 ">
-            <div className="bg-[#ECF5F8]  h-[46.875rem] w-[25rem]">
+            <div className="bg-[#ECF5F8]  h-[46.875rem] w-full">
                 <div className=" flex flex-col justify-center items-center">
                     <Image
                         className="absolute top-[34rem]"

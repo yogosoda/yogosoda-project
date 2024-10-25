@@ -1,5 +1,5 @@
 import { TextBox } from '@dev/shared/components/TextBox';
-import { notosansKr } from '@dev/shared/fonts';
+import { notosansKr } from '@dev/shared/constants/fonts';
 import { PlanInfoPropsType } from '@dev/shared/types/yogoevent.type';
 import { twMerge } from 'tailwind-merge';
 

@@ -3,7 +3,7 @@
 import RoundedButton from '@dev/shared/components/RoundedButton';
 import { TextBox } from '@dev/shared/components/TextBox';
 import ToggleButton from '@dev/shared/components/ToggleButton';
-import { notosansKr } from '@dev/shared/fonts';
+import { notosansKr } from '@dev/shared/constants/fonts';
 import { twMerge } from 'tailwind-merge';
 import GuageGraph from './GuageGraph';
 import { SelectPlanType } from '@dev/shared/types/yogoevent.type';
