@@ -125,7 +125,7 @@ function FilterGraph({ array, setFilteredData, ...props }: filterType) {
                 )}
             >
                 <div className="flex flex-row justify-between items-center w-full h-fit text-sm">
-                    <div className="flex flex-row justify-start items-center gap-2 w-full h-fit">
+                    <div className="flex flex-row justify-start items-center gap-2 w-full h-fit p-2">
                         <span onClick={() => setFilterType('fee')}>요금</span>
                         <ToggleButton
                             isSelectData={filterType === 'fee'}

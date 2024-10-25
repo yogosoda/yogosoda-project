@@ -6,7 +6,7 @@ import { ReactComponent as RightArrow } from '@devShared/svg/chevron-right-solid
 export default function RegistrationUsing() {
     return (
         <article className="flex flex-col gap-4">
-            <div className="bg-[#F6F4EA]  h-[34.375rem] w-[25rem]">
+            <div className="bg-[#F6F4EA]  h-[34.375rem] w-full">
                 <Image src={RegisOtherBg} width={400} alt="img" />
 
                 <div className="flex flex-col justify-center items-center font-bold">
