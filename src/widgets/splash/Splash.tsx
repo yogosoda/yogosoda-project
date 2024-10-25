@@ -24,7 +24,7 @@ export default function Splash() {
         }
     };
     const endSwipe = () => {
-        if (translate > 10) {
+        if (translate > 1) {
             setTranslate(window.innerWidth);
         }
     };

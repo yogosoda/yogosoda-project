@@ -11,7 +11,7 @@ import {
     neoHeavy,
     neoLight,
     neoRegular,
-} from '@devShared/fonts';
+} from '@dev/shared/constants/fonts';
 
 export const metadata: Metadata = {
     title: {

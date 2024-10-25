@@ -8,10 +8,12 @@ import { ReactComponent as Question } from '@devShared/svg/Vector.svg';
 import { ReactComponent as Down } from '@devShared/svg/chevron-down-solid.svg';
 import { ReactComponent as Up } from '@devShared/svg/chevron-up-solid.svg';
 import { KTPlansALLType, KTPlansType } from '@dev/entities/kt_plans.type';
+import FilterGraph from '../FilterGraph';
 
 export default function Payment() {
     const [payData, setPayData] = useState<KTPlansType[]>([]);
     const [payAllData, setPayAllData] = useState<KTPlansALLType[]>([]);
+    const [filteredData, setFilteredData] = useState<KTPlansType[]>([]);
     const [isToggle, setIsToggle] = useState<boolean[]>([]);
     const [isQuestion, setIsQuestion] = useState<number | null>(null);
 
@@ -36,6 +38,7 @@ export default function Payment() {
             const res = await api.get<[]>('/api/yogos');
             if (res.data) {
                 setPayData(res.data);
+                setFilteredData(res.data);
             }
         } catch (error) {
             console.error(error);
@@ -60,10 +63,14 @@ export default function Payment() {
 
     return (
         <section>
-            {payData.map((plan, index) => (
+            <FilterGraph
+                array={payData}
+                setFilteredData={setFilteredData}
+            ></FilterGraph>
+            {filteredData.map((plan, index) => (
                 <div
                     key={index}
-                    className="pt-14 pb-14 flex flex-col justify-center items-center"
+                    className="py-3 flex flex-col justify-center items-center"
                 >
                     <div className="w-[21rem] shadow-box bg-white rounded-2xl flex flex-col justify-center gap-4 p-4">
                         <KtLogo width={25} height={25} />
