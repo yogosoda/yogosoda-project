@@ -8,7 +8,11 @@ const ChatBotQuestionButtonList = ({
     options = [],
 }: ChatBotQuestionButtonListProps) => {
     return (
-        <div className={'flex-with-row item-center gap-4 flex-wrap'}>
+        <div
+            className={
+                'max-w-[80%] ml-[4.1rem] mt-[0.65rem] flex-with-row gap-2 flex-wrap'
+            }
+        >
             {options.map((option, index) => {
                 const isSelected =
                     option === value

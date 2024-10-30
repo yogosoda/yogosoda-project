@@ -34,7 +34,7 @@ const Yogo = () => {
             </header>
             <main
                 className={
-                    'block border-t-2 overflow-auto no-scrollbar p-[1.5rem]'
+                    'block border-t-2 overflow-auto no-scrollbar px-[1.5rem] pb-[1.5rem]'
                 }
                 style={{
                     height: 'calc(100vh - 10.5rem)',
@@ -56,20 +56,20 @@ const Yogo = () => {
                     onKeyDown={(e) => {
                         if (e.key === 'Enter' && !e.shiftKey) {
                             e.preventDefault();
-                            if (state) {
+                            if (state || inputMessage.trim() === '') {
                                 return;
                             }
                             event();
                         }
                     }}
                     disabled={state}
-                    placeholder="메시지를 입력하세요..."
-                    className="h-[3rem] flex-1 p-3 border-none rounded-full focus:outline-none resize-none overflow-y-auto bg-[#DDD] disabled:opacity-50 font-neo-rg text[#7C7C7C]"
+                    placeholder="메시지를 입력해주세요."
+                    className="h-[3rem] flex-1 p-3 pl-5 border-none rounded-full focus:outline-none resize-none overflow-y-auto bg-[#DDD] disabled:opacity-50 font-neo-rg text[#7C7C7C]"
                 />
                 <button
                     onClick={event}
                     className="h-[3rem] w-[3rem] rounded-full bg-[#DDD] disabled:opacity-50 relative"
-                    disabled={state}
+                    disabled={inputMessage.trim() === '' || state}
                 >
                     <img
                         src={send}

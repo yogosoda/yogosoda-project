@@ -1,7 +1,5 @@
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
-        <div className={'max-w-full min-h-screen flex-with-col'}>
-            {children}
-        </div>
+        <div className={'max-w-full h-[100vh] flex-with-col'}>{children}</div>
     );
 }
