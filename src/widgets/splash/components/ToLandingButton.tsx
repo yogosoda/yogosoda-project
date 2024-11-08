@@ -3,7 +3,7 @@ import arrow_next from '@devShared/images/arrow_next.svg';
 
 export default function ToLandingButton() {
     return (
-        <div className="w-2/5 flex justify-end items-center gap-3 mt-6">
+        <div className="w-2/5 flex justify-end items-center md:hidden gap-3 mt-6">
             <Image
                 src={arrow_next}
                 alt="이미지"

@@ -4,6 +4,7 @@ import SplashTitle from './components/SplashTitle';
 import { useState, useRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 import ToLandingButton from './components/ToLandingButton';
+import RecommendMobile from './components/RecommendMobile';
 
 export default function Splash() {
     const ref = useRef<HTMLDivElement>(null);
@@ -12,10 +13,16 @@ export default function Splash() {
     const [translate, setTranslate] = useState(0);
 
     const startSwipe = (e: React.TouchEvent) => {
+        //eslint-disable-next-line
+        if (typeof window !== undefined && window.innerWidth >= 768) return;
+
         const touchPoint = e.touches[0].clientX;
         setStartPoint(touchPoint);
     };
     const moveSwipe = (e: React.TouchEvent) => {
+        //eslint-disable-next-line
+        if (typeof window !== undefined && window.innerWidth >= 768) return;
+
         const movePoint = e.touches[0].clientX;
         if (movePoint < startPoint) {
             return;
@@ -24,6 +31,9 @@ export default function Splash() {
         }
     };
     const endSwipe = () => {
+        //eslint-disable-next-line
+        if (typeof window !== undefined && window.innerWidth >= 768) return;
+
         if (translate > 1) {
             setTranslate(window.innerWidth);
         }
@@ -45,6 +55,7 @@ export default function Splash() {
         >
             <SplashTitle />
             <ToLandingButton />
+            <RecommendMobile />
         </div>
     );
 }
