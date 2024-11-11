@@ -13,7 +13,11 @@ async function YogoEvent() {
     return (
         <div className="flex-col-center">
             <YogoeventIntro />
-            <YogoeventSearch ktPlanData={ktPlanData} />
+            {ktPlanData.length > 0 ? (
+                <YogoeventSearch ktPlanData={ktPlanData} />
+            ) : (
+                <div>데이터가 없습니다.</div> // 데이터가 없을 경우 표시할 내용
+            )}
             <YogoeventBanner />
             <YogoeventToEnter />
             <YogoeventVideo />
@@ -24,12 +28,16 @@ async function YogoEvent() {
 
 // [FIXME] KT 요고 요금제를 받아와 가입 혜택 페이지로 전달합니다
 const getKTPlan = async () => {
-    const res = await api.get<KTPlansType[]>(`/api/yogos`);
-    const data = await res.data;
-    if (!data) {
+    try {
+        const res = await api.get<KTPlansType[]>(`/api/yogos`);
+        const data = res.data;
+        if (!data) {
+            return [];
+        }
+        return data;
+    } catch {
         return [];
     }
-    return data;
 };
 
 export default YogoEvent;
